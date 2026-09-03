@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "general-marketing-intelligence": {
+      "type": "stdio",
+      "command": "node",
+      "args": ["dist/index.js"],
+      "env": {
+        "DATA_MODE": "demo",
+        "AI_PROVIDER": "none",
+        "CURRENCY_CODE": "USD",
+        "NUMBER_LOCALE": "en-US"
+      }
+    }
+  }
+}

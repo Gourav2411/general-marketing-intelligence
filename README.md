@@ -82,6 +82,20 @@ npm start
 
 A stdio MCP server normally waits silently for a client.
 
+## Connect Claude or OpenAI Codex
+
+This server works as a local intelligence layer in both clients. When Claude or Codex is the host, use `AI_PROVIDER=none`: the host model interprets the deterministic MCP results, so there is no nested model call.
+
+See [`docs/CLIENTS.md`](docs/CLIENTS.md) for exact Codex CLI, Claude Code and Claude Desktop configuration. The repository also includes a project-scoped [`.mcp.json`](.mcp.json) for Claude Code demo mode.
+
+After connecting, try:
+
+- “Use General Marketing Intelligence to give me the weekly growth brief.”
+- “Audit paid search and explain which campaigns should scale or stop.”
+- “Build a growth bet for the strongest segment.”
+
+The current server is local stdio. A shared one-click connection for remote teams requires a hosted Streamable HTTP service with authentication and tenant isolation; see the client guide for that boundary.
+
 ## MCP Inspector
 
 ```bash
