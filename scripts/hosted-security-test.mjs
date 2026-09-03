@@ -1,0 +1,18 @@
+import assert from "node:assert/strict";
+import { mkdtempSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
+import { randomBytes } from "node:crypto";
+import { EncryptedCredentialStore } from "../dist/hosted/credentials.js";
+import { authorizeTool, credentialsForSources } from "../dist/hosted/policy.js";
+const directory=mkdtempSync(join(tmpdir(),"gmi-hosted-")),store=new EncryptedCredentialStore(directory,randomBytes(32).toString("base64"));
+store.put({tenantId:"tenant-a",allowedSources:["gsc"],credentials:{TOKEN:"secret-a"}});
+store.put({tenantId:"tenant-b",allowedSources:["ga4"],credentials:{TOKEN:"secret-b"}});
+assert.equal(store.get("tenant-a")?.credentials.TOKEN,"secret-a");
+assert.equal(store.get("tenant-b")?.credentials.TOKEN,"secret-b");
+assert.deepEqual(credentialsForSources({GSC_SITE_URL:"gsc",GA4_PROPERTY_ID:"ga4",CURRENCY_CODE:"USD"},["gsc"]),{GSC_SITE_URL:"gsc",CURRENCY_CODE:"USD"});
+assert.throws(()=>authorizeTool({tenantId:"tenant-a",actorId:"u",roles:["viewer"],sources:["gsc"]},"ga4_acquisition_report",["gsc"]));
+assert.deepEqual(authorizeTool({tenantId:"tenant-a",actorId:"u",roles:["viewer"],sources:["gsc"]},"google_search_console_report",["gsc"]),["gsc"]);
+assert.equal(store.revoke("tenant-a"),true);
+assert.ok(store.get("tenant-a")?.revokedAt);
+console.log("Hosted encryption, tenant isolation, revocation and source policy checks passed.");

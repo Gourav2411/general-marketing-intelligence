@@ -1,6 +1,4 @@
-#!/usr/bin/env node
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
 import { growthSnapshot } from "./tools/growthSnapshot.js";
 import { findSeoOpportunities } from "./tools/seoOpportunities.js";
@@ -27,9 +25,11 @@ import { connectorCatalog } from "./connectors/catalog.js";
 import { getCommercialBundle, renderCommercialSignals } from "./evidence/commercial.js";
 import { brandVsNonbrand, campaignToPipeline, channelHealthScorecard, contentDecayMonitor, executiveGrowthReview, experimentReview, landingPageOpportunityReport, measurementQualityAudit, recommendGrowthBet } from "./tools/executive.js";
 
-const server=new McpServer({name:"general-marketing-intelligence",version:"1.1.0"});
+export const SERVER_VERSION="1.2.0";
+export function createMarketingServer(){
+const server=new McpServer({name:"general-marketing-intelligence",version:SERVER_VERSION});
 const segment=z.string().min(1).optional();
-const text=(value:string,data:Record<string,unknown>={})=>({content:[{type:"text" as const,text:value}],structuredContent:{markdown:value,data,meta:{serverVersion:"1.1.0",generatedAt:new Date().toISOString()}}});
+const text=(value:string,data:Record<string,unknown>={})=>({content:[{type:"text" as const,text:value}],structuredContent:{markdown:value,data,meta:{serverVersion:SERVER_VERSION,generatedAt:new Date().toISOString()}}});
 const liveInput={include_live_google:z.boolean().default(true),live_days:z.number().int().min(1).max(365).default(28)};
 const enrich=async(value:string,include:boolean,days:number,limit=3)=>{if(!include)return {markdown:value,bundle:undefined};const bundle=await getCommercialBundle({days,rowLimit:250});return {markdown:`${value}\n\n${renderLiveOpportunities(bundle.google,limit)}\n\n${renderCommercialSignals(bundle)}`,bundle}};
 
@@ -70,4 +70,5 @@ server.registerTool("measurement_quality_audit",{title:"Measurement Quality Audi
 server.registerTool("experiment_review",{title:"Experiment Review",description:"Calculate conversion-efficiency and pipeline changes against an explicit success threshold.",inputSchema:{name:z.string().min(1),baseline_spend:z.number().nonnegative().optional(),current_spend:z.number().nonnegative().optional(),baseline_conversions:z.number().nonnegative().optional(),current_conversions:z.number().nonnegative().optional(),baseline_pipeline:z.number().nonnegative().optional(),current_pipeline:z.number().nonnegative().optional(),success_threshold:z.number().min(-1).max(10).default(.1)}},input=>text(experimentReview({name:input.name,baselineSpend:input.baseline_spend,currentSpend:input.current_spend,baselineConversions:input.baseline_conversions,currentConversions:input.current_conversions,baselinePipeline:input.baseline_pipeline,currentPipeline:input.current_pipeline,successThreshold:input.success_threshold}),{inputs:input}));
 server.registerTool("recommend_next_growth_bet",{title:"Recommend Next Growth Bet",description:"Rank normalized evidence with CRM outcomes weighted above platform conversions and traffic.",inputSchema:commercialInput},async({days,row_limit})=>{const bundle=await getCommercialBundle({days,rowLimit:row_limit});return text(recommendGrowthBet(bundle),{bundle})});
 
-await server.connect(new StdioServerTransport());
+return server;
+}

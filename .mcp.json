@@ -3,7 +3,7 @@
     "general-marketing-intelligence": {
       "type": "stdio",
       "command": "node",
-      "args": ["dist/index.js"],
+      "args": ["dist/stdio.js"],
       "env": {
         "DATA_MODE": "demo",
         "AI_PROVIDER": "none",

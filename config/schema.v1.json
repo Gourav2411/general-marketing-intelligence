@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Gourav2411/general-marketing-intelligence/config/schema.v1.json",
+  "title": "Versioned General Marketing Intelligence configuration. Secret values are references or deployment inputs, never committed configuration.",
+  "type": "object",
+  "required": ["schemaVersion", "mode"],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "mode": { "enum": ["stdio", "hosted"] },
+    "dataMode": { "enum": ["demo", "local", "live"] },
+    "currencyCode": { "type": "string", "pattern": "^[A-Z]{3}$" },
+    "numberLocale": { "type": "string", "minLength": 2 },
+    "connectors": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "gsc": { "$ref": "#/$defs/source" }, "ga4": { "$ref": "#/$defs/source" },
+        "googleAds": { "$ref": "#/$defs/source" }, "hubspot": { "$ref": "#/$defs/source" },
+        "salesforce": { "$ref": "#/$defs/source" }, "crmCsv": { "$ref": "#/$defs/source" }
+      }
+    },
+    "hosted": {
+      "type": "object", "additionalProperties": false,
+      "properties": {
+        "publicUrl": { "type": "string", "format": "uri", "pattern": "^https://" },
+        "allowedOrigins": { "type": "array", "items": { "type": "string", "format": "uri" }, "minItems": 1, "uniqueItems": true },
+        "rateLimitPerMinute": { "type": "integer", "minimum": 1, "maximum": 10000 },
+        "retentionDays": { "type": "integer", "minimum": 0, "maximum": 3650 }
+      }
+    }
+  },
+  "$defs": { "source": { "type": "object", "required": ["enabled"], "additionalProperties": false, "properties": { "enabled": { "type": "boolean" }, "credentialReference": { "type": "string", "minLength": 1 } } } }
+}

@@ -3,7 +3,7 @@
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-blue.svg)](LICENSE)
 [![Verify](https://github.com/Gourav2411/general-marketing-intelligence/actions/workflows/verify.yml/badge.svg)](https://github.com/Gourav2411/general-marketing-intelligence/actions/workflows/verify.yml)
 
-A reusable, read-only stdio MCP server that normalizes Google Search Console, GA4, Google Ads and CRM evidence into deterministic marketing decisions. HubSpot, Salesforce and a vendor-neutral CRM CSV contract are supported. It is designed for a Head of Marketing, growth team or agency that needs answers—not another dashboard.
+A reusable, read-only MCP server that normalizes Google Search Console, GA4, Google Ads and CRM evidence into deterministic marketing decisions. Local stdio and a separately configured hosted Streamable HTTP edition share the same tools. HubSpot, Salesforce and a vendor-neutral CRM CSV contract are supported.
 
 ## What it answers
 
@@ -43,6 +43,8 @@ npm run doctor:live
 ```
 
 Use `npm run connect:google` for GSC and GA4 only. Setup validates paths and identifiers, creates private Claude/Codex configuration output under git-ignored `setup-output/`, and can update Claude Desktop with a timestamped backup when invoked as `npm run setup -- --apply-claude`. It never prints credential contents.
+
+For organization access, the separate hosted reference edition adds authenticated Streamable HTTP, tenant/source authorization, encrypted tenant credentials, audit events, rate limits, revocation and retention controls. It requires your own OIDC provider, TLS proxy and production storage/KMS adapters; do not expose the local stdio server. See [`docs/HOSTING.md`](docs/HOSTING.md) and [`docs/MIGRATIONS.md`](docs/MIGRATIONS.md).
 
 ## Import your data
 
@@ -156,7 +158,7 @@ Edit `claude_desktop_config.json`. Add the following server under `mcpServers`, 
       "type": "stdio",
       "command": "node",
       "args": [
-        "/absolute/path/to/general-marketing-intelligence/dist/index.js"
+        "/absolute/path/to/general-marketing-intelligence/dist/stdio.js"
       ],
       "env": {
         "DATA_MODE": "demo",
@@ -235,13 +237,13 @@ The current server is local stdio. A shared one-click connection for remote team
 ## MCP Inspector
 
 ```bash
-npx -y @modelcontextprotocol/inspector@latest node dist/index.js
+npx -y @modelcontextprotocol/inspector@latest node dist/stdio.js
 ```
 
 For local data:
 
 ```bash
-DATA_MODE=local npx -y @modelcontextprotocol/inspector@latest node dist/index.js
+DATA_MODE=local npx -y @modelcontextprotocol/inspector@latest node dist/stdio.js
 ```
 
 Connect using **STDIO**, open **Tools**, invoke `connection_status`, then try `opportunity_radar` or `build_growth_bet`.

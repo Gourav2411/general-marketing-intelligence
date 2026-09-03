@@ -29,7 +29,7 @@ codex mcp add general-marketing-intelligence \
   --env AI_PROVIDER=none \
   --env CURRENCY_CODE=USD \
   --env NUMBER_LOCALE=en-US \
-  -- node "/absolute/path/to/general-marketing-intelligence/dist/index.js"
+  -- node "/absolute/path/to/general-marketing-intelligence/dist/stdio.js"
 ```
 
 Verify:
@@ -54,7 +54,7 @@ claude mcp add --scope user --transport stdio \
   --env CURRENCY_CODE=USD \
   --env NUMBER_LOCALE=en-US \
   general-marketing-intelligence \
-  -- node "/absolute/path/to/general-marketing-intelligence/dist/index.js"
+  -- node "/absolute/path/to/general-marketing-intelligence/dist/stdio.js"
 ```
 
 Verify:
@@ -74,7 +74,7 @@ Add this inside `mcpServers` in the Claude Desktop configuration, using absolute
     "general-marketing-intelligence": {
       "type": "stdio",
       "command": "node",
-      "args": ["/absolute/path/to/general-marketing-intelligence/dist/index.js"],
+      "args": ["/absolute/path/to/general-marketing-intelligence/dist/stdio.js"],
       "env": {
         "DATA_MODE": "demo",
         "AI_PROVIDER": "none",

@@ -7,7 +7,7 @@ import { join } from "node:path";
 process.env.AI_PROVIDER="none";
 const snapshotDir=mkdtempSync(join(tmpdir(),"gmi-smoke-"));process.env.MARKETING_SNAPSHOT_DIR=snapshotDir;
 for(const key of ["GSC_SITE_URL","GA4_PROPERTY_ID","GOOGLE_APPLICATION_CREDENTIALS","GOOGLE_ADS_CUSTOMER_ID","GOOGLE_ADS_DEVELOPER_TOKEN","GOOGLE_ADS_CLIENT_ID","GOOGLE_ADS_CLIENT_SECRET","GOOGLE_ADS_REFRESH_TOKEN","HUBSPOT_ACCESS_TOKEN","SALESFORCE_INSTANCE_URL","SALESFORCE_ACCESS_TOKEN","GENERIC_CRM_CSV"])delete process.env[key];
-const transport=new StdioClientTransport({command:process.execPath,args:["dist/index.js"],cwd:process.cwd(),stderr:"inherit"});
+const transport=new StdioClientTransport({command:process.execPath,args:["dist/stdio.js"],cwd:process.cwd(),stderr:"inherit"});
 const client=new Client({name:"general-marketing-smoke-test",version:"1.0.0"});
 console.log("Connecting to MCP server over stdio…");
 await client.connect(transport);

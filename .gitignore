@@ -8,3 +8,7 @@ dist/
 data/local/
 data/snapshots/
 setup-output/
+.hosted-data/
+coverage/
+*.tgz
+sbom.cdx.json

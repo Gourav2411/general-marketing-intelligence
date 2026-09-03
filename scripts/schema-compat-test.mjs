@@ -1,0 +1,6 @@
+import assert from "node:assert/strict";
+import { Client } from "@modelcontextprotocol/sdk/client/index.js";
+import { StdioClientTransport } from "@modelcontextprotocol/sdk/client/stdio.js";
+const transport=new StdioClientTransport({command:process.execPath,args:["dist/stdio.js"],cwd:process.cwd(),stderr:"inherit"}),client=new Client({name:"gmi-schema-compat",version:"1.0.0"});await client.connect(transport);const {tools}=await client.listTools(),byName=new Map(tools.map(tool=>[tool.name,tool]));
+const required={google_search_console_report:["comparison","country","device","search_type","page_filter","query_filter","row_limit"],ga4_acquisition_report:["comparison","country","device","landing_page_filter","campaign_filter","channel_group","row_limit"],executive_growth_review:["days","row_limit"],experiment_review:["name","success_threshold"]};
+for(const [name,properties] of Object.entries(required)){const schema=byName.get(name)?.inputSchema;assert.ok(schema,`Missing stable tool ${name}`);for(const property of properties)assert.ok(schema.properties?.[property],`${name} lost input ${property}`)}assert.equal(tools.length,32,"Unexpected public tool count; update the compatibility contract intentionally for a versioned schema change");await transport.close();console.log("MCP public schema compatibility checks passed.");

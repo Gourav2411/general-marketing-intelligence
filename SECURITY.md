@@ -18,4 +18,4 @@ The maintainer will acknowledge a complete report when practicable, investigate 
 - Use least-privilege, read-only product roles.
 - Rotate and revoke a credential immediately if exposure is suspected.
 
-The server is local stdio software. Do not expose it directly to the public internet without authentication, tenant isolation, encrypted storage, rate limiting and audit controls.
+The default server is local stdio software. Do not expose it directly to the public internet. The hosted entry point is a reference resource server and must be deployed behind TLS with an external OIDC provider and production KMS/storage/audit adapters as described in `docs/HOSTING.md`.

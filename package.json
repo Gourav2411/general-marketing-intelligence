@@ -1,6 +1,6 @@
 {
   "name": "general-marketing-intelligence",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "private": true,
   "type": "module",
   "description": "A reusable MCP decision layer for direct Google and CSV-backed marketing intelligence.",
@@ -26,14 +26,17 @@
   ],
   "scripts": {
     "build": "tsc",
-    "start": "node dist/index.js",
-    "dev": "tsx src/index.ts",
+    "start": "node dist/stdio.js",
+    "start:hosted": "node dist/hosted.js",
+    "dev": "tsx src/stdio.ts",
+    "dev:hosted": "tsx src/hosted.ts",
     "demo": "node scripts/demo.mjs",
     "import:csv": "node scripts/import-csv.mjs",
     "setup": "npm run build && node scripts/setup.mjs",
     "connect:google": "npm run build && node scripts/setup.mjs --google-only",
     "doctor": "npm run build && node scripts/doctor.mjs",
     "doctor:live": "npm run build && node scripts/doctor.mjs --live",
+    "tenant:admin": "npm run build && node scripts/tenant-admin.mjs",
     "typecheck": "tsc --noEmit",
     "test:marketing": "node scripts/marketing-decision-test.mjs",
     "test:ai": "node scripts/ai-layer-test.mjs",
@@ -41,19 +44,25 @@
     "test:google": "node scripts/google-connectors-test.mjs",
     "test:connectors": "node scripts/connectors-test.mjs",
     "test:mcp": "node scripts/smoke-test.mjs",
-    "test": "npm run build && npm run test:marketing && npm run test:ai && npm run test:local && npm run test:google && npm run test:connectors && npm run test:mcp",
-    "verify": "npm run build && npm run typecheck && npm run test:marketing && npm run test:ai && npm run test:local && npm run test:google && npm run test:connectors && npm run test:mcp"
+    "test:hosted": "node scripts/hosted-security-test.mjs",
+    "test:schema": "node scripts/schema-compat-test.mjs",
+    "coverage": "npm run build && c8 --all --src dist/hosted --reporter=text --reporter=lcov node scripts/hosted-security-test.mjs",
+    "license:check": "node scripts/license-check.mjs",
+    "test": "npm run build && npm run test:marketing && npm run test:ai && npm run test:local && npm run test:google && npm run test:connectors && npm run test:mcp && npm run test:hosted && npm run test:schema",
+    "verify": "npm run build && npm run typecheck && npm run test:marketing && npm run test:ai && npm run test:local && npm run test:google && npm run test:connectors && npm run test:mcp && npm run test:hosted && npm run test:schema && npm run license:check"
   },
   "dependencies": {
     "@google-analytics/data": "7.0.0",
     "@modelcontextprotocol/sdk": "1.30.0",
     "csv-parse": "6.1.0",
     "googleapis": "178.0.0",
+    "jose": "6.2.10",
     "openai": "7.8.0",
     "zod": "3.25.76"
   },
   "devDependencies": {
     "@types/node": "22.18.1",
+    "c8": "10.1.3",
     "tsx": "4.20.5",
     "typescript": "5.9.3"
   }
