@@ -3,7 +3,7 @@
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-blue.svg)](LICENSE)
 [![Verify](https://github.com/Gourav2411/general-marketing-intelligence/actions/workflows/verify.yml/badge.svg)](https://github.com/Gourav2411/general-marketing-intelligence/actions/workflows/verify.yml)
 
-A reusable stdio MCP server that combines direct Google Search Console and GA4 reporting with paid-media and conversion CSVs to produce deterministic marketing decisions. It is designed for a Head of Marketing, growth team or agency that needs answers—not another dashboard.
+A reusable, read-only stdio MCP server that normalizes Google Search Console, GA4, Google Ads and CRM evidence into deterministic marketing decisions. HubSpot, Salesforce and a vendor-neutral CRM CSV contract are supported. It is designed for a Head of Marketing, growth team or agency that needs answers—not another dashboard.
 
 ## What it answers
 
@@ -33,6 +33,16 @@ npm run demo -- radar
 npm run demo -- budget
 npm run demo -- roundtable
 ```
+
+For an interactive private configuration flow:
+
+```bash
+npm run setup
+npm run doctor
+npm run doctor:live
+```
+
+Use `npm run connect:google` for GSC and GA4 only. Setup validates paths and identifiers, creates private Claude/Codex configuration output under git-ignored `setup-output/`, and can update Claude Desktop with a timestamped backup when invoked as `npm run setup -- --apply-claude`. It never prints credential contents.
 
 ## Import your data
 
@@ -70,6 +80,26 @@ GA4_PROPERTY_ID=123456789
 Then restart Claude or Codex and ask it to invoke the direct Google tools. Never commit the service-account JSON or place its contents in a prompt.
 
 Search Console compares the requested period with the immediately preceding period and returns query/page metrics. GA4 returns source/medium, campaign and landing-page performance with sessions, users, configured key events and revenue. These tools do not claim that GA4 events or revenue equal CRM pipeline.
+
+Both tools support explicit periods, previous-period or year-over-year comparison, filters and row limits. GSC supports country, device, search type, page and query filters. GA4 supports country, device, landing page, campaign and default channel-group filters.
+
+## Connect Google Ads and CRM
+
+Google Ads uses read-only GAQL reports for campaign, ad-group, search-term, landing-page, device and geography evidence. Configure the variables documented in [`.env.example`](.env.example); an optional manager account uses `GOOGLE_ADS_LOGIN_CUSTOMER_ID`. There are no campaign mutation methods.
+
+Choose one CRM source:
+
+- `CRM_PROVIDER=hubspot` with a read-only HubSpot private-app token.
+- `CRM_PROVIDER=salesforce` with an HTTPS instance URL and read-only OAuth access token.
+- `CRM_PROVIDER=csv` with `GENERIC_CRM_CSV` pointing to the schema in [`templates/crm-funnel.csv`](templates/crm-funnel.csv).
+
+CRM stages and attribution fields are organization-specific. Define and govern MQL, SQL, opportunity, pipeline and revenue semantics before using them for investment decisions. See [`docs/CONNECTORS.md`](docs/CONNECTORS.md) for scopes, limitations and setup details.
+
+## Normalize cross-channel evidence
+
+All implemented live connectors emit a shared evidence contract with source, property, period, retrieval time, segment mapping, metrics, provenance and limitations. Copy [`config/marketing-mapping.example.json`](config/marketing-mapping.example.json), customize it, and set `MARKETING_MAPPING_FILE` to its absolute path.
+
+Without explicit mapping, URL-path inference is used and confidence is limited. Use `save_evidence_snapshot` deliberately to store a private local metric snapshot, then `content_decay_monitor` to compare snapshots. Snapshot and setup directories are git-ignored with restrictive file permissions. See [`docs/EVIDENCE_MODEL.md`](docs/EVIDENCE_MODEL.md).
 
 ### Claude Desktop: complete Google setup
 
@@ -231,9 +261,25 @@ Connect using **STDIO**, open **Tools**, invoke `connection_status`, then try `o
 | `content_strategy` | What content has a commercial job? |
 | `create_campaign_asset` | What should a proof-safe asset contain? |
 | `build_growth_bet` | How should channels coordinate around one opportunity? |
-| `connection_status` | Which data and AI modes are active? |
+| `connection_status` / `diagnose_setup` | Which modes, credentials and APIs are ready? |
 | `google_search_console_report` | What queries and pages drive Google demand, and how did they change? |
 | `ga4_acquisition_report` | Which sources, campaigns and landing pages drive sessions and key events? |
+| `google_ads_report` | How do campaigns, ad groups, search terms, landing pages, devices and geographies perform? |
+| `hubspot_funnel_report` | What lifecycle and deal evidence exists in HubSpot? |
+| `salesforce_funnel_report` | What lead and opportunity evidence exists in Salesforce? |
+| `generic_crm_csv_report` | What funnel evidence exists in a vendor-neutral CRM export? |
+| `connector_catalog` | Which normalized connectors are implemented or planned? |
+| `live_opportunity_radar` | Which mapped GSC/GA4 opportunities deserve validation? |
+| `save_evidence_snapshot` / `snapshot_history` | What historical evidence has been stored locally? |
+| `executive_growth_review` | What matters commercially across all configured evidence? |
+| `channel_health_scorecard` | Which channels have traffic, conversion or CRM evidence? |
+| `landing_page_opportunity_report` | Which pages should be protected, validated or improved? |
+| `brand_vs_nonbrand_search` | How do explicitly classified brand and non-brand queries compare? |
+| `content_decay_monitor` | Which query/page signals declined across snapshots? |
+| `campaign_to_pipeline_report` | Which paid campaigns match CRM pipeline and revenue? |
+| `measurement_quality_audit` | Which evidence and governance gaps block confident decisions? |
+| `experiment_review` | Did an experiment clear its explicit efficiency or pipeline threshold? |
+| `recommend_next_growth_bet` | Which segment has the strongest evidence-weighted next bet? |
 
 ## Verification
 
@@ -241,12 +287,12 @@ Connect using **STDIO**, open **Tools**, invoke `connection_status`, then try `o
 npm run verify
 ```
 
-This covers build, typecheck, deterministic decision cases, AI validation/fallback, local CSV behavior, arbitrary-segment output, stdio discovery and invocation of all fourteen tools.
+This covers build, typecheck, deterministic decision cases, AI validation/fallback, local CSV behavior, mocked GSC/GA4/Google Ads/CRM responses, retry and error classification, normalization, stdio discovery and invocation of all 32 tools.
 
 ## Boundaries
 
-- Search Console and GA4 have implemented read-only report tools. Paid-media and CRM/pipeline data remain CSV-backed.
-- Direct Google reports are not yet normalized into `opportunity_radar` or other cross-channel decision tools.
+- Search Console, GA4, Google Ads, HubSpot, Salesforce and generic CRM CSV have implemented read-only report paths.
+- Mapping quality and source definitions determine whether cross-platform joins are trustworthy.
 - Estimated pipeline is only as reliable as the supplied attribution and CRM definitions.
 - Scores and confidence labels are transparent heuristics, not causal or statistical models.
 - Tools recommend; they never change spend, publish, message people or write to business systems.

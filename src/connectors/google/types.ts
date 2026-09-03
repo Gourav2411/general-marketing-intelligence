@@ -1,0 +1,5 @@
+export interface ReportMeta { source:"google_search_console"|"ga4"; property:string; startDate:string; endDate:string; retrievedAt:string; rowCount:number; partial:boolean; warnings:string[] }
+export interface SearchConsoleEvidenceRow { query:string; page:string; clicks:number; impressions:number; ctr:number; position:number; previousImpressions:number; impressionGrowth:number|null }
+export interface SearchConsoleReport { meta:ReportMeta&{previousStartDate:string;previousEndDate:string};rows:SearchConsoleEvidenceRow[];markdown:string }
+export interface Ga4EvidenceRow { sourceMedium:string;channelGroup:string;campaign:string;landingPage:string;country:string;device:string;sessions:number;users:number;keyEvents:number;revenue:number;keyEventsPerSession:number }
+export interface Ga4Report { meta:ReportMeta&{sampled:boolean;quota?:Record<string,unknown>;comparison?:{mode:string;startDate:string;endDate:string;currentSessions:number;previousSessions:number;sessionChange:number|null;currentKeyEvents:number;previousKeyEvents:number;keyEventChange:number|null}};rows:Ga4EvidenceRow[];markdown:string }

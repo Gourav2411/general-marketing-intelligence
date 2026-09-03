@@ -6,3 +6,5 @@ dist/
 .env.*
 !.env.example
 data/local/
+data/snapshots/
+setup-output/

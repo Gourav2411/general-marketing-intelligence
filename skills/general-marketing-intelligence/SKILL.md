@@ -19,3 +19,7 @@ Use MCP tools for data access and deterministic calculations. Use this skill for
 8. Never fabricate company metrics, customer proof, product claims, market facts or attribution certainty.
 9. On any conflict, code-calculated evidence wins over AI prose.
 10. Humans approve all external actions.
+11. Preserve the hierarchy: CRM won revenue → qualified pipeline/opportunities → SQL/MQL progression → platform conversions/key events → sessions/clicks → impressions.
+12. Never relabel GA4 key events or ad-platform conversions as MQLs, SQLs, pipeline or revenue.
+13. Prefer configured cross-source mappings; label inferred or unmatched joins and reduce confidence.
+14. Include source, period, freshness and partial-data warnings in material conclusions.

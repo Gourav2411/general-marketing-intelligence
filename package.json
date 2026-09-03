@@ -1,6 +1,6 @@
 {
   "name": "general-marketing-intelligence",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "type": "module",
   "description": "A reusable MCP decision layer for direct Google and CSV-backed marketing intelligence.",
@@ -17,21 +17,32 @@
   "engines": {
     "node": ">=20 <23"
   },
-  "keywords": ["mcp", "marketing-intelligence", "ga4", "search-console", "analytics"],
+  "keywords": [
+    "mcp",
+    "marketing-intelligence",
+    "ga4",
+    "search-console",
+    "analytics"
+  ],
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
     "dev": "tsx src/index.ts",
     "demo": "node scripts/demo.mjs",
     "import:csv": "node scripts/import-csv.mjs",
+    "setup": "npm run build && node scripts/setup.mjs",
+    "connect:google": "npm run build && node scripts/setup.mjs --google-only",
+    "doctor": "npm run build && node scripts/doctor.mjs",
+    "doctor:live": "npm run build && node scripts/doctor.mjs --live",
     "typecheck": "tsc --noEmit",
     "test:marketing": "node scripts/marketing-decision-test.mjs",
     "test:ai": "node scripts/ai-layer-test.mjs",
     "test:local": "node scripts/local-data-test.mjs",
     "test:google": "node scripts/google-connectors-test.mjs",
+    "test:connectors": "node scripts/connectors-test.mjs",
     "test:mcp": "node scripts/smoke-test.mjs",
-    "test": "npm run build && npm run test:marketing && npm run test:ai && npm run test:local && npm run test:google && npm run test:mcp",
-    "verify": "npm run build && npm run typecheck && npm run test:marketing && npm run test:ai && npm run test:local && npm run test:google && npm run test:mcp"
+    "test": "npm run build && npm run test:marketing && npm run test:ai && npm run test:local && npm run test:google && npm run test:connectors && npm run test:mcp",
+    "verify": "npm run build && npm run typecheck && npm run test:marketing && npm run test:ai && npm run test:local && npm run test:google && npm run test:connectors && npm run test:mcp"
   },
   "dependencies": {
     "@google-analytics/data": "7.0.0",

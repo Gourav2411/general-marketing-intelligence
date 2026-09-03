@@ -7,6 +7,16 @@ npm install
 npm run build
 ```
 
+Or use the guided flow:
+
+```bash
+npm run setup
+npm run doctor
+npm run doctor:live
+```
+
+`npm run setup -- --apply-claude` backs up and updates the macOS Claude Desktop configuration. Generated snippets and commands are stored with restrictive permissions in git-ignored `setup-output/`.
+
 Use `AI_PROVIDER=none` when Claude or Codex is the MCP host. The host model should interpret the deterministic tool output directly. Enable embedded OpenAI only for Inspector or another client that does not provide its own reasoning model.
 
 ## OpenAI Codex
@@ -95,6 +105,8 @@ GSC and GA4 use the same Google Cloud service-account JSON file. Keep that file 
 For a URL-prefix Search Console property, use the exact registered URL such as `https://www.example.com/`. `GA4_PROPERTY_ID` is the numeric property ID, not a Measurement ID such as `G-ABC123`.
 
 Restart Claude or Codex after changing environment variables. Then ask it to call `connection_status`, followed by `google_search_console_report` or `ga4_acquisition_report`. These tools fetch live read-only data at invocation time; they do not copy credentials or Google data into this repository.
+
+For Google Ads and CRM variables, roles and limitations, see [`CONNECTORS.md`](CONNECTORS.md). Keep `AI_PROVIDER=none` in Claude and Codex so the host model interprets structured, code-calculated MCP evidence directly.
 
 ## Demo versus local data
 

@@ -1,0 +1,3 @@
+record_type,record_id,created_date,lifecycle_stage,opportunity_stage,campaign,first_touch_source,latest_touch_source,segment,pipeline_value,closed_won_revenue,is_won
+lead,lead-001,2026-08-01,MQL,,Organic Search,google,google,Enterprise,0,0,false
+opportunity,opp-001,2026-08-15,,Qualification,Enterprise Search,google,cpc,Enterprise,25000,0,false

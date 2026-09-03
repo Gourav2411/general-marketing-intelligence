@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "segments": [
+    {
+      "name": "Enterprise",
+      "query_patterns": ["enterprise", "workflow"],
+      "landing_page_patterns": ["/enterprise", "/workflow"],
+      "campaign_patterns": ["enterprise"]
+    },
+    {
+      "name": "Animation",
+      "query_patterns": ["animation", "3d studio"],
+      "landing_page_patterns": ["/animation", "/3d"],
+      "campaign_patterns": ["animation"]
+    }
+  ]
+}
