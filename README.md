@@ -126,7 +126,7 @@ Edit `claude_desktop_config.json`. Add the following server under `mcpServers`, 
         "/absolute/path/to/general-marketing-intelligence/dist/index.js"
       ],
       "env": {
-        "DATA_MODE": "local",
+        "DATA_MODE": "demo",
         "AI_PROVIDER": "none",
         "CURRENCY_CODE": "USD",
         "NUMBER_LOCALE": "en-US",
@@ -140,6 +140,8 @@ Edit `claude_desktop_config.json`. Add the following server under `mcpServers`, 
 ```
 
 Use absolute paths. Claude Desktop does not expand shell aliases inside this configuration. `AI_PROVIDER=none` is intentional: Claude supplies the model reasoning while the MCP server supplies data and code-calculated metrics.
+
+Use `DATA_MODE=demo` when testing the direct GSC and GA4 tools without CSV uploads. Change it to `local` only after importing all three required CSV files with `npm run import:csv`; if those files are missing, the server safely falls back to demo data instead of disconnecting.
 
 Save the file and reopen Claude Desktop. In a new conversation, test in this order:
 

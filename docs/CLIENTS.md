@@ -66,7 +66,7 @@ Add this inside `mcpServers` in the Claude Desktop configuration, using absolute
       "command": "node",
       "args": ["/absolute/path/to/general-marketing-intelligence/dist/index.js"],
       "env": {
-        "DATA_MODE": "local",
+        "DATA_MODE": "demo",
         "AI_PROVIDER": "none",
         "CURRENCY_CODE": "USD",
         "NUMBER_LOCALE": "en-US"
@@ -77,6 +77,8 @@ Add this inside `mcpServers` in the Claude Desktop configuration, using absolute
 ```
 
 Restart Claude Desktop after saving the configuration.
+
+Use `DATA_MODE=demo` for direct GSC and GA4 reporting when no CSV files have been imported. Change it to `local` only after `npm run import:csv` has installed all three validated CSV inputs. Missing local files fall back to demo data so the MCP server remains available.
 
 ## Enable direct Google data
 
