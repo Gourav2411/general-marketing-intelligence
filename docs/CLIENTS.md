@@ -78,6 +78,22 @@ Add this inside `mcpServers` in the Claude Desktop configuration, using absolute
 
 Restart Claude Desktop after saving the configuration.
 
+## Enable direct Google data
+
+GSC and GA4 use the same Google Cloud service-account JSON file. Keep that file outside the repository, grant the service-account email access to the Search Console property and GA4 property, then add these variables to the MCP client's `env` block:
+
+```json
+{
+  "GOOGLE_APPLICATION_CREDENTIALS": "/absolute/path/to/google-service-account.json",
+  "GSC_SITE_URL": "sc-domain:example.com",
+  "GA4_PROPERTY_ID": "123456789"
+}
+```
+
+For a URL-prefix Search Console property, use the exact registered URL such as `https://www.example.com/`. `GA4_PROPERTY_ID` is the numeric property ID, not a Measurement ID such as `G-ABC123`.
+
+Restart Claude or Codex after changing environment variables. Then ask it to call `connection_status`, followed by `google_search_console_report` or `ga4_acquisition_report`. These tools fetch live read-only data at invocation time; they do not copy credentials or Google data into this repository.
+
 ## Demo versus local data
 
 - `DATA_MODE=demo`: bundled synthetic examples.

@@ -19,8 +19,10 @@
     "verify": "npm run build && npm run typecheck && npm run test:marketing && npm run test:ai && npm run test:local && npm run test:mcp"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "1.17.4",
+    "@google-analytics/data": "7.0.0",
+    "@modelcontextprotocol/sdk": "1.30.0",
     "csv-parse": "6.1.0",
+    "googleapis": "178.0.0",
     "openai": "7.8.0",
     "zod": "3.25.76"
   },

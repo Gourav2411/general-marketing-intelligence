@@ -12,4 +12,4 @@ TypeScript owns arithmetic, normalization, ranking, thresholds, opportunity stat
 
 The marketing skill defines evidence standards for compatible hosts. It does not silently control every MCP client.
 
-Current integrations are CSV-only. Connector status describes future Google Ads, Search Console, analytics and CRM adapters truthfully; no live API client is implemented.
+Search Console and GA4 have implemented read-only API clients that query Google at tool invocation time using local Application Default Credentials. Paid-media and CRM/pipeline data remain CSV-backed; Google Ads and CRM live clients are future work. Direct Google reports are deliberately kept separate from CRM pipeline attribution.

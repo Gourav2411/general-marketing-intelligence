@@ -1,6 +1,6 @@
 # General Marketing Intelligence MCP
 
-A reusable stdio MCP server that converts search, paid-media and conversion CSVs into deterministic marketing decisions. It is designed for a Head of Marketing, growth team or agency that needs answers—not another dashboard.
+A reusable stdio MCP server that combines direct Google Search Console and GA4 reporting with paid-media and conversion CSVs to produce deterministic marketing decisions. It is designed for a Head of Marketing, growth team or agency that needs answers—not another dashboard.
 
 ## What it answers
 
@@ -47,6 +47,26 @@ DATA_MODE=local npm run demo -- growth-bet
 ```
 
 Imports validate required columns, numeric values, CTR, funnel order, clicks/impressions, non-empty segments and paid-campaign matching. Valid files go to git-ignored `data/local/`. Restart a running MCP server after each import.
+
+## Connect Google Search Console and GA4 directly
+
+The server includes read-only `google_search_console_report` and `ga4_acquisition_report` tools. Both use Google Application Default Credentials or a service-account JSON file on the local machine.
+
+1. Create or select a Google Cloud project.
+2. Enable the Search Console API and Google Analytics Data API.
+3. Create a service account and download its JSON key locally.
+4. Add the service-account email as a user on the Search Console property and as a Viewer on the GA4 property.
+5. Configure the MCP host environment:
+
+```bash
+GOOGLE_APPLICATION_CREDENTIALS=/absolute/path/to/service-account.json
+GSC_SITE_URL=https://www.example.com/
+GA4_PROPERTY_ID=123456789
+```
+
+Then restart Claude or Codex and ask it to invoke the direct Google tools. Never commit the service-account JSON or place its contents in a prompt.
+
+Search Console compares the requested period with the immediately preceding period and returns query/page metrics. GA4 returns source/medium, campaign and landing-page performance with sessions, users, configured key events and revenue. These tools do not claim that GA4 events or revenue equal CRM pipeline.
 
 ## Currency
 
@@ -126,6 +146,8 @@ Connect using **STDIO**, open **Tools**, invoke `connection_status`, then try `o
 | `create_campaign_asset` | What should a proof-safe asset contain? |
 | `build_growth_bet` | How should channels coordinate around one opportunity? |
 | `connection_status` | Which data and AI modes are active? |
+| `google_search_console_report` | What queries and pages drive Google demand, and how did they change? |
+| `ga4_acquisition_report` | Which sources, campaigns and landing pages drive sessions and key events? |
 
 ## Verification
 
