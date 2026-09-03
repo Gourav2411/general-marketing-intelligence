@@ -1,5 +1,8 @@
 # General Marketing Intelligence MCP
 
+[![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-blue.svg)](LICENSE)
+[![Verify](https://github.com/Gourav2411/general-marketing-intelligence/actions/workflows/verify.yml/badge.svg)](https://github.com/Gourav2411/general-marketing-intelligence/actions/workflows/verify.yml)
+
 A reusable stdio MCP server that combines direct Google Search Console and GA4 reporting with paid-media and conversion CSVs to produce deterministic marketing decisions. It is designed for a Head of Marketing, growth team or agency that needs answers—not another dashboard.
 
 ## What it answers
@@ -248,3 +251,17 @@ This covers build, typecheck, deterministic decision cases, AI validation/fallba
 - Scores and confidence labels are transparent heuristics, not causal or statistical models.
 - Tools recommend; they never change spend, publish, message people or write to business systems.
 - [`SKILL.md`](skills/general-marketing-intelligence/SKILL.md) affects hosts that explicitly load project skills.
+
+## Security
+
+Never commit service-account JSON, `.env` files, API keys or customer data. Report vulnerabilities privately through the repository Security tab; see [`SECURITY.md`](SECURITY.md). This local stdio server is not hardened for direct public-internet exposure.
+
+## Contributing
+
+Contributions are welcome through issues and pull requests. Read [`CONTRIBUTING.md`](CONTRIBUTING.md), follow the [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md), and sign commits under the [`DCO.md`](DCO.md). Project decisions and ownership are described in [`GOVERNANCE.md`](GOVERNANCE.md).
+
+## License
+
+Copyright 2026 Gourav Kondadadi. Licensed under the [Apache License 2.0](LICENSE). The license includes an express patent grant; trademarks and product names remain with their respective owners. See [`NOTICE`](NOTICE).
+
+The software is provided “AS IS”, without warranties or conditions of any kind. It provides analytical recommendations, not legal, financial or professional advice.

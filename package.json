@@ -4,6 +4,20 @@
   "private": true,
   "type": "module",
   "description": "A reusable MCP decision layer for direct Google and CSV-backed marketing intelligence.",
+  "license": "Apache-2.0",
+  "author": "Gourav Kondadadi",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gourav2411/general-marketing-intelligence.git"
+  },
+  "homepage": "https://github.com/Gourav2411/general-marketing-intelligence#readme",
+  "bugs": {
+    "url": "https://github.com/Gourav2411/general-marketing-intelligence/issues"
+  },
+  "engines": {
+    "node": ">=20 <23"
+  },
+  "keywords": ["mcp", "marketing-intelligence", "ga4", "search-console", "analytics"],
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
