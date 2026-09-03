@@ -50,7 +50,7 @@ Imports validate required columns, numeric values, CTR, funnel order, clicks/imp
 
 ## Connect Google Search Console and GA4 directly
 
-The server includes read-only `google_search_console_report` and `ga4_acquisition_report` tools. Both use Google Application Default Credentials or a service-account JSON file on the local machine.
+The server includes read-only `google_search_console_report` and `ga4_acquisition_report` tools. Both use a service-account JSON file stored outside the repository on the local machine.
 
 1. Create or select a Google Cloud project.
 2. Enable the Search Console API and Google Analytics Data API.
@@ -155,11 +155,12 @@ Connect using **STDIO**, open **Tools**, invoke `connection_status`, then try `o
 npm run verify
 ```
 
-This covers build, typecheck, deterministic decision cases, AI validation/fallback, local CSV behavior, arbitrary-segment output, stdio discovery and invocation of all twelve tools.
+This covers build, typecheck, deterministic decision cases, AI validation/fallback, local CSV behavior, arbitrary-segment output, stdio discovery and invocation of all fourteen tools.
 
 ## Boundaries
 
-- CSV is the implemented data boundary; live APIs are future work.
+- Search Console and GA4 have implemented read-only report tools. Paid-media and CRM/pipeline data remain CSV-backed.
+- Direct Google reports are not yet normalized into `opportunity_radar` or other cross-channel decision tools.
 - Estimated pipeline is only as reliable as the supplied attribution and CRM definitions.
 - Scores and confidence labels are transparent heuristics, not causal or statistical models.
 - Tools recommend; they never change spend, publish, message people or write to business systems.
