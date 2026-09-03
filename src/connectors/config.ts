@@ -1,0 +1,4 @@
+import type { Connection } from "./types.js";
+export const dataMode=()=>process.env.DATA_MODE==="live"?"live":process.env.DATA_MODE==="local"?"local":"demo";
+const ready=(name:string,vars:string[]):Connection=>({name,status:"ADAPTER READY",configured:vars.every(v=>Boolean(process.env[v])),detail:vars.every(v=>Boolean(process.env[v]))?"Configuration present; API client not implemented":"Read-only adapter contract ready; configuration incomplete"});
+export function liveConnections():Connection[]{return [ready("Google Ads",["GOOGLE_ADS_CUSTOMER_ID","GOOGLE_ADS_DEVELOPER_TOKEN","GOOGLE_ADS_CLIENT_ID","GOOGLE_ADS_CLIENT_SECRET","GOOGLE_ADS_REFRESH_TOKEN"]),ready("Search Console",["GSC_SITE_URL","GSC_SERVICE_ACCOUNT_JSON"]),ready("GA4",["GA4_PROPERTY_ID","GOOGLE_SERVICE_ACCOUNT_JSON"]),ready("HubSpot",["HUBSPOT_ACCESS_TOKEN"]),{name:"Meta Ads",status:"NOT IMPLEMENTED",configured:false,detail:"Future, read-only connector"}]}

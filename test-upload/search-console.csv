@@ -1,0 +1,6 @@
+query,landing_page,segment,impressions,clicks,ctr,average_position,current_period,previous_period,commercial_intent
+enterprise workflow platform,/enterprise,Enterprise,12000,480,0.04,6.2,12000,9000,high
+workflow automation software,/platform,Enterprise,8500,255,0.03,9.1,8500,7000,high
+team productivity platform,/mid-market,Mid-Market,14500,725,0.05,5.4,14500,13200,medium
+project workflow software,/mid-market,Mid-Market,9200,276,0.03,10.8,9200,8600,high
+free workflow tool,/free,SMB,26000,2080,0.08,3.1,26000,25000,low

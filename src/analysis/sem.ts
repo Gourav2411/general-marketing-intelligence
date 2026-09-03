@@ -1,0 +1,6 @@
+import type { AdsRow } from "../types.js";
+import { ratio } from "./metrics.js";
+export interface SemDecision extends AdsRow { costPerSql:number; pipelineRoas:number; change:number; recommendation:string; reason:string; negativeKeywords?:string }
+export function semAudit(rows:AdsRow[]):SemDecision[]{
+ return rows.map(row=>{const costPerSql=row.sqls?row.spend/row.sqls:Infinity,pipelineRoas=ratio(row.estimated_pipeline,row.spend),leadToSql=ratio(row.sqls,row.leads);if(row.sqls===0||pipelineRoas<5||leadToSql<.05)return {...row,costPerSql,pipelineRoas,change:-30,recommendation:"Reduce or pause",reason:"Spend is not producing sufficient SQL or pipeline quality.",negativeKeywords:"Review search terms for irrelevant, research-only and low-intent traffic"};if(row.sqls>=3&&pipelineRoas>=30&&leadToSql>=.15)return {...row,costPerSql,pipelineRoas,change:20,recommendation:"Run a controlled scale test",reason:"SQL quality and pipeline efficiency support incremental investment."};return {...row,costPerSql,pipelineRoas,change:0,recommendation:"Hold and validate",reason:"Evidence is mixed; preserve spend while testing message, audience and landing-page fit."};}).sort((a,b)=>b.pipelineRoas-a.pipelineRoas);
+}

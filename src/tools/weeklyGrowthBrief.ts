@@ -1,0 +1,9 @@
+import { data } from "../data/loader.js";
+import { opportunityRadar } from "../analysis/opportunity.js";
+import { semAudit } from "../analysis/sem.js";
+import { disclaimer, money, sum } from "../analysis/metrics.js";
+export function weeklyGrowthBrief():string {
+ const opportunities=opportunityRadar(data.search,data.ads),paid=semAudit(data.ads),top=opportunities[0],best=paid[0],weak=paid.at(-1),spend=sum(data.ads,"spend"),pipeline=sum(data.conversions,"estimated_pipeline");
+ const actions=[top?`Build or improve the ${top.segment} intent path around its strongest observed search theme.`:"Validate search tracking and provide query data.",best?`${best.recommendation} for ${best.campaign}; judge it on cost per SQL and pipeline/spend.`:"Validate paid acquisition tracking.",weak&&weak.campaign!==best?.campaign?`${weak.recommendation} for ${weak.campaign}; investigate audience, intent and message match.`:"Review the lowest-quality acquisition traffic.",top?`Create one proof-safe asset that answers the highest-intent ${top.segment} buyer question.`:"Define one commercially relevant content hypothesis.","Review results with Sales and document pipeline progression, assumptions and the next decision date."];
+ return `# Weekly Marketing Intelligence Brief\n\n> ${disclaimer}\n\n## Executive summary\n\nMarketing recorded **${money(spend)} paid spend** and **${money(pipeline)} estimated attributed pipeline**. ${top?`The strongest cross-channel opportunity is **${top.segment}**.`:"No ranked opportunity is available."}\n\n## Strongest observed opportunity\n\n${top?`${top.signal}\n\n**Hypothesis:** ${top.hypothesis}\n\n**Commercial implication:** ${top.implication}`:"Insufficient data."}\n\n## Actions for next week\n\n${actions.map((action,index)=>`${index+1}. ${action}`).join("\n")}\n\n## Operating guardrail\n\nNo budget, publishing, outreach or CRM action occurs without human approval.`;
+}

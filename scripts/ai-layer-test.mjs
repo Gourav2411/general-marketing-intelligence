@@ -1,0 +1,17 @@
+import assert from "node:assert/strict";
+import { enhanceMarketingOutput } from "../dist/ai/enhance.js";
+import { getAIStatus } from "../dist/ai/provider.js";
+const fallback="# Deterministic output\n\n> Synthetic demo data only. No production data was used.";
+const evidence={observedFacts:{sqls:9},calculatedMetrics:{costPerSql:5111},deterministicScores:{rank:1},opportunityState:"GROWTH BET",confidenceInputs:{level:"HIGH"},deterministicOutput:fallback};
+const valid={observedSignal:"Nine SQLs were observed in the synthetic evidence.",interpretation:"Downstream quality supports a controlled test.",hypothesis:"Workflow specificity may be improving qualification.",recommendation:"Run the defined controlled test.",confidence:"HIGH",successMetric:"Qualified opportunities and pipeline.",reviewWindow:"At the defined review window.",strategicOutput:"Coordinate the approved paid, content and sales motion."};
+const mock={name:"openai",model:"mock",async generateMarketingAnalysis(){return valid}};
+const enhanced=await enhanceMarketingOutput("test",fallback,evidence,mock);
+assert.match(enhanced,/AI Intelligence Layer/); assert.match(enhanced,/Nine SQLs/); console.log("✓ mock AI response validates and renders");
+const invented={...valid,observedSignal:"The evidence shows 999 SQLs."}; let numericAttempts=0;
+const numericMock={name:"openai",model:"mock",async generateMarketingAnalysis(){numericAttempts++;return invented}};
+assert.equal(await enhanceMarketingOutput("test",fallback,evidence,numericMock),fallback); assert.equal(numericAttempts,2); console.log("✓ invented numeric truth is rejected and falls back");
+let attempts=0; const invalid={name:"openai",model:"invalid-mock",async generateMarketingAnalysis(){attempts++;return {confidence:"certain"}}};
+const invalidResult=await enhanceMarketingOutput("test",fallback,evidence,invalid);
+assert.equal(invalidResult,fallback); assert.equal(attempts,2); console.log("✓ invalid AI response retries once then falls back");
+process.env.AI_PROVIDER="none"; assert.equal(await enhanceMarketingOutput("test",fallback,evidence),fallback); console.log("✓ AI_PROVIDER=none preserves deterministic output");
+process.env.AI_PROVIDER="openai"; delete process.env.OPENAI_API_KEY; assert.equal(getAIStatus().status,"NOT CONFIGURED"); assert.equal(await enhanceMarketingOutput("test",fallback,evidence),fallback); console.log("✓ OpenAI without key falls back gracefully");

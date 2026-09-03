@@ -1,0 +1,2 @@
+query,landing_page,segment,impressions,clicks,ctr,average_position,current_period,previous_period,commercial_intent
+example commercial query,/example,Example Segment,1000,40,0.04,8,1000,800,high
