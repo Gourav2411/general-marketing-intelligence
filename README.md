@@ -68,6 +68,87 @@ Then restart Claude or Codex and ask it to invoke the direct Google tools. Never
 
 Search Console compares the requested period with the immediately preceding period and returns query/page metrics. GA4 returns source/medium, campaign and landing-page performance with sessions, users, configured key events and revenue. These tools do not claim that GA4 events or revenue equal CRM pipeline.
 
+### Claude Desktop: complete Google setup
+
+#### 1. Create one read-only Google identity
+
+1. In [Google Cloud Console](https://console.cloud.google.com/), create or select a project.
+2. Enable **Google Analytics Data API** and **Google Search Console API** under **APIs & Services → Library**.
+3. Under **IAM & Admin → Service Accounts**, create a service account such as `marketing-intelligence-reader`.
+4. No Google Cloud IAM role is required for this service account.
+5. Open the service account, select **Keys → Add key → Create new key → JSON**, and download the file.
+
+Keep the JSON outside this repository. A downloaded file normally has this macOS path structure:
+
+```text
+/Users/YOUR_MAC_USERNAME/Downloads/FILENAME.json
+```
+
+For a permanent installation, move it to a private location such as:
+
+```text
+/Users/YOUR_MAC_USERNAME/.config/google/marketing-intelligence-reader.json
+```
+
+In Finder, hold **Option**, right-click the file, and select **Copy as Pathname** to obtain the exact path. Never paste the JSON contents into Claude or commit the file to Git.
+
+#### 2. Grant the minimum product permissions
+
+Copy the service-account email ending in `.iam.gserviceaccount.com`, then grant it:
+
+- **GA4:** **Admin → Property access management → Add users → Viewer**.
+- **Search Console:** **Settings → Users and permissions → Add user → Full**.
+
+Do not grant Google Cloud Owner, Editor, Billing, Service Account Admin, GA4 Administrator, or Search Console Owner roles.
+
+Record:
+
+- The numeric GA4 **Property ID**, such as `123456789`—not the `G-...` Measurement ID.
+- The exact Search Console property identifier. A domain property uses `sc-domain:example.com`; a URL-prefix property uses its exact registered value, such as `https://www.example.com/`.
+
+#### 3. Configure Claude Desktop on macOS
+
+Quit Claude Desktop with **Command-Q**. In Finder, press **Command-Shift-G** and open:
+
+```text
+~/Library/Application Support/Claude/
+```
+
+Edit `claude_desktop_config.json`. Add the following server under `mcpServers`, preserving any other servers already in the file:
+
+```json
+{
+  "mcpServers": {
+    "general-marketing-intelligence": {
+      "type": "stdio",
+      "command": "node",
+      "args": [
+        "/absolute/path/to/general-marketing-intelligence/dist/index.js"
+      ],
+      "env": {
+        "DATA_MODE": "local",
+        "AI_PROVIDER": "none",
+        "CURRENCY_CODE": "USD",
+        "NUMBER_LOCALE": "en-US",
+        "GOOGLE_APPLICATION_CREDENTIALS": "/Users/YOUR_MAC_USERNAME/.config/google/marketing-intelligence-reader.json",
+        "GSC_SITE_URL": "sc-domain:example.com",
+        "GA4_PROPERTY_ID": "123456789"
+      }
+    }
+  }
+}
+```
+
+Use absolute paths. Claude Desktop does not expand shell aliases inside this configuration. `AI_PROVIDER=none` is intentional: Claude supplies the model reasoning while the MCP server supplies data and code-calculated metrics.
+
+Save the file and reopen Claude Desktop. In a new conversation, test in this order:
+
+1. “Use General Marketing Intelligence and call `connection_status`.”
+2. “Call `google_search_console_report` for the last 28 completed days.”
+3. “Call `ga4_acquisition_report` for the last 28 days.”
+
+If the server is disconnected, check the JSON syntax, confirm both absolute paths exist, run `npm run build` in the repository, and fully restart Claude. If a Google tool returns a permission error, confirm that the same service-account email was added to the exact GA4 and Search Console properties configured above.
+
 ## Currency
 
 The default is USD. Override formatting without changing the input numbers:
