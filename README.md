@@ -2,26 +2,72 @@
 
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-blue.svg)](LICENSE)
 [![Verify](https://github.com/Gourav2411/general-marketing-intelligence/actions/workflows/verify.yml/badge.svg)](https://github.com/Gourav2411/general-marketing-intelligence/actions/workflows/verify.yml)
+[![CodeQL](https://github.com/Gourav2411/general-marketing-intelligence/actions/workflows/codeql.yml/badge.svg)](https://github.com/Gourav2411/general-marketing-intelligence/actions/workflows/codeql.yml)
+[![Release](https://img.shields.io/github/v/release/Gourav2411/general-marketing-intelligence)](https://github.com/Gourav2411/general-marketing-intelligence/releases/latest)
 
-A reusable, read-only MCP server that normalizes Google Search Console, GA4, Google Ads and CRM evidence into deterministic marketing decisions. Local stdio and a separately configured hosted Streamable HTTP edition share the same tools. HubSpot, Salesforce and a vendor-neutral CRM CSV contract are supported.
+An open-source marketing decision layer for Claude, Codex and other MCP clients. It connects acquisition, web analytics and CRM evidence, performs calculations in code, and turns the results into decision-oriented marketing outputs.
 
-## What it answers
+**Code calculates. AI interprets. The marketing leader decides.**
 
-- What changed across acquisition?
-- Which organic themes deserve action?
-- Which paid campaigns should scale, hold or reduce?
-- Where should incremental budget go?
-- Which audience or use case deserves a coordinated growth bet?
-- What should the team do next week?
+The current release provides 32 MCP tools, read-only connectors for Google Search Console, GA4, Google Ads, HubSpot, Salesforce and generic CRM CSV data, plus local stdio and a separately configured hosted Streamable HTTP reference edition.
 
-OpenAI is optional. Code remains the source of metrics, scores, rankings and allocations.
+## Why this exists
+
+Marketing teams already have dashboards. The harder problem is combining search demand, website behavior, advertising cost and pipeline evidence into a defensible decision.
+
+General Marketing Intelligence is designed to answer questions such as:
+
+- What changed, and does it matter commercially?
+- Which channel or landing page deserves attention?
+- Are campaigns producing pipeline or merely inexpensive leads?
+- Which measurement gaps prevent a confident decision?
+- What should the team start, stop or continue?
+- What is the next growth bet, and how should it be tested?
+
+The MCP server retrieves and normalizes evidence. Deterministic TypeScript functions calculate comparisons, efficiency, scores, rankings, thresholds and allocations. The host model explains the evidence and helps form a strategy without becoming the source of the underlying numbers.
+
+## Current capabilities
+
+| Area | What is implemented |
+|---|---|
+| Search intelligence | Filtered GSC query and page reporting, pagination, country, device, search type, brand classification and period comparisons |
+| Website behavior | GA4 acquisition, campaign, channel and landing-page evidence with sampling and quota metadata |
+| Paid acquisition | Read-only Google Ads GAQL reports for campaigns, ad groups, search terms, landing pages, devices and geography |
+| Commercial outcomes | HubSpot, Salesforce and vendor-neutral CRM CSV funnel, opportunity, pipeline and closed-won evidence |
+| Executive decisions | Growth reviews, channel scorecards, landing-page opportunities, measurement audits, experiment reviews and growth-bet recommendations |
+| Evidence governance | Normalized provenance, explicit mapping, confidence limitations, local snapshots and structured MCP responses |
+| AI safety | Code-owned calculations, structured AI validation, numeric-integrity checks and deterministic fallback |
+| Team architecture | Authenticated Streamable HTTP reference, external OIDC/JWKS verification, tenant/source permissions, encrypted credentials, revocation, audit events and rate limits |
+| Engineering | Node 20/22 CI, CodeQL, dependency review, license policy, coverage, schema compatibility tests, SBOMs and build attestations |
+
+## How it works
+
+```text
+GSC     GA4     Google Ads     CRM / CSV
+ |       |          |              |
+ +-------+----------+--------------+
+                    |
+          Normalized evidence layer
+                    |
+      Deterministic analysis and scoring
+                    |
+          MCP tools and structured data
+                    |
+              Claude or Codex
+                    |
+       Evidence-backed marketing decision
+```
+
+The server never changes advertising budgets, publishes content or writes to business systems. It recommends actions and leaves execution with the user.
 
 ## Quick start
 
 Requires Node.js 20+.
 
 ```bash
-npm install
+git clone https://github.com/Gourav2411/general-marketing-intelligence.git
+cd general-marketing-intelligence
+npm ci
 npm run build
 npm run demo -- growth-bet
 ```
@@ -45,6 +91,14 @@ npm run doctor:live
 Use `npm run connect:google` for GSC and GA4 only. Setup validates paths and identifiers, creates private Claude/Codex configuration output under git-ignored `setup-output/`, and can update Claude Desktop with a timestamped backup when invoked as `npm run setup -- --apply-claude`. It never prints credential contents.
 
 For organization access, the separate hosted reference edition adds authenticated Streamable HTTP, tenant/source authorization, encrypted tenant credentials, audit events, rate limits, revocation and retention controls. It requires your own OIDC provider, TLS proxy and production storage/KMS adapters; do not expose the local stdio server. See [`docs/HOSTING.md`](docs/HOSTING.md) and [`docs/MIGRATIONS.md`](docs/MIGRATIONS.md).
+
+## Ask an executive question
+
+After connecting GSC and GA4, try:
+
+> Use General Marketing Intelligence to review the last 28 completed days. Call `executive_growth_review`, `channel_health_scorecard`, `landing_page_opportunity_report`, `measurement_quality_audit` and `recommend_next_growth_bet`. Produce a 30-day plan that separates observed facts, interpretation, assumptions and recommendations. Include owners, success metrics, decision thresholds and review dates. Do not invent unavailable commercial metrics.
+
+When Google Ads and CRM are also configured, add `campaign_to_pipeline_report` so platform conversions are evaluated against pipeline and closed-won evidence.
 
 ## Import your data
 
@@ -232,7 +286,13 @@ After connecting, try:
 - “Audit paid search and explain which campaigns should scale or stop.”
 - “Build a growth bet for the strongest segment.”
 
-The current server is local stdio. A shared one-click connection for remote teams requires a hosted Streamable HTTP service with authentication and tenant isolation; see the client guide for that boundary.
+Local stdio is the recommended path for individual use. A shared team deployment can use the hosted reference entry point described below.
+
+## Hosted reference edition
+
+`npm run start:hosted` starts a loopback-only Streamable HTTP resource server. It includes external OIDC/JWKS token validation, Origin allowlisting, tenant and source permissions, AES-256-GCM credential envelopes, revocation, retention controls, rate limits and secret-free audit events.
+
+It is deliberately not presented as a turnkey SaaS. Before public deployment, replace the reference filesystem and in-memory adapters with production KMS, secret-manager, database, distributed rate-limit and append-only audit services. Terminate TLS at a trusted proxy and complete a security review. See [`docs/HOSTING.md`](docs/HOSTING.md).
 
 ## MCP Inspector
 
@@ -291,6 +351,8 @@ npm run verify
 
 This covers build, typecheck, deterministic decision cases, AI validation/fallback, local CSV behavior, mocked GSC/GA4/Google Ads/CRM responses, retry and error classification, normalization, stdio discovery and invocation of all 32 tools.
 
+Tagged releases additionally produce a CycloneDX software bill of materials, SHA-256 checksums and GitHub build-provenance attestations. Public tool compatibility is protected by an MCP schema contract test.
+
 ## Boundaries
 
 - Search Console, GA4, Google Ads, HubSpot, Salesforce and generic CRM CSV have implemented read-only report paths.
@@ -302,7 +364,20 @@ This covers build, typecheck, deterministic decision cases, AI validation/fallba
 
 ## Security
 
-Never commit service-account JSON, `.env` files, API keys or customer data. Report vulnerabilities privately through the repository Security tab; see [`SECURITY.md`](SECURITY.md). This local stdio server is not hardened for direct public-internet exposure.
+Never commit service-account JSON, `.env` files, API keys or customer data. Report vulnerabilities privately through the repository Security tab; see [`SECURITY.md`](SECURITY.md). Never expose the stdio entry point to the public internet. The hosted entry point remains a reference architecture until its local storage and process-level controls are replaced with production infrastructure.
+
+## Roadmap
+
+Near-term priorities include:
+
+- Browser-based OAuth and account/property discovery
+- Stronger campaign and landing-page identity resolution across platforms
+- Meta Ads and additional normalized connector implementations
+- Scheduled executive reviews and decision-history tracking
+- More hosted HTTP, authentication and multi-tenant integration coverage
+- Validation with real marketing teams and documented case studies
+
+The project is open source so marketers, analysts and engineers can use it, question its assumptions and improve it. Issues and focused pull requests are welcome.
 
 ## Contributing
 
