@@ -27,7 +27,10 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run verify
-      - run: npm audit --omit=dev
+      # npm 10 can call the retired quick-audit endpoint on Node 22 and return a
+      # false HTTP 400. Run the security gate once with a pinned current npm.
+      - if: matrix.node-version == 22
+        run: npx --yes npm@12.0.2 audit --omit=dev
       - if: matrix.node-version == 22
         run: npm run coverage
       - if: matrix.node-version == 22
