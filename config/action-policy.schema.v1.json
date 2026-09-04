@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Gourav2411/general-marketing-intelligence/config/action-policy.schema.v1.json",
+  "title": "General Marketing Intelligence action policy v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "mode", "approvalTtlMinutes", "sources"],
+  "properties": {
+    "version": { "const": 1 },
+    "mode": { "enum": ["read_only", "draft_only", "read_write"] },
+    "approvalTtlMinutes": { "type": "integer", "minimum": 1, "maximum": 1440 },
+    "sources": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "local_artifacts": { "$ref": "#/$defs/permission" },
+        "google_ads": { "$ref": "#/$defs/permission" },
+        "hubspot": { "$ref": "#/$defs/permission" },
+        "salesforce": { "$ref": "#/$defs/permission" },
+        "email": { "$ref": "#/$defs/permission" }
+      }
+    }
+  },
+  "$defs": {
+    "permission": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["read", "draft", "write"],
+      "properties": {
+        "read": { "type": "boolean" },
+        "draft": { "type": "boolean" },
+        "write": { "type": "boolean" },
+        "maxBudgetChange": { "type": "number", "minimum": 0 },
+        "maxAudienceSize": { "type": "integer", "minimum": 0 }
+      }
+    }
+  }
+}

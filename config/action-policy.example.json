@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "mode": "draft_only",
+  "approvalTtlMinutes": 10,
+  "sources": {
+    "local_artifacts": { "read": true, "draft": true, "write": false },
+    "google_ads": { "read": true, "draft": true, "write": false, "maxBudgetChange": 1000 },
+    "hubspot": { "read": true, "draft": true, "write": false },
+    "salesforce": { "read": true, "draft": true, "write": false },
+    "email": { "read": true, "draft": true, "write": false, "maxAudienceSize": 500 }
+  }
+}

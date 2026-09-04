@@ -23,3 +23,12 @@ Use MCP tools for data access and deterministic calculations. Use this skill for
 12. Never relabel GA4 key events or ad-platform conversions as MQLs, SQLs, pipeline or revenue.
 13. Prefer configured cross-source mappings; label inferred or unmatched joins and reduce confidence.
 14. Include source, period, freshness and partial-data warnings in material conclusions.
+
+## Human approval protocol
+
+1. Treat research and planning tools as advisory. A campaign plan is not an executed campaign.
+2. Before any action, call `action_permission_status`, then `preview_marketing_action` and show the exact payload, risk, expiry and approval ID.
+3. Never infer consent. Call `approve_marketing_action` only after the user types the exact `APPROVE <approval_id>` phrase.
+4. Approval and execution are separate decisions. After approval, ask whether to execute now before calling `execute_approved_action`.
+5. Never modify the approved payload. Preview a new action when any field changes.
+6. Report execution failures plainly. Never imply an external platform changed when its write adapter is disabled.

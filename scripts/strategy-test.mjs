@@ -1,0 +1,6 @@
+import assert from "node:assert/strict";
+import { keywordInsights, paidCampaignPlan, emailCampaignPlan } from "../dist/tools/strategy.js";
+const rows=keywordInsights([{query:"buy marketing analytics software",page:"/software",clicks:10,impressions:500,ctr:.02,position:8,previousImpressions:250,impressionGrowth:1},{query:"what is marketing analytics",page:"/guide",clicks:20,impressions:1000,ctr:.02,position:5,previousImpressions:1000,impressionGrowth:0}],[],[],10);
+assert.equal(rows[0].intent,"TRANSACTIONAL");assert.equal(rows[0].length,"MEDIUM");assert.ok(rows[0].score>rows[1].score);
+const paid=paidCampaignPlan({name:"Test",objective:"Pipeline",audience:"Marketing leaders",offer:"Demo",landingPage:"https://example.com",budget:100,keywords:["marketing intelligence"],matchTypes:["exact","phrase"]});assert.equal(paid.status,"DRAFT_NOT_EXECUTED");assert.equal(paid.adGroups[0].keywords.length,2);
+const email=emailCampaignPlan({name:"Nurture",objective:"Activation",audience:"Opted-in leads",offer:"Guide",emails:25,cta:"Read guide"});assert.equal(email.status,"DRAFT_NOT_SENT");assert.ok(email.requiredChecks.includes("Consent and lawful basis"));console.log("Keyword, paid campaign and email strategy calculations passed.");

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { randomUUID } from "node:crypto";
+import { createHash, randomUUID } from "node:crypto";
 import { join } from "node:path";
 import { createMcpExpressApp } from "@modelcontextprotocol/sdk/server/express.js";
 import { StreamableHTTPServerTransport } from "@modelcontextprotocol/sdk/server/streamableHttp.js";
@@ -40,7 +40,9 @@ app.all("/mcp",async(req:any,res:any)=>{
     for(const tool of toolCalls(req.body)){const sources=authorizeTool(principal,tool,tenant.allowedSources);audit.write({requestId,tenantId:principal.tenantId,actorId:principal.actorId,action:`tool:${tool}`,source:sources.join(","),outcome:"allowed"})}
     if(req.method!=="POST")return reject(res,405,"Stateless hosted mode accepts POST only",requestId);
     const effectiveSources=principal.sources.filter(source=>tenant.allowedSources.includes(source));
-    return await withScopedCredentials(credentialsForSources(tenant.credentials,effectiveSources),join(dataDir,"runtime"),async()=>{const server=createMarketingServer(),transport=new StreamableHTTPServerTransport({sessionIdGenerator:undefined,enableJsonResponse:true});await server.connect(transport);try{await transport.handleRequest(req,res,req.body)}finally{await transport.close();await server.close()}});
+    const tenantDirectory=join(dataDir,"tenants",createHash("sha256").update(principal.tenantId).digest("hex"));
+    const credentials={...credentialsForSources(tenant.credentials,effectiveSources),MCP_ACTION_DIR:join(tenantDirectory,"actions"),MARKETING_DRAFT_DIR:join(tenantDirectory,"drafts")};
+    return await withScopedCredentials(credentials,join(dataDir,"runtime"),async()=>{const server=createMarketingServer(),transport=new StreamableHTTPServerTransport({sessionIdGenerator:undefined,enableJsonResponse:true});await server.connect(transport);try{await transport.handleRequest(req,res,req.body)}finally{await transport.close();await server.close()}});
   }catch(error){const reason=error instanceof Error?error.message:"unknown";audit.write({requestId,tenantId:principal.tenantId,actorId:principal.actorId,action:"mcp_request",outcome:"error",reason});if(!res.headersSent)return reject(res,403,reason,requestId)}
 });
 

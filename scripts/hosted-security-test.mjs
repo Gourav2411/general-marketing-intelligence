@@ -11,8 +11,11 @@ store.put({tenantId:"tenant-b",allowedSources:["ga4"],credentials:{TOKEN:"secret
 assert.equal(store.get("tenant-a")?.credentials.TOKEN,"secret-a");
 assert.equal(store.get("tenant-b")?.credentials.TOKEN,"secret-b");
 assert.deepEqual(credentialsForSources({GSC_SITE_URL:"gsc",GA4_PROPERTY_ID:"ga4",CURRENCY_CODE:"USD"},["gsc"]),{GSC_SITE_URL:"gsc",CURRENCY_CODE:"USD"});
+assert.deepEqual(credentialsForSources({MCP_ACCESS_MODE:"read_write",MCP_ACTION_POLICY_FILE:"/unsafe",UNKNOWN_SECRET:"secret"},["gsc"]),{});
+assert.deepEqual(credentialsForSources({MCP_ACCESS_MODE:"draft_only"},["actions"]),{MCP_ACCESS_MODE:"draft_only"});
 assert.throws(()=>authorizeTool({tenantId:"tenant-a",actorId:"u",roles:["viewer"],sources:["gsc"]},"ga4_acquisition_report",["gsc"]));
 assert.deepEqual(authorizeTool({tenantId:"tenant-a",actorId:"u",roles:["viewer"],sources:["gsc"]},"google_search_console_report",["gsc"]),["gsc"]);
+assert.throws(()=>authorizeTool({tenantId:"tenant-a",actorId:"u",roles:["viewer"],sources:["gsc"]},"preview_marketing_action",["gsc"]));
 assert.equal(store.revoke("tenant-a"),true);
 assert.ok(store.get("tenant-a")?.revokedAt);
 console.log("Hosted encryption, tenant isolation, revocation and source policy checks passed.");

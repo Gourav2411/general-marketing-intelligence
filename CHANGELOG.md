@@ -1,5 +1,38 @@
 # Changelog
 
+## [1.3.0] - 2026-09-04
+
+### Added
+
+- Deterministic observed-query classification and SEO/SEM opportunity ranking.
+- Separate growth-strategy, marketing-strategy, paid-search-plan and email-plan tools.
+- Versioned read/draft/write action policy with budget and audience limits.
+- Immutable action previews, exact expiring approvals, separate execution, revocation, single-use enforcement and local audit history.
+- Approved private local campaign-draft executor and per-tenant hosted action directories.
+- Action policy schema, security documentation and approval/strategy tests.
+
+### Security
+
+- Read-only remains the default and all external platform write adapters remain disabled.
+- Hosted credential projection now rejects unknown credential keys and requires explicit `actions` source permission.
+- The local stdio human-origin trust boundary is documented explicitly.
+
+## [1.3.0] - 2026-09-04
+
+### Added
+
+- Deterministic keyword opportunity classification using observed GSC and Google Ads search-term evidence.
+- Separate growth-strategy, marketing-strategy, paid-campaign draft and email-campaign draft tools.
+- Explicit `read_only`, `draft_only` and `read_write` action policies.
+- Expiring, hash-bound preview, exact approval, execution, revocation and audit lifecycle.
+- Tenant-isolated hosted action and draft storage.
+
+### Security
+
+- Read-only remains the default, and every executable action requires a separate exact approval.
+- Approvals are single use and payload changes invalidate execution.
+- This release only executes private local campaign-draft saves. Google Ads, CRM and email mutation adapters remain disabled.
+
 ## [1.2.0] - 2026-09-04
 
 ### Added

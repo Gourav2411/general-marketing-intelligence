@@ -9,6 +9,7 @@ data/local/
 data/snapshots/
 setup-output/
 .hosted-data/
+.marketing-actions/
 coverage/
 *.tgz
 sbom.cdx.json

@@ -9,7 +9,7 @@ An open-source marketing decision layer for Claude, Codex and other MCP clients.
 
 **Code calculates. AI interprets. The marketing leader decides.**
 
-The current release provides 32 MCP tools, read-only connectors for Google Search Console, GA4, Google Ads, HubSpot, Salesforce and generic CRM CSV data, plus local stdio and a separately configured hosted Streamable HTTP reference edition.
+The current release provides 43 MCP tools, read-only connectors for Google Search Console, GA4, Google Ads, HubSpot, Salesforce and generic CRM CSV data, plus deterministic keyword and campaign planning, human-controlled local drafts, local stdio and a separately configured hosted Streamable HTTP reference edition.
 
 ## Why this exists
 
@@ -35,6 +35,8 @@ The MCP server retrieves and normalizes evidence. Deterministic TypeScript funct
 | Paid acquisition | Read-only Google Ads GAQL reports for campaigns, ad groups, search terms, landing pages, devices and geography |
 | Commercial outcomes | HubSpot, Salesforce and vendor-neutral CRM CSV funnel, opportunity, pipeline and closed-won evidence |
 | Executive decisions | Growth reviews, channel scorecards, landing-page opportunities, measurement audits, experiment reviews and growth-bet recommendations |
+| Strategy and planning | Observed keyword opportunities, separate growth and marketing strategies, paid-search plans and email-sequence drafts |
+| Human-controlled actions | Read/draft/write policy, immutable previews, exact expiring approvals, separate execution, revocation and audit history |
 | Evidence governance | Normalized provenance, explicit mapping, confidence limitations, local snapshots and structured MCP responses |
 | AI safety | Code-owned calculations, structured AI validation, numeric-integrity checks and deterministic fallback |
 | Team architecture | Authenticated Streamable HTTP reference, external OIDC/JWKS verification, tenant/source permissions, encrypted credentials, revocation, audit events and rate limits |
@@ -58,7 +60,13 @@ GSC     GA4     Google Ads     CRM / CSV
        Evidence-backed marketing decision
 ```
 
-The server never changes advertising budgets, publishes content or writes to business systems. It recommends actions and leaves execution with the user.
+The server never changes advertising budgets, publishes content, sends email or writes to business systems in this release. It can save an approved private local campaign draft; all external write adapters remain disabled.
+
+## Human-controlled action flow
+
+Read-only is the default. Choose `MCP_ACCESS_MODE=read_only`, `draft_only` or `read_write`, or use the versioned example in [`config/action-policy.example.json`](config/action-policy.example.json). Even `read_write` cannot enable an adapter that has not been implemented.
+
+Any executable action must pass through preview, the user's exact `APPROVE <approval_id>` phrase, and a separate execute decision. Approvals expire, are bound to the exact payload and cannot be replayed. See [`docs/HUMAN_APPROVALS.md`](docs/HUMAN_APPROVALS.md) for the security model and its explicit client trust boundary.
 
 ## Quick start
 
@@ -342,6 +350,13 @@ Connect using **STDIO**, open **Tools**, invoke `connection_status`, then try `o
 | `measurement_quality_audit` | Which evidence and governance gaps block confident decisions? |
 | `experiment_review` | Did an experiment clear its explicit efficiency or pipeline threshold? |
 | `recommend_next_growth_bet` | Which segment has the strongest evidence-weighted next bet? |
+| `keyword_opportunity_research` | Which observed queries show SEO or paid-search opportunity and intent? |
+| `derive_growth_strategy` | Which acquisition, activation and commercial-validation system should change? |
+| `derive_marketing_strategy` | Which audience, position, demand-creation and demand-capture plan fits the evidence? |
+| `build_paid_campaign_plan` / `build_email_campaign_plan` | What should a bounded campaign draft contain? |
+| `action_permission_status` | Which read, draft and write permissions are active? |
+| `preview_marketing_action` / `approve_marketing_action` / `execute_approved_action` | What exact action is proposed, explicitly approved and separately executed? |
+| `revoke_action_approval` / `action_audit_history` | Which approval should be cancelled, and what lifecycle events occurred? |
 
 ## Verification
 
@@ -349,7 +364,7 @@ Connect using **STDIO**, open **Tools**, invoke `connection_status`, then try `o
 npm run verify
 ```
 
-This covers build, typecheck, deterministic decision cases, AI validation/fallback, local CSV behavior, mocked GSC/GA4/Google Ads/CRM responses, retry and error classification, normalization, stdio discovery and invocation of all 32 tools.
+This covers build, typecheck, deterministic decision cases, AI validation/fallback, local CSV behavior, mocked GSC/GA4/Google Ads/CRM responses, retry and error classification, normalization, action approval security, strategy calculations, stdio discovery and invocation of all 43 tools.
 
 Tagged releases additionally produce a CycloneDX software bill of materials, SHA-256 checksums and GitHub build-provenance attestations. Public tool compatibility is protected by an MCP schema contract test.
 
@@ -359,7 +374,7 @@ Tagged releases additionally produce a CycloneDX software bill of materials, SHA
 - Mapping quality and source definitions determine whether cross-platform joins are trustworthy.
 - Estimated pipeline is only as reliable as the supplied attribution and CRM definitions.
 - Scores and confidence labels are transparent heuristics, not causal or statistical models.
-- Tools recommend; they never change spend, publish, message people or write to business systems.
+- External tools recommend; they never change spend, publish, message people or write to business systems. The only executor in v1.3.0 saves an explicitly approved private local draft.
 - [`SKILL.md`](skills/general-marketing-intelligence/SKILL.md) affects hosts that explicitly load project skills.
 
 ## Security
@@ -372,6 +387,7 @@ Near-term priorities include:
 
 - Browser-based OAuth and account/property discovery
 - Stronger campaign and landing-page identity resolution across platforms
+- Audited, least-privilege external write adapters only after client-native human confirmation and security review
 - Meta Ads and additional normalized connector implementations
 - Scheduled executive reviews and decision-history tracking
 - More hosted HTTP, authentication and multi-tenant integration coverage
