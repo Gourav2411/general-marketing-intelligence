@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.5.0] - 2026-09-08
+
+### Added
+
+- Live, read-only Google Search Console and GA4 dashboard datasets using existing service-account configuration.
+- Date ranges with previous-period or year-over-year comparisons and current-versus-prior values.
+- Geographic bubble charts, comparison-aware scorecards, trends and tables.
+- `build_dashboard` MCP tool for validated 1-to-20-chart boards generated from Claude or Codex requests.
+- One-click GSC/GA4 starter board and mocked live-provider transformation tests.
+
+### Security
+
+- Dashboard URLs contain allowlisted configuration only; evidence stays behind the loopback-only local server.
+- Live dashboard queries use read-only Google scopes and deterministic code-owned calculations.
+
 ## [1.4.0] - 2026-09-08
 
 ### Added

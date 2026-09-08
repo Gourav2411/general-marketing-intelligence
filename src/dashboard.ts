@@ -4,6 +4,7 @@ import { readFileSync } from "node:fs";
 import { extname, join, normalize } from "node:path";
 import { data } from "./data/loader.js";
 import { chartTypes, dashboardCatalog, runDashboardQuery } from "./dashboard/query.js";
+import { runGoogleDashboardQuery } from "./dashboard/google.js";
 
 const port=Number(process.env.DASHBOARD_PORT??4173),host=process.env.DASHBOARD_HOST??"127.0.0.1",root=join(process.cwd(),"dashboard");
 const headers={"Content-Security-Policy":"default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; img-src 'self' data:; connect-src 'self'","X-Content-Type-Options":"nosniff","Referrer-Policy":"no-referrer","Cache-Control":"no-store"};
@@ -14,7 +15,7 @@ const mime:Record<string,string>={".html":"text/html; charset=utf-8",".js":"text
 const server=createServer(async(req,res)=>{try{
   const url=new URL(req.url??"/",`http://${host}`);
   if(req.method==="GET"&&url.pathname==="/api/catalog")return json(res,200,{datasets:dashboardCatalog,chartTypes});
-  if(req.method==="POST"&&url.pathname==="/api/query")return json(res,200,runDashboardQuery(data,await body(req)));
+  if(req.method==="POST"&&url.pathname==="/api/query"){const input=await body(req),dataset=String(input.dataset??"");return json(res,200,dataset.endsWith("_live")?await runGoogleDashboardQuery(input):runDashboardQuery(data,input))}
   if(req.method!=="GET")return json(res,405,{error:"Method not allowed"});
   const requested=url.pathname==="/"?"index.html":url.pathname.slice(1),safe=normalize(requested);
   if(safe.startsWith("..")||safe.includes("\0"))return json(res,400,{error:"Invalid path"});

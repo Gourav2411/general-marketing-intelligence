@@ -3,3 +3,7 @@
 .bar-wrap { display: block; position: relative; }
 .bar { bottom: 22px; position: absolute; width: 100%; }
 .bar-wrap > span { bottom: 0; left: 0; position: absolute; width: 100%; }
+.date-row { display: grid; gap: 8px; grid-template-columns: 1fr 1fr; }
+.delta { color: var(--green); font-size: 13px; font-weight: 800; }
+.delta.negative { color: #a23b2b; }
+.map-note { color: var(--muted); font-size: 11px; margin-top: 4px; }
