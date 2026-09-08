@@ -1,6 +1,6 @@
 {
   "name": "general-marketing-intelligence",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "private": true,
   "type": "module",
   "description": "A reusable MCP decision layer for direct Google and CSV-backed marketing intelligence.",
@@ -31,6 +31,7 @@
     "dev": "tsx src/stdio.ts",
     "dev:hosted": "tsx src/hosted.ts",
     "dashboard": "node dist/dashboard.js",
+    "dashboard:claude": "node scripts/dashboard-from-claude.mjs",
     "dev:dashboard": "tsx src/dashboard.ts",
     "demo": "node scripts/demo.mjs",
     "import:csv": "node scripts/import-csv.mjs",
@@ -53,10 +54,11 @@
     "test:dashboard": "node scripts/dashboard-test.mjs",
     "test:dashboard:google": "node scripts/dashboard-google-test.mjs",
     "test:ad-strategy": "node scripts/ad-strategy-test.mjs",
+    "test:platforms": "node scripts/platform-intelligence-test.mjs",
     "coverage": "npm run build && c8 --all --src dist/hosted --reporter=text --reporter=lcov node scripts/hosted-security-test.mjs",
     "license:check": "node scripts/license-check.mjs",
-    "test": "npm run build && npm run test:marketing && npm run test:ai && npm run test:local && npm run test:google && npm run test:connectors && npm run test:mcp && npm run test:hosted && npm run test:schema && npm run test:actions && npm run test:strategy && npm run test:dashboard && npm run test:dashboard:google && npm run test:ad-strategy",
-    "verify": "npm run build && npm run typecheck && npm run test:marketing && npm run test:ai && npm run test:local && npm run test:google && npm run test:connectors && npm run test:mcp && npm run test:hosted && npm run test:schema && npm run test:actions && npm run test:strategy && npm run test:dashboard && npm run test:dashboard:google && npm run test:ad-strategy && npm run license:check"
+    "test": "npm run build && npm run test:marketing && npm run test:ai && npm run test:local && npm run test:google && npm run test:connectors && npm run test:mcp && npm run test:hosted && npm run test:schema && npm run test:actions && npm run test:strategy && npm run test:dashboard && npm run test:dashboard:google && npm run test:ad-strategy && npm run test:platforms",
+    "verify": "npm run build && npm run typecheck && npm run test:marketing && npm run test:ai && npm run test:local && npm run test:google && npm run test:connectors && npm run test:mcp && npm run test:hosted && npm run test:schema && npm run test:actions && npm run test:strategy && npm run test:dashboard && npm run test:dashboard:google && npm run test:ad-strategy && npm run test:platforms && npm run license:check"
   },
   "dependencies": {
     "@google-analytics/data": "7.0.0",

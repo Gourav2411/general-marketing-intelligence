@@ -69,6 +69,53 @@ GENERIC_CRM_CSV=/absolute/path/to/crm-funnel.csv
 
 Copy `templates/crm-funnel.csv`. IDs should be non-sensitive internal identifiers. Do not include names, email addresses, phone numbers or free-text notes. Numeric values and dates are validated before aggregation.
 
+## Generic CRM HTTPS API
+
+```text
+CRM_PROVIDER=api
+GENERIC_CRM_API_CONFIG=/absolute/path/to/private-crm-map.json
+GENERIC_CRM_API_TOKEN=
+```
+
+Copy `config/generic-crm-api.example.json` and map a public HTTPS JSON endpoint into the normalized opportunity contract. The mapping file names an environment variable containing the token; it never contains the token itself. The adapter makes one GET request, rejects loopback/private-network targets and performs no writes. Pagination and associations remain vendor-specific.
+
+This can support endpoints such as Pipedrive `GET /api/v2/deals`. HubSpot and Salesforce should use their dedicated connectors because their pagination and association semantics are already implemented.
+
+## Meta Ads
+
+```text
+META_AD_ACCOUNT_ID=
+META_ACCESS_TOKEN=
+META_API_VERSION=
+META_CONVERSION_ACTION=offsite_conversion.purchase
+```
+
+The connector calls campaign-level Insights with a read-only GET request. Supply an explicit Graph API version and an access token authorized for reporting. The conversion action must match the account definition.
+
+Reference: [Meta Marketing API Insights](https://developers.facebook.com/docs/marketing-api/insights/).
+
+## LinkedIn Ads
+
+```text
+LINKEDIN_AD_ACCOUNT_ID=
+LINKEDIN_ACCESS_TOKEN=
+LINKEDIN_API_VERSION=
+```
+
+The connector calls the versioned `adAnalytics` endpoint using `r_ads_reporting`. Campaign pivot values may be URNs; entity-name resolution is reported as a limitation rather than guessed.
+
+Reference: [LinkedIn Ads Reporting](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ads-reporting).
+
+## Microsoft Ads
+
+The generic paid-media CSV contract supports Microsoft Ads exports now. A direct connector remains planned because Microsoft Advertising Reporting v13 requires a SOAP submit, poll and compressed-report download workflow. It will not be labelled implemented until that full asynchronous path and its tests exist.
+
+Reference: [Microsoft Advertising Reporting API](https://learn.microsoft.com/en-us/advertising/reporting-service/reporting-service-reference?view=bingads-13).
+
+## Generic paid-media CSV
+
+Set `PAID_MEDIA_CSV` or pass a path to `paid_media_csv_report`. Copy `templates/paid-media.csv`. It normalizes Google, Meta, LinkedIn, Microsoft, YouTube and programmatic exports into the same statistical strategy contract.
+
 ## Diagnostics
 
 ```bash

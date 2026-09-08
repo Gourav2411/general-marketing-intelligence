@@ -1,0 +1,13 @@
+import { existsSync, readFileSync } from "node:fs";
+import { homedir } from "node:os";
+import { join, resolve } from "node:path";
+import { spawn } from "node:child_process";
+import { fileURLToPath } from "node:url";
+const root=resolve(fileURLToPath(new URL("..",import.meta.url))),configPath=process.env.CLAUDE_CONFIG_PATH??join(homedir(),"Library/Application Support/Claude/claude_desktop_config.json");
+if(!existsSync(configPath))throw new Error(`Claude configuration was not found at ${configPath}`);
+const config=JSON.parse(readFileSync(configPath,"utf8")),server=config?.mcpServers?.["general-marketing-intelligence"],source=server?.env;
+if(!source||typeof source!=="object")throw new Error("Claude configuration has no general-marketing-intelligence environment");
+const allowed=["GOOGLE_APPLICATION_CREDENTIALS","GSC_SITE_URL","GA4_PROPERTY_ID","DATA_MODE","CURRENCY_CODE","NUMBER_LOCALE","MARKETING_DATA_DIR","MARKETING_MAPPING_FILE"],projected=Object.fromEntries(allowed.filter(key=>typeof source[key]==="string"&&source[key]).map(key=>[key,source[key]]));
+for(const required of ["GOOGLE_APPLICATION_CREDENTIALS","GSC_SITE_URL","GA4_PROPERTY_ID"])if(!projected[required])throw new Error(`Claude configuration is missing ${required}`);
+console.log(`Starting the local dashboard with ${Object.keys(projected).length} allowlisted settings from Claude. Credential values were not printed.`);
+const child=spawn(process.execPath,[join(root,"dist/dashboard.js")],{cwd:root,env:{...process.env,...projected},stdio:"inherit"});child.on("exit",code=>process.exit(code??0));

@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.7.0] - 2026-09-08
+
+### Added
+
+- `marketing_intelligence_router` and a backwards-compatible six-family tool catalog.
+- CRM-enriched Google Ads strategy using explicit case-insensitive campaign-name matching.
+- Generic paid-media CSV ingestion across Google, Meta, LinkedIn, Microsoft, YouTube and programmatic exports.
+- Read-only, version-configurable Meta Insights and LinkedIn ad analytics connectors.
+- Account/type empirical Bayesian baselines and deterministic anomaly, change-point, pacing, saturation and creative-fatigue screening.
+- `npm run dashboard:claude` to reuse an allowlist of local Claude dashboard settings without printing credentials.
+- Configurable public HTTPS JSON CRM adapter and a complete synthetic example analysis.
+
+### Security
+
+- Generic CRM endpoints must use HTTPS and cannot target loopback or private IPv4 hosts.
+- New advertising connectors issue reporting reads only; Microsoft direct reporting remains explicitly planned rather than partially implemented.
+
 ## [1.6.0] - 2026-09-08
 
 ### Added

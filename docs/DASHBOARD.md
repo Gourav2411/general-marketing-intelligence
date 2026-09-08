@@ -9,6 +9,14 @@ npm run build
 npm run dashboard
 ```
 
+If GSC and GA4 are already configured in Claude Desktop, start the dashboard without copying values:
+
+```bash
+npm run dashboard:claude
+```
+
+The launcher imports only an allowlist of dashboard settings from the local Claude configuration and never prints credential values.
+
 Open `http://127.0.0.1:4173`. Use `DATA_MODE=local npm run dashboard` after importing CSVs. Live datasets require `GOOGLE_APPLICATION_CREDENTIALS`, `GSC_SITE_URL` and/or `GA4_PROPERTY_ID`; `npm run connect:google` creates private configuration. Override the loopback port with `DASHBOARD_PORT`; do not bind it publicly without authentication and a production security review.
 
 ## Build a view

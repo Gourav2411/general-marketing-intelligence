@@ -9,7 +9,7 @@ An open-source marketing decision layer for Claude, Codex and other MCP clients.
 
 **Code calculates. AI interprets. The marketing leader decides.**
 
-The current release provides 47 MCP tools, read-only connectors for Google Search Console, GA4, Google Ads, HubSpot, Salesforce and generic CRM CSV data, recommendation-only statistical advertising strategy, deterministic keyword and campaign planning, live configurable dashboards, human-controlled local drafts, local stdio and a separately configured hosted Streamable HTTP reference edition.
+The current release provides 54 MCP tools, deterministic question routing, read-only connectors for Google Search Console, GA4, Google Ads, Meta Ads, LinkedIn Ads, HubSpot, Salesforce and configurable CRM/paid-media sources, recommendation-only statistical advertising strategy, live configurable dashboards, human-controlled local drafts, local stdio and a separately configured hosted Streamable HTTP reference edition.
 
 ## Why this exists
 
@@ -32,9 +32,10 @@ The MCP server retrieves and normalizes evidence. Deterministic TypeScript funct
 |---|---|
 | Search intelligence | Filtered GSC query and page reporting, pagination, country, device, search type, brand classification and period comparisons |
 | Website behavior | GA4 acquisition, campaign, channel and landing-page evidence with sampling and quota metadata |
-| Paid acquisition | Read-only Google Ads GAQL reports for campaigns, ad groups, search terms, landing pages, devices and geography |
+| Paid acquisition | Read-only Google Ads, Meta Insights and LinkedIn ad analytics, plus a normalized multi-platform CSV contract |
 | Advertising strategy | Bayesian-shrunk conversion estimates, data-maturity checks and bounded suggestions across Google, Meta, LinkedIn, Microsoft, YouTube and programmatic campaign types |
-| Commercial outcomes | HubSpot, Salesforce and vendor-neutral CRM CSV funnel, opportunity, pipeline and closed-won evidence |
+| Commercial outcomes | HubSpot, Salesforce, vendor-neutral CRM CSV and configurable public HTTPS JSON APIs for pipeline and closed-won evidence |
+| Guided routing | One business question maps to an ordered workflow across executive, acquisition, content, measurement, governance and visualization families |
 | Executive decisions | Growth reviews, channel scorecards, landing-page opportunities, measurement audits, experiment reviews and growth-bet recommendations |
 | Strategy and planning | Observed keyword opportunities, separate growth and marketing strategies, paid-search plans and email-sequence drafts |
 | Human-controlled actions | Read/draft/write policy, immutable previews, exact expiring approvals, separate execution, revocation and audit history |
@@ -98,6 +99,8 @@ npm run dashboard
 ```
 
 Open `http://127.0.0.1:4173`. Ask Claude or Codex to call `build_dashboard` for a full board, or `build_dashboard_chart` for one graph. See [`docs/DASHBOARD.md`](docs/DASHBOARD.md).
+
+If Google credentials already live in Claude Desktop configuration, use `npm run dashboard:claude`; it allowlists the required settings and never prints credential values.
 
 For an interactive private configuration flow:
 
@@ -369,6 +372,11 @@ Connect using **STDIO**, open **Tools**, invoke `connection_status`, then try `o
 | `build_dashboard` | Which validated set of GSC/GA4 scorecards, trends, geo views and tables answers the decision question? |
 | `ad_strategy_review` | What recommendation-only strategy and bounded budget test fits normalized cross-platform campaign evidence? |
 | `google_ads_strategy_review` | What does live read-only Google Ads evidence suggest, after data sufficiency and conversion lag are considered? |
+| `marketing_intelligence_router` / `marketing_tool_catalog` | Which ordered tool workflow and family match one business question? |
+| `paid_media_diagnostics` | Do daily observations indicate an anomaly, change point, pacing issue, saturation or creative fatigue? |
+| `paid_media_csv_report` | What strategy follows from a normalized Google, Meta, LinkedIn, Microsoft, YouTube or programmatic export? |
+| `meta_ads_report` / `linkedin_ads_report` | What campaign evidence is available from the configured read-only reporting API? |
+| `generic_crm_api_report` | What normalized opportunity and revenue evidence is available from a mapped public HTTPS JSON endpoint? |
 | `action_permission_status` | Which read, draft and write permissions are active? |
 | `preview_marketing_action` / `approve_marketing_action` / `execute_approved_action` | What exact action is proposed, explicitly approved and separately executed? |
 | `revoke_action_approval` / `action_audit_history` | Which approval should be cancelled, and what lifecycle events occurred? |
@@ -379,13 +387,13 @@ Connect using **STDIO**, open **Tools**, invoke `connection_status`, then try `o
 npm run verify
 ```
 
-This covers build, typecheck, deterministic decision cases, AI validation/fallback, local CSV behavior, mocked GSC/GA4/Google Ads/CRM responses, retry and error classification, normalization, action approval security, advertising statistics, strategy and dashboard calculations, stdio discovery and invocation of all 47 tools.
+This covers build, typecheck, deterministic decision cases, AI validation/fallback, local CSV behavior, mocked GSC/GA4/Google Ads/Meta/LinkedIn/CRM responses, routing, account-calibrated advertising statistics, diagnostics, normalization, action approval security, strategy and dashboard calculations, stdio discovery and invocation of all 54 tools.
 
 Tagged releases additionally produce a CycloneDX software bill of materials, SHA-256 checksums and GitHub build-provenance attestations. Public tool compatibility is protected by an MCP schema contract test.
 
 ## Boundaries
 
-- Search Console, GA4, Google Ads, HubSpot, Salesforce and generic CRM CSV have implemented read-only report paths.
+- Search Console, GA4, Google Ads, Meta Ads, LinkedIn Ads, HubSpot, Salesforce, generic CRM and paid-media CSV/API paths are read-only. Microsoft Ads has normalized CSV support; its direct asynchronous Reporting v13 connector remains planned.
 - Mapping quality and source definitions determine whether cross-platform joins are trustworthy.
 - Estimated pipeline is only as reliable as the supplied attribution and CRM definitions.
 - Scores and confidence labels are transparent heuristics, not causal or statistical models.

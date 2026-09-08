@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "endpoint": "https://api.example-crm.com/v2/deals",
+  "records_path": "data",
+  "token_env": "GENERIC_CRM_API_TOKEN",
+  "authorization": "bearer",
+  "record_type": "opportunity",
+  "fields": {
+    "id": "id",
+    "created_date": "created_at",
+    "opportunity_stage": "stage",
+    "campaign": "campaign",
+    "latest_touch_source": "source",
+    "segment": "segment",
+    "pipeline_value": "value",
+    "closed_won_revenue": "value",
+    "status": "status"
+  },
+  "won_values": ["won", "closed won", "closed_won"]
+}
