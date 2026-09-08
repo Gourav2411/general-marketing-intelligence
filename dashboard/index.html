@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Marketing Intelligence Dashboard</title><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/fixes.css"></head>
+<body>
+  <header><div><p class="eyebrow">GENERAL MARKETING INTELLIGENCE</p><h1>Build the view you need.</h1><p class="lede">Choose the evidence, calculation and visual. Your data stays on this machine.</p></div><div class="status"><span></span> Local evidence</div></header>
+  <main>
+    <aside>
+      <div class="step">01 · DATA</div><label>Dataset<select id="dataset"></select></label><label>Dimension<select id="dimension"></select></label><label>Metric<select id="metric"></select></label>
+      <div class="step">02 · CALCULATION</div><label>Aggregation<select id="aggregation"><option value="sum">Sum</option><option value="average">Average</option><option value="count">Count rows</option></select></label><label>Sort<select id="sort"><option value="descending">Highest first</option><option value="ascending">Lowest first</option></select></label><label>Maximum groups<input id="limit" type="number" min="1" max="50" value="10"></label>
+      <div class="step">03 · VISUAL</div><label>Chart<select id="chart"></select></label><label>Filter evidence<input id="filter" maxlength="200" placeholder="Campaign, page, segment…"></label><label>Chart title<input id="title" maxlength="100" placeholder="Optional title"></label>
+      <button id="add">Add to dashboard</button><button id="clear" class="secondary">Clear dashboard</button>
+    </aside>
+    <section class="workspace"><div class="workspace-head"><div><p class="eyebrow">YOUR BOARD</p><h2 id="board-title">Marketing evidence</h2></div><p id="count">0 charts</p></div><div id="empty"><strong>No charts yet.</strong><span>Configure your first view, then add it to the board.</span></div><div id="grid"></div></section>
+  </main>
+  <template id="card"><article class="card"><div class="card-head"><div><p class="meta"></p><h3></h3></div><button class="remove" title="Remove chart">×</button></div><div class="viz"></div><div class="foot"></div></article></template>
+  <script type="module" src="/app.js"></script>
+</body></html>

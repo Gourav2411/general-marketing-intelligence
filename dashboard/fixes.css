@@ -1,0 +1,5 @@
+[hidden] { display: none !important; }
+.bars { align-items: stretch; }
+.bar-wrap { display: block; position: relative; }
+.bar { bottom: 22px; position: absolute; width: 100%; }
+.bar-wrap > span { bottom: 0; left: 0; position: absolute; width: 100%; }

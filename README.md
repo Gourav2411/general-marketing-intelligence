@@ -9,7 +9,7 @@ An open-source marketing decision layer for Claude, Codex and other MCP clients.
 
 **Code calculates. AI interprets. The marketing leader decides.**
 
-The current release provides 43 MCP tools, read-only connectors for Google Search Console, GA4, Google Ads, HubSpot, Salesforce and generic CRM CSV data, plus deterministic keyword and campaign planning, human-controlled local drafts, local stdio and a separately configured hosted Streamable HTTP reference edition.
+The current release provides 44 MCP tools, read-only connectors for Google Search Console, GA4, Google Ads, HubSpot, Salesforce and generic CRM CSV data, deterministic keyword and campaign planning, a configurable local dashboard builder, human-controlled local drafts, local stdio and a separately configured hosted Streamable HTTP reference edition.
 
 ## Why this exists
 
@@ -37,6 +37,7 @@ The MCP server retrieves and normalizes evidence. Deterministic TypeScript funct
 | Executive decisions | Growth reviews, channel scorecards, landing-page opportunities, measurement audits, experiment reviews and growth-bet recommendations |
 | Strategy and planning | Observed keyword opportunities, separate growth and marketing strategies, paid-search plans and email-sequence drafts |
 | Human-controlled actions | Read/draft/write policy, immutable previews, exact expiring approvals, separate execution, revocation and audit history |
+| Local dashboards | User-selected datasets, dimensions, metrics, aggregations, filters and seven visual types with browser-local layouts |
 | Evidence governance | Normalized provenance, explicit mapping, confidence limitations, local snapshots and structured MCP responses |
 | AI safety | Code-owned calculations, structured AI validation, numeric-integrity checks and deterministic fallback |
 | Team architecture | Authenticated Streamable HTTP reference, external OIDC/JWKS verification, tenant/source permissions, encrypted credentials, revocation, audit events and rate limits |
@@ -87,6 +88,15 @@ npm run demo -- radar
 npm run demo -- budget
 npm run demo -- roundtable
 ```
+
+Launch the local dashboard builder:
+
+```bash
+npm run build
+npm run dashboard
+```
+
+Open `http://127.0.0.1:4173`. Ask Claude or Codex to call `build_dashboard_chart` when you want a validated link for a graph described in natural language. See [`docs/DASHBOARD.md`](docs/DASHBOARD.md).
 
 For an interactive private configuration flow:
 
@@ -354,6 +364,7 @@ Connect using **STDIO**, open **Tools**, invoke `connection_status`, then try `o
 | `derive_growth_strategy` | Which acquisition, activation and commercial-validation system should change? |
 | `derive_marketing_strategy` | Which audience, position, demand-creation and demand-capture plan fits the evidence? |
 | `build_paid_campaign_plan` / `build_email_campaign_plan` | What should a bounded campaign draft contain? |
+| `build_dashboard_chart` | Which validated local graph matches the user's requested evidence view? |
 | `action_permission_status` | Which read, draft and write permissions are active? |
 | `preview_marketing_action` / `approve_marketing_action` / `execute_approved_action` | What exact action is proposed, explicitly approved and separately executed? |
 | `revoke_action_approval` / `action_audit_history` | Which approval should be cancelled, and what lifecycle events occurred? |
@@ -364,7 +375,7 @@ Connect using **STDIO**, open **Tools**, invoke `connection_status`, then try `o
 npm run verify
 ```
 
-This covers build, typecheck, deterministic decision cases, AI validation/fallback, local CSV behavior, mocked GSC/GA4/Google Ads/CRM responses, retry and error classification, normalization, action approval security, strategy calculations, stdio discovery and invocation of all 43 tools.
+This covers build, typecheck, deterministic decision cases, AI validation/fallback, local CSV behavior, mocked GSC/GA4/Google Ads/CRM responses, retry and error classification, normalization, action approval security, strategy and dashboard calculations, stdio discovery and invocation of all 44 tools.
 
 Tagged releases additionally produce a CycloneDX software bill of materials, SHA-256 checksums and GitHub build-provenance attestations. Public tool compatibility is protected by an MCP schema contract test.
 

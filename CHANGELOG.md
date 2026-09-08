@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.4.0] - 2026-09-08
+
+### Added
+
+- Local, dependency-free dashboard builder for Search Console, Google Ads and conversion/pipeline CSV evidence.
+- User-controlled dataset, dimension, metric, aggregation, chart, sort, limit, filter and title parameters.
+- Bar, horizontal-bar, line, area, donut, table and KPI rendering with browser-local layout persistence.
+- `build_dashboard_chart` MCP tool for validated natural-language-to-dashboard links.
+- Allowlisted, deterministic server-side aggregation and dashboard security tests.
+
 ## [1.3.0] - 2026-09-04
 
 ### Added
