@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.6.0] - 2026-09-08
+
+### Added
+
+- Recommendation-only advertising strategy engine for Google, Meta, LinkedIn, Microsoft, YouTube and programmatic campaign types.
+- Bayesian-shrunk conversion estimates, data-sufficiency and conversion-lag checks, and bounded daily budget-test suggestions.
+- Campaign-type playbooks for search, Shopping, Performance Max, display, video, Demand Gen, social prospecting, retargeting, lead generation, ABM and programmatic display.
+- `ad_strategy_review` for normalized cross-platform evidence and `google_ads_strategy_review` for live read-only GAQL campaign evidence.
+
+### Safety
+
+- No campaign, bid or budget mutation endpoint was added. Every suggestion is explicitly recommendation-only and requires human judgment outside the MCP.
+- Suggested daily changes are capped, defaulting to ±10%, and sparse or conversion-lagged evidence produces a hold decision.
+
 ## [1.5.0] - 2026-09-08
 
 ### Added

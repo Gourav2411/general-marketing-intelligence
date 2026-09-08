@@ -1,0 +1,12 @@
+import assert from "node:assert/strict";
+import { adCampaignTypes, analyzeAdCampaign, analyzeAdPortfolio, renderAdStrategy } from "../dist/analysis/adStrategy.js";
+const base={platform:"google_ads",campaignType:"search",objective:"pipeline",impressions:10000,daysObserved:30,daysSinceLastChange:30,conversionLagDays:7};
+const scale=analyzeAdCampaign({...base,name:"Efficient",clicks:500,conversions:50,spend:1000,conversionValue:4000,targetCpa:30,targetRoas:2},10);
+assert.equal(scale.decision,"INCREASE_TEST");assert.equal(scale.suggestedChangePct,10);assert.equal(scale.confidence,"HIGH");assert.equal(scale.humanDecisionRequired,true);
+const reduce=analyzeAdCampaign({...base,name:"Inefficient",clicks:500,conversions:10,spend:1000,conversionValue:1000,targetCpa:50,targetRoas:3},10);
+assert.equal(reduce.decision,"DECREASE_TEST");assert.equal(reduce.suggestedChangePct,-10);
+const sparse=analyzeAdCampaign({...base,name:"Sparse",clicks:20,conversions:1,spend:100},10);assert.equal(sparse.decision,"HOLD");assert.equal(sparse.confidence,"LOW");
+const lagged=analyzeAdCampaign({...base,name:"Fresh change",clicks:500,conversions:50,spend:1000,targetCpa:30,daysSinceLastChange:2},10);assert.equal(lagged.decision,"HOLD");
+for(const campaignType of adCampaignTypes)assert.ok(analyzeAdCampaign({...base,name:campaignType,campaignType,clicks:100,conversions:5,spend:100}).strategy.length>=2);
+const portfolio=analyzeAdPortfolio([{...base,name:"A",clicks:500,conversions:50,spend:1000,targetCpa:30},{...base,name:"B",clicks:500,conversions:5,spend:1000,targetCpa:50}],8);assert.equal(portfolio[0].name,"A");assert.ok(portfolio.every(row=>Math.abs(row.suggestedChangePct)<=8));assert.match(renderAdStrategy(portfolio),/No campaign, bid or budget mutation is implemented/);
+console.log("Advertising strategy statistics, guardrails and campaign-type coverage passed.");
