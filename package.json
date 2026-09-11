@@ -1,6 +1,6 @@
 {
   "name": "general-marketing-intelligence",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "private": true,
   "type": "module",
   "description": "A reusable MCP decision layer for direct Google and CSV-backed marketing intelligence.",
@@ -55,15 +55,20 @@
     "test:dashboard:google": "node scripts/dashboard-google-test.mjs",
     "test:ad-strategy": "node scripts/ad-strategy-test.mjs",
     "test:platforms": "node scripts/platform-intelligence-test.mjs",
+    "test:intelligence": "node scripts/intelligence-test.mjs",
+    "knowledge:validate": "npm run build && node scripts/knowledge-ingest.mjs --validate",
+    "knowledge:ingest": "npm run build && node scripts/knowledge-ingest.mjs",
+    "memory": "npm run build && node scripts/memory.mjs",
+    "benchmark:intelligence": "npm run build && node scripts/intelligence-benchmark.mjs",
     "coverage": "npm run build && c8 --all --src dist/hosted --reporter=text --reporter=lcov node scripts/hosted-security-test.mjs",
     "license:check": "node scripts/license-check.mjs",
-    "test": "npm run build && npm run test:marketing && npm run test:ai && npm run test:local && npm run test:google && npm run test:connectors && npm run test:mcp && npm run test:hosted && npm run test:schema && npm run test:actions && npm run test:strategy && npm run test:dashboard && npm run test:dashboard:google && npm run test:ad-strategy && npm run test:platforms",
-    "verify": "npm run build && npm run typecheck && npm run test:marketing && npm run test:ai && npm run test:local && npm run test:google && npm run test:connectors && npm run test:mcp && npm run test:hosted && npm run test:schema && npm run test:actions && npm run test:strategy && npm run test:dashboard && npm run test:dashboard:google && npm run test:ad-strategy && npm run test:platforms && npm run license:check"
+    "test": "npm run build && npm run test:marketing && npm run test:ai && npm run test:local && npm run test:google && npm run test:connectors && npm run test:mcp && npm run test:hosted && npm run test:schema && npm run test:actions && npm run test:strategy && npm run test:dashboard && npm run test:dashboard:google && npm run test:ad-strategy && npm run test:platforms && npm run test:intelligence",
+    "verify": "npm run build && npm run typecheck && npm run test:marketing && npm run test:ai && npm run test:local && npm run test:google && npm run test:connectors && npm run test:mcp && npm run test:hosted && npm run test:schema && npm run test:actions && npm run test:strategy && npm run test:dashboard && npm run test:dashboard:google && npm run test:ad-strategy && npm run test:platforms && npm run test:intelligence && npm run knowledge:validate && npm run benchmark:intelligence && npm run license:check"
   },
   "dependencies": {
     "@google-analytics/data": "7.0.0",
     "@modelcontextprotocol/sdk": "1.30.0",
-    "csv-parse": "6.1.0",
+    "csv-parse": "^7.0.2",
     "googleapis": "178.0.0",
     "jose": "6.2.10",
     "openai": "7.8.0",

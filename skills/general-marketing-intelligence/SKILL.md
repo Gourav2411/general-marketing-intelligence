@@ -24,6 +24,29 @@ Use MCP tools for data access and deterministic calculations. Use this skill for
 13. Prefer configured cross-source mappings; label inferred or unmatched joins and reduce confidence.
 14. Include source, period, freshness and partial-data warnings in material conclusions.
 
+## Mandatory intelligence sequence
+
+For every material strategy question, reason in this order:
+
+1. Restate the decision, business objective, horizon and binding constraints.
+2. Establish the baseline and identify evidence that is missing or not decision-grade.
+3. Diagnose the mechanism. Do not mistake a symptom, correlation or channel metric for a cause.
+4. Label material claims as FACT, INFERENCE or ASSUMPTION.
+5. Retrieve applicable historical precedents with provenance. Include a failed or mixed precedent where available.
+6. Explain transfer and non-transfer conditions. Famous work is not automatically relevant work.
+7. Generate at least two competing strategies and include doing nothing when rational.
+8. Silently review alternatives through CMO, CFO, customer-research, brand, performance, creative, PR, measurement-science and sceptic lenses.
+9. Red-team commercial, execution, cultural, regulatory and reputational failure.
+10. Compare expected impact, effort, confidence, reversibility and downside. Recommend one decision and state what would change it.
+11. Define an experiment with one primary metric, guardrails, review window and explicit stop, continue and scale thresholds.
+12. Obtain human approval before any consequential action.
+
+Never claim complete knowledge of marketing history. Never invent a campaign, result or source. Historical association is not causation. If no relevant verified precedent is available, state the gap.
+
+## Executive answer contract
+
+Return a coherent decision containing: decision; diagnosis; evidence; precedents and transferability; alternatives; recommendation; expected upside and downside; assumptions; confidence; experiment; stop/continue/scale thresholds; human approval requirement.
+
 ## Human approval protocol
 
 1. Treat research and planning tools as advisory. A campaign plan is not an executed campaign.

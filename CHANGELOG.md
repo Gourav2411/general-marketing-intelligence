@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.8.0] - 2026-09-11
+
+### Added
+
+- A strict, provenance-bearing marketing-case schema and curated seed corpus covering successful, failed and mixed advertising, brand, product-launch and crisis-PR precedents.
+- Deterministic precedent retrieval with evidence quality, causal confidence, failure modes and transfer/non-transfer conditions.
+- A twelve-step strategic reasoning protocol, nine internal executive/creative/measurement lenses, red-team review and an executive decision contract in `SKILL.md`.
+- Private, explicit, permission-restricted account learning records for decisions, outcomes, forecast errors and lessons.
+- Controlled knowledge ingestion and validation commands plus a 100-scenario intelligence benchmark.
+- Intelligence guidance in the existing `marketing_intelligence_router`; the MCP tool count remains unchanged.
+
+### Security
+
+- Account learning is git-ignored, stored with restrictive permissions and never captures credentials automatically.
+- Corpus ingestion is dry-run by default and requires explicit commit plus human editorial/licensing review.
+- Updated `csv-parse` to 7.0.2 to resolve GHSA-8cw4-87c7-c6xx.
+
 ## [1.7.0] - 2026-09-08
 
 ### Added

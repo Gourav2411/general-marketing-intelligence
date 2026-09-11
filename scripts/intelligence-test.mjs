@@ -1,0 +1,15 @@
+import assert from "node:assert/strict";
+import {mkdtempSync,statSync} from "node:fs";
+import {join} from "node:path";
+import {tmpdir} from "node:os";
+import {loadKnowledgeBase,retrievePrecedents} from "../dist/intelligence/knowledge.js";
+import {appendLearningRecord,readLearningMemory} from "../dist/intelligence/memory.js";
+import {buildIntelligenceContext,strategicLenses} from "../dist/intelligence/pipeline.js";
+import {renderIntelligenceRoute,routeMarketingQuestion} from "../dist/tools/router.js";
+const cases=loadKnowledgeBase();assert.ok(cases.length>=8);assert.ok(cases.some(x=>x.outcome==="failed"));assert.ok(cases.every(x=>x.sources.length&&x.transferConditions.length&&x.nonTransferConditions.length));
+const crisis=retrievePrecedents("How should a brand respond to a cultural advertising and PR crisis?",5,cases);assert.ok(crisis.some(x=>x.case.outcome==="failed"));
+assert.equal(strategicLenses.length,9);
+const route=renderIntelligenceRoute("Should we increase paid campaign budget?",routeMarketingQuestion("Should we increase paid campaign budget?"));for(const term of ["FACT","do-nothing","Red-team","stop/continue/scale","human approval"])assert.match(route,new RegExp(term,"i"));
+const path=join(mkdtempSync(join(tmpdir(),"gmi-memory-")),"learning.jsonl");appendLearningRecord({question:"test",recommendation:"hold",evidenceIds:["e1"],assumptions:[],confidence:"LOW",status:"completed",outcome:"no lift",forecastError:"overestimated",lessons:["require holdout"]},"acct",path);assert.equal(readLearningMemory("acct",10,path).length,1);assert.equal(statSync(path).mode&0o777,0o600);
+const packet={observedFacts:{issue:"brand crisis"},calculatedMetrics:{},deterministicScores:{},opportunityState:"VALIDATE",confidenceInputs:{level:"LOW"},deterministicOutput:"test"};const context=buildIntelligenceContext("crisis PR",packet);assert.match(context,/Retrieved precedents/);assert.match(context,/association is not causation/i);
+console.log("✓ intelligence corpus, retrieval, nine lenses, router protocol and private learning memory");

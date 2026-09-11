@@ -33,16 +33,16 @@ import { diagnosePaidMedia, renderPaidDiagnostics } from "./analysis/paidDiagnos
 import { paidMediaCsvReport } from "./connectors/paid/csv.js";
 import { linkedinAdsReport, metaAdsReport } from "./connectors/paid/http.js";
 import { genericCrmApiReport } from "./connectors/crm/api.js";
-import { renderRoute, routeMarketingQuestion, toolFamilies } from "./tools/router.js";
+import { renderIntelligenceRoute, routeMarketingQuestion, toolFamilies } from "./tools/router.js";
 
-export const SERVER_VERSION="1.7.0";
+export const SERVER_VERSION="1.8.0";
 export function createMarketingServer(){
 const server=new McpServer({name:"general-marketing-intelligence",version:SERVER_VERSION});
 const segment=z.string().min(1).optional();
 const text=(value:string,data:Record<string,unknown>={})=>({content:[{type:"text" as const,text:value}],structuredContent:{markdown:value,data,meta:{serverVersion:SERVER_VERSION,generatedAt:new Date().toISOString()}}});
 const liveInput={include_live_google:z.boolean().default(true),live_days:z.number().int().min(1).max(365).default(28)};
 const enrich=async(value:string,include:boolean,days:number,limit=3)=>{if(!include)return {markdown:value,bundle:undefined};const bundle=await getCommercialBundle({days,rowLimit:250});return {markdown:`${value}\n\n${renderLiveOpportunities(bundle.google,limit)}\n\n${renderCommercialSignals(bundle)}`,bundle}};
-server.registerTool("marketing_intelligence_router",{title:"Marketing Intelligence Router",description:"Translate one business question into a bounded, ordered workflow across executive, acquisition, content, measurement, governance and visualization tools.",inputSchema:{question:z.string().min(5).max(2000)}},({question})=>{const routes=routeMarketingQuestion(question);return text(renderRoute(question,routes),{question,routes})});
+server.registerTool("marketing_intelligence_router",{title:"Marketing Intelligence Router",description:"Translate one business question into a bounded evidence workflow and rigorous decision protocol across executive, acquisition, content, measurement, governance and visualization tools.",inputSchema:{question:z.string().min(5).max(2000)}},({question})=>{const routes=routeMarketingQuestion(question);return text(renderIntelligenceRoute(question,routes),{question,routes,intelligenceProtocolVersion:"1.0"})});
 server.registerTool("marketing_tool_catalog",{title:"Marketing Tool Catalog",description:"List the stable MCP tool families so users can navigate the intelligence layer without guessing tool names.",inputSchema:{}},()=>text(`# Marketing Tool Families\n\n${Object.entries(toolFamilies).map(([family,tools])=>`## ${family}\n${tools.map(tool=>`- \`${tool}\``).join("\n")}`).join("\n\n")}`,{families:toolFamilies}));
 
 server.registerTool("growth_snapshot",{title:"Growth Snapshot",description:"What changed across acquisition, and what matters commercially? Combines configured CSV context with normalized live Google evidence when available.",inputSchema:{date_range:z.string().optional().describe("Optional label for the reporting period."),segment,...liveInput}},async({segment,include_live_google,live_days})=>{const enriched=await enrich(growthSnapshot(segment),include_live_google,live_days);return text(enriched.markdown,{liveEvidence:enriched.bundle??null})});
