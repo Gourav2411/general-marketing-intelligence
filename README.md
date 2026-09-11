@@ -67,7 +67,7 @@ GSC     GA4     Google Ads     CRM / CSV
 
 The server never changes advertising budgets, publishes content, sends email or writes to business systems in this release. It can save an approved private local campaign draft; all external write adapters remain disabled.
 
-See [`docs/INTELLIGENCE_LAYER.md`](docs/INTELLIGENCE_LAYER.md) for the knowledge schema, curation workflow, private learning loop and evaluation limits. The seed corpus demonstrates the system; it is deliberately not presented as exhaustive knowledge of marketing history.
+See [`docs/INTELLIGENCE_LAYER.md`](docs/INTELLIGENCE_LAYER.md) for ontology v2, evidence grading, rights review, staged contributions, duplicate detection, the 250-case release gate, private learning and evaluation limits. The seed corpus demonstrates the system; it is deliberately not presented as exhaustive knowledge of marketing history.
 
 ## Human-controlled action flow
 

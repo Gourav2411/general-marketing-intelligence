@@ -34,12 +34,21 @@ Validate the full corpus:
 npm run knowledge:validate
 ```
 
-Dry-run a candidate case, then commit it only after factual, editorial, copyright and licensing review:
+Copy `knowledge/case-template.v2.json`, complete every field, and stage it for review:
 
 ```bash
 npm run knowledge:ingest -- /absolute/path/case.json
-npm run knowledge:ingest -- /absolute/path/case.json --commit
+npm run corpus -- queue
 ```
+
+Maintainers request changes or approve with an attributable review:
+
+```bash
+npm run corpus -- changes case-id --reviewer "Name" --notes "Required corrections"
+npm run corpus -- approve case-id --reviewer "Name" --notes "Rights, sources and claims checked"
+```
+
+Submissions remain in a private, git-ignored queue. Only approval promotes a case into the trusted public corpus. Approval is blocked for unknown or restricted rights, non-redistributable material, duplicate fingerprints and unsupported evidence grades.
 
 Do not copy paywalled case studies or copyrighted articles into the repository. Store structured, independently written facts and link to sources.
 
@@ -59,3 +68,7 @@ Recording is explicit. The MCP never silently learns from or writes user data.
 `npm run benchmark:intelligence` runs 100 deterministic cases across brand decline, launches, allocation, creative fatigue, SEO, PR, category entry, expansion, attribution and profit trade-offs. It checks routing, protocol and safety invariants. It does not claim human-level strategic quality.
 
 Production evaluation should blind-score model answers against experienced marketers for diagnosis, evidence use, originality, commercial realism, risk awareness, calibration and testability. Red-team sets should include fabricated cases, fake metrics, hindsight bias, cultural transfer errors and inappropriate copying.
+
+## Corpus milestone
+
+Run `npm run corpus -- status`. The first editorial milestone requires 250 approved cases, at least 40% failed or mixed outcomes, and every case fully enriched under ontology v2. The command reports `Release-ready corpus: NO` until all conditions are satisfied. Case count alone can never satisfy the gate.

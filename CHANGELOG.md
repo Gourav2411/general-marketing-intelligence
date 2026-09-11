@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.9.0] - 2026-09-11
+
+### Added
+
+- Corpus ontology v2 covering category, business model, market maturity, economic context, evidence grades, incrementality methods and outcome levels.
+- Explicit source-type, rights-basis, redistribution and attributable reviewer metadata.
+- Private staged contribution queue with exact and near-duplicate detection, change requests, approval audit and trusted-corpus promotion.
+- Evidence-grade consistency checks that block claims stronger than their source and measurement methods support.
+- Corpus health reporting with an enforced 250-case, 40% failed/mixed and 100% native-v2 editorial milestone.
+- Candidate cross-case pattern discovery; only patterns with sufficient support and counterexamples can enter model context.
+- A v2 contribution template, contributor workflow and corpus-foundation tests.
+
+### Safety
+
+- Unknown, restricted or non-redistributable contributions cannot be approved.
+- Legacy cases are conservatively canonicalized at Grade D and remain visibly marked for v2 enrichment.
+- The release does not manufacture cases to satisfy a corpus-count target.
+
 ## [1.8.0] - 2026-09-11
 
 ### Added

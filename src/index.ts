@@ -35,7 +35,7 @@ import { linkedinAdsReport, metaAdsReport } from "./connectors/paid/http.js";
 import { genericCrmApiReport } from "./connectors/crm/api.js";
 import { renderIntelligenceRoute, routeMarketingQuestion, toolFamilies } from "./tools/router.js";
 
-export const SERVER_VERSION="1.8.0";
+export const SERVER_VERSION="1.9.0";
 export function createMarketingServer(){
 const server=new McpServer({name:"general-marketing-intelligence",version:SERVER_VERSION});
 const segment=z.string().min(1).optional();

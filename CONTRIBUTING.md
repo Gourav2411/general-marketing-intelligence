@@ -30,6 +30,20 @@ git commit -s -m "Describe the change"
 
 The sign-off certifies that you have the right to submit the contribution under this repository's license. Pull requests with unsigned commits may be held until corrected.
 
+## Marketing case contributions
+
+Never paste or reproduce licensed case-study text. Start from `knowledge/case-template.v2.json` and contribute independently written factual metadata with source links and an explicit rights basis. Every case needs failure modes, transfer and non-transfer conditions, evidence grade, causal confidence and review metadata.
+
+Before opening a pull request, run:
+
+```bash
+npm run knowledge:ingest -- /absolute/path/case.json
+npm run corpus -- status
+npm run verify
+```
+
+Submission does not imply approval. Maintainers independently check claims, sources, rights and duplicates before promoting a staged case into `knowledge/cases/`.
+
 ## Review and acceptance
 
 All contributions require maintainer review. Passing automation does not guarantee acceptance. Maintainers may request changes for scope, safety, product direction, evidence quality or long-term maintenance cost.

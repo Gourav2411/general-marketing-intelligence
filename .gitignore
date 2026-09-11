@@ -11,6 +11,7 @@ setup-output/
 .hosted-data/
 .marketing-actions/
 .marketing-memory/
+.marketing-corpus/
 coverage/
 *.tgz
 sbom.cdx.json

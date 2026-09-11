@@ -1,0 +1,13 @@
+import assert from "node:assert/strict";
+import {cpSync,mkdirSync,mkdtempSync,readFileSync,statSync,writeFileSync} from "node:fs";
+import {join,resolve} from "node:path";
+import {tmpdir} from "node:os";
+import {loadKnowledgeBase} from "../dist/intelligence/knowledge.js";
+import {canonicalizeCase,caseFingerprint,evidenceGradeIsConsistent,contributionSchema} from "../dist/intelligence/ontology.js";
+import {corpusStats} from "../dist/intelligence/corpus.js";
+import {discoverCandidatePatterns} from "../dist/intelligence/patterns.js";
+const project=process.cwd(),rows=loadKnowledgeBase();assert.ok(rows.every(x=>x.schemaVersion===2&&x.rights&&x.review));assert.equal(new Set(rows.map(caseFingerprint)).size,rows.length);assert.ok(rows.every(x=>evidenceGradeIsConsistent(x).consistent));const stats=corpusStats(rows);assert.equal(stats.milestone.target,250);assert.equal(stats.milestone.releaseReady,false);
+const temp=mkdtempSync(join(tmpdir(),"gmi-corpus-"));mkdirSync(join(temp,"knowledge/cases"),{recursive:true});process.env.MARKETING_KNOWLEDGE_DIR=join(project,"knowledge/cases");process.env.MARKETING_REVIEW_QUEUE=join(temp,"queue");process.chdir(temp);
+const template=JSON.parse(readFileSync(join(project,"knowledge/case-template.v2.json"),"utf8"));template.id="test-unique-case";template.campaign="Unique test campaign";template.brand="Unique test brand";contributionSchema.parse(template);const input=join(temp,"candidate.json");writeFileSync(input,JSON.stringify(template));const {submitContribution,listContributions,approveContribution}=await import("../dist/intelligence/review.js");submitContribution(input);assert.equal(listContributions().length,1);assert.equal(statSync(join(temp,"queue/test-unique-case.json")).mode&0o777,0o600);const approved=approveContribution("test-unique-case","Test Reviewer","Rights, sources and claims checked.");assert.equal(approved.row.review.status,"approved");assert.throws(()=>submitContribution(join(project,"knowledge/cases/new-coke-1985.json")));
+const repeated=rows.slice(0,3).map((x,i)=>({...x,id:`pattern-${i}`,failureModes:["shared mechanism"],outcome:i?"failed":"succeeded"}));assert.equal(discoverCandidatePatterns(repeated,3)[0].mechanism,"shared mechanism");
+console.log("✓ ontology v2, evidence grading, rights gate, staging, duplicate fingerprints, approval, corpus milestone and pattern candidates");
