@@ -68,13 +68,13 @@
     "verify": "npm run build && npm run typecheck && npm run test:marketing && npm run test:ai && npm run test:local && npm run test:google && npm run test:connectors && npm run test:mcp && npm run test:hosted && npm run test:schema && npm run test:actions && npm run test:strategy && npm run test:dashboard && npm run test:dashboard:google && npm run test:ad-strategy && npm run test:platforms && npm run test:intelligence && npm run test:corpus && npm run knowledge:validate && npm run benchmark:intelligence && npm run license:check"
   },
   "dependencies": {
-    "@google-analytics/data": "7.0.0",
+    "@google-analytics/data": "7.1.0",
     "@modelcontextprotocol/sdk": "1.30.0",
     "csv-parse": "^7.0.2",
-    "googleapis": "178.0.0",
-    "jose": "6.2.10",
-    "openai": "7.8.0",
-    "zod": "3.25.76"
+    "googleapis": "178.1.1",
+    "jose": "6.2.12",
+    "openai": "7.13.0",
+    "zod": "4.6.0"
   },
   "devDependencies": {
     "@types/node": "22.18.1",
