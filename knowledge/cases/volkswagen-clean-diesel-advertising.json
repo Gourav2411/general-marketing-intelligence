@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 2,
+  "id": "volkswagen-clean-diesel-advertising",
+  "campaign": "Clean Diesel advertising",
+  "brand": "Volkswagen",
+  "period": "2008-2015",
+  "markets": [
+    "United States"
+  ],
+  "disciplines": [
+    "advertising",
+    "claims",
+    "crisis-pr"
+  ],
+  "objective": "Position diesel vehicles as low-emission and environmentally responsible.",
+  "audience": [
+    "Vehicle buyers",
+    "environmentally concerned consumers"
+  ],
+  "businessContext": "Advertising claims conflicted with vehicles fitted with illegal emissions defeat devices.",
+  "strategy": "Use environmental and compliance claims to differentiate diesel vehicles.",
+  "execution": [
+    "Multi-year advertising",
+    "environmental claims",
+    "resale-value claims"
+  ],
+  "outcome": "failed",
+  "outcomes": [
+    "FTC orders led to a consumer redress program exceeding $9.5 billion according to its final court summary."
+  ],
+  "evidenceQuality": "high",
+  "causalConfidence": "high",
+  "whatWorked": [],
+  "whatFailed": [
+    "Objective product claims were contradicted by product behavior and regulatory findings."
+  ],
+  "failureModes": [
+    "deceptive claims",
+    "product-message contradiction",
+    "governance failure"
+  ],
+  "transferConditions": [
+    "Use as a warning whenever marketing depends on technical, environmental or compliance claims."
+  ],
+  "nonTransferConditions": [
+    "Do not generalize regulatory redress amounts to other claim failures."
+  ],
+  "sources": [
+    {
+      "id": "source-1",
+      "title": "FTC final court summary on Volkswagen Clean Diesel",
+      "url": "https://www.ftc.gov/news-events/news/press-releases/2020/07/final-court-summary-ftc-reports-volkswagen-repaid-more-95-billion-car-buyers-who-were-deceived-clean",
+      "publisher": "Federal Trade Commission",
+      "accessedAt": "2026-09-11",
+      "sourceType": "regulatory",
+      "methodology": "Regulatory case summary and court-supervised consumer-redress reporting."
+    }
+  ],
+  "category": "Automotive",
+  "businessModel": "Consumer durable goods",
+  "marketMaturity": "Mature",
+  "economicContext": "Regulated emissions and environmental positioning",
+  "evidenceGrade": "B",
+  "outcomeMeasurements": [
+    {
+      "name": "Consumer redress reported by FTC",
+      "level": "business",
+      "direction": "negative",
+      "value": 9.5,
+      "unit": "USD billions",
+      "incrementality": "observational",
+      "sourceIds": [
+        "source-1"
+      ]
+    }
+  ],
+  "rights": {
+    "basis": "factual-metadata-only",
+    "redistributionAllowed": true,
+    "reviewedBy": "Codex-assisted source review",
+    "reviewedAt": "2026-09-11",
+    "notes": "Only independently written factual metadata and outbound links are redistributed."
+  },
+  "review": {
+    "status": "approved",
+    "reviewedBy": "Codex-assisted editorial review",
+    "reviewedAt": "2026-09-11",
+    "notes": "Claims checked against the linked primary or regulatory source. Evidence grade remains conservative; independent human review is encouraged."
+  }
+}

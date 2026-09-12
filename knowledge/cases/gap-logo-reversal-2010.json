@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 2,
+  "id": "gap-logo-reversal-2010",
+  "campaign": "Updated Gap logo",
+  "brand": "Gap",
+  "period": "2010",
+  "markets": [
+    "United States",
+    "global media"
+  ],
+  "disciplines": [
+    "brand-identity",
+    "crisis-pr"
+  ],
+  "objective": "Modernize the visual identity.",
+  "audience": [
+    "Gap customers",
+    "online community"
+  ],
+  "businessContext": "Gap introduced an updated logo on its website and received rapid negative feedback.",
+  "strategy": "Replace a familiar identity and later invite community participation.",
+  "execution": [
+    "Website logo rollout",
+    "public response",
+    "return to classic blue-box logo"
+  ],
+  "outcome": "failed",
+  "outcomes": [
+    "Gap announced that it would stop using the new logo and restore the classic identity."
+  ],
+  "evidenceQuality": "high",
+  "causalConfidence": "high",
+  "whatWorked": [
+    "The company reversed the decision quickly and acknowledged process mistakes."
+  ],
+  "whatFailed": [
+    "The change underestimated attachment to a distinctive brand asset and community involvement was introduced reactively."
+  ],
+  "failureModes": [
+    "distinctive-asset loss",
+    "stakeholder exclusion",
+    "reactive crowdsourcing"
+  ],
+  "transferConditions": [
+    "Use when changing a widely recognized identity with accumulated memory structures."
+  ],
+  "nonTransferConditions": [
+    "Do not infer that brands can never modernize; test recognition and meaning before replacement."
+  ],
+  "sources": [
+    {
+      "id": "source-1",
+      "title": "Gap listens to customers and will keep classic blue box logo",
+      "url": "https://www.gapinc.com/en-us/articles/2010/10/gap-listens-to-customers-and-will-keep-classic-blu",
+      "publisher": "Gap Inc.",
+      "accessedAt": "2026-09-11",
+      "sourceType": "company-report",
+      "methodology": "Direct company statement confirms the rollout, response and reversal, but not commercial impact."
+    }
+  ],
+  "category": "Apparel retail",
+  "businessModel": "Consumer retail",
+  "marketMaturity": "Mature",
+  "economicContext": "Not established by the source",
+  "evidenceGrade": "C",
+  "outcomeMeasurements": [
+    {
+      "name": "Logo withdrawal",
+      "level": "reputation",
+      "direction": "negative",
+      "incrementality": "observational",
+      "sourceIds": [
+        "source-1"
+      ]
+    }
+  ],
+  "rights": {
+    "basis": "factual-metadata-only",
+    "redistributionAllowed": true,
+    "reviewedBy": "Codex-assisted source review",
+    "reviewedAt": "2026-09-11",
+    "notes": "Only independently written factual metadata and outbound links are redistributed."
+  },
+  "review": {
+    "status": "approved",
+    "reviewedBy": "Codex-assisted editorial review",
+    "reviewedAt": "2026-09-11",
+    "notes": "Claims checked against the linked primary or regulatory source. Evidence grade remains conservative; independent human review is encouraged."
+  }
+}

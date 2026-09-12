@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 2,
+  "id": "skechers-shape-ups-claims",
+  "campaign": "Shape-ups fitness claims",
+  "brand": "Skechers",
+  "period": "2012 settlement",
+  "markets": [
+    "United States"
+  ],
+  "disciplines": [
+    "advertising",
+    "endorsements",
+    "claims"
+  ],
+  "objective": "Sell toning footwear using weight-loss and muscle-strengthening claims.",
+  "audience": [
+    "Fitness and weight-management consumers"
+  ],
+  "businessContext": "Advertising used celebrity and expert-style endorsements for objective health-related claims.",
+  "strategy": "Convert product design into promised fitness outcomes.",
+  "execution": [
+    "Celebrity advertising",
+    "expert endorsement",
+    "comparative fitness claims"
+  ],
+  "outcome": "failed",
+  "outcomes": [
+    "Skechers agreed to provide $40 million for consumer refunds under an FTC settlement."
+  ],
+  "evidenceQuality": "high",
+  "causalConfidence": "high",
+  "whatWorked": [],
+  "whatFailed": [
+    "Objective benefit claims lacked adequate substantiation and a material relationship affecting an endorsement was not adequately disclosed."
+  ],
+  "failureModes": [
+    "unsubstantiated claims",
+    "endorsement conflict",
+    "disclosure failure"
+  ],
+  "transferConditions": [
+    "Use when campaigns make measurable health or performance claims."
+  ],
+  "nonTransferConditions": [
+    "Do not treat the settlement as evidence about ordinary subjective brand claims."
+  ],
+  "sources": [
+    {
+      "id": "source-1",
+      "title": "FTC to Skechers: Shape up your ad claims",
+      "url": "https://www.ftc.gov/business-guidance/blog/2012/05/ftc-skechers-shape-your-ad-claims",
+      "publisher": "Federal Trade Commission",
+      "accessedAt": "2026-09-11",
+      "sourceType": "regulatory",
+      "methodology": "Regulatory account of challenged claims, disclosures and settlement."
+    }
+  ],
+  "category": "Footwear",
+  "businessModel": "Consumer durable goods",
+  "marketMaturity": "Mature",
+  "economicContext": "Growth of toning-footwear claims",
+  "evidenceGrade": "B",
+  "outcomeMeasurements": [
+    {
+      "name": "Consumer refund settlement",
+      "level": "business",
+      "direction": "negative",
+      "value": 40,
+      "unit": "USD millions",
+      "incrementality": "observational",
+      "sourceIds": [
+        "source-1"
+      ]
+    }
+  ],
+  "rights": {
+    "basis": "factual-metadata-only",
+    "redistributionAllowed": true,
+    "reviewedBy": "Codex-assisted source review",
+    "reviewedAt": "2026-09-11",
+    "notes": "Only independently written factual metadata and outbound links are redistributed."
+  },
+  "review": {
+    "status": "approved",
+    "reviewedBy": "Codex-assisted editorial review",
+    "reviewedAt": "2026-09-11",
+    "notes": "Claims checked against the linked primary or regulatory source. Evidence grade remains conservative; independent human review is encouraged."
+  }
+}

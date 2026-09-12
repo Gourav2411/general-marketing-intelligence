@@ -11,6 +11,8 @@ An open-source marketing decision layer for Claude, Codex and other MCP clients.
 
 The current release keeps the same 54 MCP tools and adds a strategic intelligence layer: sourced success and failure precedents, transferability checks, nine-lens deliberation, red-teaming, a decision contract, private account learning and a 100-case evaluation harness. It also includes deterministic question routing, read-only connectors for Google Search Console, GA4, Google Ads, Meta Ads, LinkedIn Ads, HubSpot, Salesforce and configurable CRM/paid-media sources, recommendation-only statistical advertising strategy, live dashboards, local stdio and a separately configured hosted Streamable HTTP reference edition.
 
+The trusted historical corpus currently contains 20 fully enriched ontology-v2 cases, with 40% classified as failed or mixed. The first editorial milestone remains 250 cases; `npm run corpus -- status` reports progress and will not mark the corpus ready until count, balance and enrichment gates all pass.
+
 ## Why this exists
 
 Marketing teams already have dashboards. The harder problem is combining search demand, website behavior, advertising cost and pipeline evidence into a defensible decision.

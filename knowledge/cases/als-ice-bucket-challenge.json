@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 2,
+  "id": "als-ice-bucket-challenge",
+  "campaign": "ALS Ice Bucket Challenge",
+  "brand": "ALS community and ALS Association",
+  "period": "2014",
+  "markets": [
+    "Global"
+  ],
+  "disciplines": [
+    "fundraising",
+    "earned-media",
+    "participation"
+  ],
+  "objective": "Increase awareness and funding for amyotrophic lateral sclerosis.",
+  "audience": [
+    "General public",
+    "donors",
+    "social-media participants"
+  ],
+  "businessContext": "A participant-led challenge spread through public nominations and video sharing.",
+  "strategy": "Combine a visible ritual, public nomination, identity and donation into a low-friction participation loop.",
+  "execution": [
+    "User-created videos",
+    "peer nominations",
+    "donation prompts",
+    "earned media"
+  ],
+  "outcome": "succeeded",
+  "outcomes": [
+    "The ALS Association reported $115 million raised and commissioned a ten-year impact analysis."
+  ],
+  "evidenceQuality": "high",
+  "causalConfidence": "medium",
+  "whatWorked": [
+    "The action was observable, replicable and carried its own invitation mechanism.",
+    "Participation connected attention to a concrete donation action."
+  ],
+  "whatFailed": [
+    "Viral reach and long-term medical outcomes should not be conflated."
+  ],
+  "failureModes": [
+    "virality-impact conflation",
+    "novelty decay"
+  ],
+  "transferConditions": [
+    "The action is safe, simple, identity-relevant and connected to a credible beneficiary and conversion path."
+  ],
+  "nonTransferConditions": [
+    "Do not imitate nomination mechanics without participant meaning, trust and operational capacity."
+  ],
+  "sources": [
+    {
+      "id": "source-1",
+      "title": "ALS Association 2024 year-end report",
+      "url": "https://www.als.org/2024-year-end-report",
+      "publisher": "ALS Association",
+      "accessedAt": "2026-09-11",
+      "sourceType": "company-report",
+      "methodology": "Reports participation, funds raised and commissioned impact analysis."
+    }
+  ],
+  "category": "Nonprofit health",
+  "businessModel": "Charitable fundraising",
+  "marketMaturity": "Established cause with low public awareness",
+  "economicContext": "Rapid social-video adoption",
+  "evidenceGrade": "C",
+  "outcomeMeasurements": [
+    {
+      "name": "Funds raised",
+      "level": "business",
+      "direction": "positive",
+      "value": 115,
+      "unit": "USD millions",
+      "incrementality": "observational",
+      "sourceIds": [
+        "source-1"
+      ]
+    }
+  ],
+  "rights": {
+    "basis": "factual-metadata-only",
+    "redistributionAllowed": true,
+    "reviewedBy": "Codex-assisted source review",
+    "reviewedAt": "2026-09-11",
+    "notes": "Only independently written factual metadata and outbound links are redistributed."
+  },
+  "review": {
+    "status": "approved",
+    "reviewedBy": "Codex-assisted editorial review",
+    "reviewedAt": "2026-09-11",
+    "notes": "Claims checked against the linked primary or regulatory source. Evidence grade remains conservative; independent human review is encouraged."
+  }
+}

@@ -72,3 +72,5 @@ Production evaluation should blind-score model answers against experienced marke
 ## Corpus milestone
 
 Run `npm run corpus -- status`. The first editorial milestone requires 250 approved cases, at least 40% failed or mixed outcomes, and every case fully enriched under ontology v2. The command reports `Release-ready corpus: NO` until all conditions are satisfied. Case count alone can never satisfy the gate.
+
+As of v1.10.0, batch one contains 20 fully enriched cases and meets the 40% failed-or-mixed balance floor. It spans brand identity, product launch, advertising claims, reviews, education lead generation, crisis response, participation, purpose, personalization and branded experience. The remaining gap is reported rather than filled with generated or weakly sourced records.

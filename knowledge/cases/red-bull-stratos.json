@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 2,
+  "id": "red-bull-stratos",
+  "campaign": "Red Bull Stratos",
+  "brand": "Red Bull",
+  "period": "2010-2012",
+  "markets": [
+    "Global"
+  ],
+  "disciplines": [
+    "brand-experience",
+    "content",
+    "earned-media"
+  ],
+  "objective": "Associate the brand with extreme human performance through a real scientific and engineering mission.",
+  "audience": [
+    "Global sports and science audience"
+  ],
+  "businessContext": "The project required years of technical development, testing and risk management before a high-altitude jump.",
+  "strategy": "Create the event and scientific project that the brand wanted audiences to experience rather than merely depicting it in an advertisement.",
+  "execution": [
+    "Aerospace development",
+    "test program",
+    "live event",
+    "documentary content"
+  ],
+  "outcome": "succeeded",
+  "outcomes": [
+    "The mission completed a high-altitude supersonic freefall and produced equipment, protocols and research documented by the Smithsonian."
+  ],
+  "evidenceQuality": "high",
+  "causalConfidence": "medium",
+  "whatWorked": [
+    "The branded promise was enacted through a difficult real-world achievement.",
+    "The project created durable content and earned attention."
+  ],
+  "whatFailed": [
+    "Mission achievement does not by itself establish incremental product sales."
+  ],
+  "failureModes": [
+    "spectacle-sales conflation",
+    "safety risk",
+    "execution dependency"
+  ],
+  "transferConditions": [
+    "The organization possesses exceptional operational capability, safety governance and a direct brand connection to the feat."
+  ],
+  "nonTransferConditions": [
+    "Do not imitate high-risk spectacle when the brand cannot credibly own or safely execute it."
+  ],
+  "sources": [
+    {
+      "id": "source-1",
+      "title": "Red Bull Stratos Capsule",
+      "url": "https://www.si.edu/object/red-bull-stratos-capsule%3Anasm_A20180108000",
+      "publisher": "Smithsonian Institution",
+      "accessedAt": "2026-09-11",
+      "sourceType": "independent-research",
+      "methodology": "Independent museum record supports mission and technical contributions, not commercial lift."
+    }
+  ],
+  "category": "Energy drinks",
+  "businessModel": "Consumer packaged goods",
+  "marketMaturity": "Growth",
+  "economicContext": "Expansion of owned-media and live-streamed brand events",
+  "evidenceGrade": "C",
+  "outcomeMeasurements": [
+    {
+      "name": "Mission completion and technical contribution",
+      "level": "brand",
+      "direction": "positive",
+      "incrementality": "observational",
+      "sourceIds": [
+        "source-1"
+      ]
+    }
+  ],
+  "rights": {
+    "basis": "factual-metadata-only",
+    "redistributionAllowed": true,
+    "reviewedBy": "Codex-assisted source review",
+    "reviewedAt": "2026-09-11",
+    "notes": "Only independently written factual metadata and outbound links are redistributed."
+  },
+  "review": {
+    "status": "approved",
+    "reviewedBy": "Codex-assisted editorial review",
+    "reviewedAt": "2026-09-11",
+    "notes": "Claims checked against the linked primary or regulatory source. Evidence grade remains conservative; independent human review is encouraged."
+  }
+}

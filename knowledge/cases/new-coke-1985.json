@@ -1,1 +1,89 @@
-{"id":"new-coke-1985","campaign":"New Coke launch","brand":"Coca-Cola","period":"1985","markets":["United States"],"disciplines":["product-launch","brand","research"],"objective":"Improve competitive preference through a reformulated flagship product.","audience":["cola consumers"],"businessContext":"Taste testing emphasized product preference but did not fully capture attachment to the original brand and ritual.","strategy":"Replace the established formula with a sweeter formulation supported by research.","execution":["National reformulation","launch communications","subsequent return of Coca-Cola classic"],"outcome":"failed","outcomes":["Consumer reaction led the company to restore the original formula as Coca-Cola classic."],"evidenceQuality":"high","causalConfidence":"high","whatWorked":["The company responded visibly and restored consumer choice."],"whatFailed":["Research framed preference too narrowly and undervalued identity, memory and loss aversion."],"failureModes":["research framing error","brand-meaning blindness","forced migration"],"transferConditions":["Use as a warning when changing a symbolic flagship with high emotional switching costs."],"nonTransferConditions":["Do not generalize the lesson into never changing products; test meaning and migration, not taste alone."],"sources":[{"title":"The Real Story of New Coke","url":"https://www.coca-colacompany.com/about-us/history/new-coke-the-most-memorable-marketing-blunder-ever","publisher":"The Coca-Cola Company","accessedAt":"2026-09-11"}]}
+{
+  "schemaVersion": 2,
+  "id": "new-coke-1985",
+  "campaign": "New Coke launch",
+  "brand": "Coca-Cola",
+  "period": "1985",
+  "markets": [
+    "United States"
+  ],
+  "disciplines": [
+    "product-launch",
+    "brand",
+    "research"
+  ],
+  "objective": "Improve competitive preference through a reformulated flagship product.",
+  "audience": [
+    "cola consumers"
+  ],
+  "businessContext": "Taste testing emphasized product preference but did not fully capture attachment to the original brand and ritual.",
+  "strategy": "Replace the established formula with a sweeter formulation supported by research.",
+  "execution": [
+    "National reformulation",
+    "launch communications",
+    "subsequent return of Coca-Cola classic"
+  ],
+  "outcome": "failed",
+  "outcomes": [
+    "Consumer reaction led the company to restore the original formula as Coca-Cola classic."
+  ],
+  "evidenceQuality": "high",
+  "causalConfidence": "high",
+  "whatWorked": [
+    "The company responded visibly and restored consumer choice."
+  ],
+  "whatFailed": [
+    "Research framed preference too narrowly and undervalued identity, memory and loss aversion."
+  ],
+  "failureModes": [
+    "research framing error",
+    "brand-meaning blindness",
+    "forced migration"
+  ],
+  "transferConditions": [
+    "Use as a warning when changing a symbolic flagship with high emotional switching costs."
+  ],
+  "nonTransferConditions": [
+    "Do not generalize the lesson into never changing products; test meaning and migration, not taste alone."
+  ],
+  "sources": [
+    {
+      "id": "source-1",
+      "title": "The Real Story of New Coke",
+      "url": "https://www.coca-colacompany.com/about-us/history/new-coke-the-most-memorable-marketing-blunder-ever",
+      "publisher": "The Coca-Cola Company",
+      "accessedAt": "2026-09-11",
+      "sourceType": "company-report",
+      "methodology": "Supports descriptive campaign history or recognition; does not independently establish incrementality."
+    }
+  ],
+  "category": "Non-alcoholic beverages",
+  "businessModel": "Consumer packaged goods",
+  "marketMaturity": "Mature",
+  "economicContext": "Competitive share pressure in the United States cola market",
+  "evidenceGrade": "D",
+  "outcomeMeasurements": [
+    {
+      "name": "Consumer reaction led the company to restore the original formula as Coca-Cola classic.",
+      "level": "business",
+      "direction": "negative",
+      "incrementality": "claimed",
+      "sourceIds": [
+        "source-1"
+      ]
+    }
+  ],
+  "rights": {
+    "basis": "factual-metadata-only",
+    "redistributionAllowed": true,
+    "reviewedBy": "Codex-assisted source review",
+    "reviewedAt": "2026-09-11",
+    "notes": "Only independently written factual metadata and outbound links are redistributed; no source text or creative asset is copied."
+  },
+  "review": {
+    "status": "approved",
+    "reviewedBy": "Codex-assisted editorial review",
+    "reviewedAt": "2026-09-11",
+    "notes": "Conservative Grade D enrichment. Original claims retained; independent human review is still encouraged."
+  }
+}

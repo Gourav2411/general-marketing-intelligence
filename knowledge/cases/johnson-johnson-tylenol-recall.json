@@ -1,1 +1,90 @@
-{"id":"johnson-johnson-tylenol-recall","campaign":"Tylenol recall response","brand":"Johnson & Johnson","period":"1982","markets":["United States"],"disciplines":["crisis-pr","reputation","product-safety"],"objective":"Protect people and restore trust after fatal product tampering.","audience":["consumers","retailers","regulators","media"],"businessContext":"Externally tampered capsules caused deaths and a national trust crisis.","strategy":"Put public safety first through broad recall, transparent communication and tamper-resistant packaging.","execution":["Product recall","public warnings","stakeholder communication","tamper-evident packaging"],"outcome":"succeeded","outcomes":["The response became a widely studied crisis-management precedent and accelerated packaging safeguards."],"evidenceQuality":"high","causalConfidence":"medium","whatWorked":["Actions matched the stated priority of public safety.","Operational remediation supported communication."],"whatFailed":[],"failureModes":["copying crisis language without equivalent action"],"transferConditions":["Leadership can act quickly, accept short-term cost and provide verifiable remediation."],"nonTransferConditions":["Do not treat transparency as messaging alone when operational harm remains unresolved."],"sources":[{"title":"The Tylenol Crisis, 1982","url":"https://americanhistory.si.edu/collections/object-groups/tylenol-crisis-1982","publisher":"Smithsonian National Museum of American History","accessedAt":"2026-09-11"}]}
+{
+  "schemaVersion": 2,
+  "id": "johnson-johnson-tylenol-recall",
+  "campaign": "Tylenol recall response",
+  "brand": "Johnson & Johnson",
+  "period": "1982",
+  "markets": [
+    "United States"
+  ],
+  "disciplines": [
+    "crisis-pr",
+    "reputation",
+    "product-safety"
+  ],
+  "objective": "Protect people and restore trust after fatal product tampering.",
+  "audience": [
+    "consumers",
+    "retailers",
+    "regulators",
+    "media"
+  ],
+  "businessContext": "Externally tampered capsules caused deaths and a national trust crisis.",
+  "strategy": "Put public safety first through broad recall, transparent communication and tamper-resistant packaging.",
+  "execution": [
+    "Product recall",
+    "public warnings",
+    "stakeholder communication",
+    "tamper-evident packaging"
+  ],
+  "outcome": "succeeded",
+  "outcomes": [
+    "The response became a widely studied crisis-management precedent and accelerated packaging safeguards."
+  ],
+  "evidenceQuality": "high",
+  "causalConfidence": "medium",
+  "whatWorked": [
+    "Actions matched the stated priority of public safety.",
+    "Operational remediation supported communication."
+  ],
+  "whatFailed": [],
+  "failureModes": [
+    "copying crisis language without equivalent action"
+  ],
+  "transferConditions": [
+    "Leadership can act quickly, accept short-term cost and provide verifiable remediation."
+  ],
+  "nonTransferConditions": [
+    "Do not treat transparency as messaging alone when operational harm remains unresolved."
+  ],
+  "sources": [
+    {
+      "id": "source-1",
+      "title": "The Tylenol Crisis, 1982",
+      "url": "https://americanhistory.si.edu/collections/object-groups/tylenol-crisis-1982",
+      "publisher": "Smithsonian National Museum of American History",
+      "accessedAt": "2026-09-11",
+      "sourceType": "independent-research",
+      "methodology": "Supports descriptive campaign history or recognition; does not independently establish incrementality."
+    }
+  ],
+  "category": "Consumer healthcare",
+  "businessModel": "Consumer packaged healthcare",
+  "marketMaturity": "Mature",
+  "economicContext": "Product-safety crisis following criminal tampering",
+  "evidenceGrade": "D",
+  "outcomeMeasurements": [
+    {
+      "name": "The response became a widely studied crisis-management precedent and accelerated packaging safeguards.",
+      "level": "reputation",
+      "direction": "positive",
+      "incrementality": "claimed",
+      "sourceIds": [
+        "source-1"
+      ]
+    }
+  ],
+  "rights": {
+    "basis": "factual-metadata-only",
+    "redistributionAllowed": true,
+    "reviewedBy": "Codex-assisted source review",
+    "reviewedAt": "2026-09-11",
+    "notes": "Only independently written factual metadata and outbound links are redistributed; no source text or creative asset is copied."
+  },
+  "review": {
+    "status": "approved",
+    "reviewedBy": "Codex-assisted editorial review",
+    "reviewedAt": "2026-09-11",
+    "notes": "Conservative Grade D enrichment. Original claims retained; independent human review is still encouraged."
+  }
+}

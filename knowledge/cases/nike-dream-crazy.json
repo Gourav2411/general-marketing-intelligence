@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 2,
+  "id": "nike-dream-crazy",
+  "campaign": "Dream Crazy",
+  "brand": "Nike",
+  "period": "2018",
+  "markets": [
+    "Global"
+  ],
+  "disciplines": [
+    "advertising",
+    "brand-purpose",
+    "earned-media"
+  ],
+  "objective": "Connect Nike's empowerment positioning with athletes challenging the status quo.",
+  "audience": [
+    "Athletes",
+    "sports consumers",
+    "global public"
+  ],
+  "businessContext": "The campaign used a prominent and polarizing athlete-led cultural position.",
+  "strategy": "Accept polarization to dramatize a long-running belief in athletic aspiration and social challenge.",
+  "execution": [
+    "Film",
+    "athlete stories",
+    "global conversation"
+  ],
+  "outcome": "succeeded",
+  "outcomes": [
+    "Nike described the campaign as a global conversation catalyst that connected deeply with consumers."
+  ],
+  "evidenceQuality": "medium",
+  "causalConfidence": "low",
+  "whatWorked": [
+    "The position was connected to an established brand belief and athlete relationships."
+  ],
+  "whatFailed": [
+    "First-party narrative does not establish incremental commercial effect or quantify polarization costs."
+  ],
+  "failureModes": [
+    "purpose-commercial causality gap",
+    "polarization risk"
+  ],
+  "transferConditions": [
+    "The position is consistent with established brand behavior and leadership accepts stakeholder polarization."
+  ],
+  "nonTransferConditions": [
+    "Do not borrow controversy when the brand lacks credible history, affected-community relationships or risk tolerance."
+  ],
+  "sources": [
+    {
+      "id": "source-1",
+      "title": "Nike FY18 Summary Report",
+      "url": "https://media.about.nike.com/files/d3df5655-4772-41c7-af0d-9f1c99badb4b/FY18-Nike-Summary-Report_Final.pdf",
+      "publisher": "Nike",
+      "accessedAt": "2026-09-11",
+      "sourceType": "company-report",
+      "methodology": "First-party qualitative description; no isolated campaign incrementality."
+    }
+  ],
+  "category": "Sportswear",
+  "businessModel": "Consumer products",
+  "marketMaturity": "Mature",
+  "economicContext": "Heightened debate about athlete activism",
+  "evidenceGrade": "D",
+  "outcomeMeasurements": [
+    {
+      "name": "Reported consumer connection",
+      "level": "brand",
+      "direction": "positive",
+      "incrementality": "claimed",
+      "sourceIds": [
+        "source-1"
+      ]
+    }
+  ],
+  "rights": {
+    "basis": "factual-metadata-only",
+    "redistributionAllowed": true,
+    "reviewedBy": "Codex-assisted source review",
+    "reviewedAt": "2026-09-11",
+    "notes": "Only independently written factual metadata and outbound links are redistributed."
+  },
+  "review": {
+    "status": "approved",
+    "reviewedBy": "Codex-assisted editorial review",
+    "reviewedAt": "2026-09-11",
+    "notes": "Claims checked against the linked primary or regulatory source. Evidence grade remains conservative; independent human review is encouraged."
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 2,
+  "id": "lego-rebuild-the-world",
+  "campaign": "Rebuild the World",
+  "brand": "LEGO",
+  "period": "2019 onward",
+  "markets": [
+    "Global"
+  ],
+  "disciplines": [
+    "brand",
+    "integrated-advertising",
+    "participation"
+  ],
+  "objective": "Strengthen LEGO's association with creativity and imaginative problem solving.",
+  "audience": [
+    "Children",
+    "parents",
+    "adult fans"
+  ],
+  "businessContext": "LEGO launched its first global brand advertising campaign in more than 30 years.",
+  "strategy": "Make rebuilding an expression of the product system and a participatory platform.",
+  "execution": [
+    "Television",
+    "digital",
+    "cinema",
+    "out-of-home",
+    "public building events"
+  ],
+  "outcome": "succeeded",
+  "outcomes": [
+    "LEGO continued the platform and reported that it attracted new builders."
+  ],
+  "evidenceQuality": "medium",
+  "causalConfidence": "low",
+  "whatWorked": [
+    "The organizing idea was native to the product behavior.",
+    "The platform supported both communications and participation."
+  ],
+  "whatFailed": [
+    "Company reporting does not isolate incremental commercial impact."
+  ],
+  "failureModes": [
+    "company-claim bias",
+    "brand-lift causality gap"
+  ],
+  "transferConditions": [
+    "The brand idea is demonstrable through the product experience and supports repeated participation."
+  ],
+  "nonTransferConditions": [
+    "Do not copy a broad purpose platform when the product cannot enact it."
+  ],
+  "sources": [
+    {
+      "id": "source-1",
+      "title": "The LEGO Group launches Rebuild the World",
+      "url": "https://www.lego.com/en-us/aboutus/news/2019/september/rebuild-the-world",
+      "publisher": "LEGO Group",
+      "accessedAt": "2026-09-11",
+      "sourceType": "company-report",
+      "methodology": "Confirms objective, execution and channels."
+    },
+    {
+      "id": "source-2",
+      "title": "LEGO Annual Report 2020",
+      "url": "https://www.lego.com/cdn/cs/aboutus/assets/bltdee53df07dda2287/Annual_Report_2020_ENG.pdf",
+      "publisher": "LEGO Group",
+      "accessedAt": "2026-09-11",
+      "sourceType": "company-report",
+      "methodology": "Company-reported continuation and audience outcome without independent incrementality."
+    }
+  ],
+  "category": "Toys",
+  "businessModel": "Consumer products",
+  "marketMaturity": "Mature",
+  "economicContext": "Global brand investment and category expansion",
+  "evidenceGrade": "D",
+  "outcomeMeasurements": [
+    {
+      "name": "Reported attraction of new builders",
+      "level": "brand",
+      "direction": "positive",
+      "incrementality": "claimed",
+      "sourceIds": [
+        "source-2"
+      ]
+    }
+  ],
+  "rights": {
+    "basis": "factual-metadata-only",
+    "redistributionAllowed": true,
+    "reviewedBy": "Codex-assisted source review",
+    "reviewedAt": "2026-09-11",
+    "notes": "Only independently written factual metadata and outbound links are redistributed."
+  },
+  "review": {
+    "status": "approved",
+    "reviewedBy": "Codex-assisted editorial review",
+    "reviewedAt": "2026-09-11",
+    "notes": "Claims checked against the linked primary or regulatory source. Evidence grade remains conservative; independent human review is encouraged."
+  }
+}

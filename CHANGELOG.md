@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.10.0] - 2026-09-11
+
+### Added
+
+- Enriched all eight original cases into native ontology v2 with business context, source types, outcome measurements, rights and attributable review metadata.
+- Added twelve sourced cases spanning identity redesign, deceptive advertising, review manipulation, education lead generation, brand platforms, fundraising, retail purpose and branded experiences.
+- Expanded the trusted corpus to 20 cases with exactly 40% failed or mixed outcomes and 100% native-v2 enrichment.
+
+### Evidence policy
+
+- Regulatory cases use stronger source grades where the record supports them.
+- Company and award claims remain conservatively graded when incrementality is not independently established.
+- The 250-case corpus milestone remains unmet and is reported as such.
+
 ## [1.9.0] - 2026-09-11
 
 ### Added

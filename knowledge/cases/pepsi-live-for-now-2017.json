@@ -1,1 +1,88 @@
-{"id":"pepsi-live-for-now-2017","campaign":"Live for Now protest film","brand":"Pepsi","period":"2017","markets":["United States","global media"],"disciplines":["advertising","brand","crisis-pr"],"objective":"Associate the brand with cultural unity and relevance.","audience":["young adults"],"businessContext":"A celebrity-led film borrowed imagery associated with real protest movements.","strategy":"Use a mass-culture symbol and celebrity to dramatize togetherness.","execution":["Online film","celebrity casting","protest-themed creative"],"outcome":"failed","outcomes":["The company withdrew the film and apologized after widespread criticism."],"evidenceQuality":"high","causalConfidence":"high","whatWorked":[],"whatFailed":["The execution trivialized serious social movements and lacked stakeholder legitimacy."],"failureModes":["purpose-washing","cultural appropriation","insufficient stakeholder review"],"transferConditions":["Only use social-issue narratives when the brand has credible actions and affected stakeholders shape the work."],"nonTransferConditions":["Do not use protest imagery as aesthetic shorthand for product-led harmony."],"sources":[{"title":"Pepsi statement re: Pepsi Moments content","url":"https://www.pepsico.com/news/press-release/pepsi-statement-re-pepsi-moments-content04052017","publisher":"PepsiCo","accessedAt":"2026-09-11"}]}
+{
+  "schemaVersion": 2,
+  "id": "pepsi-live-for-now-2017",
+  "campaign": "Live for Now protest film",
+  "brand": "Pepsi",
+  "period": "2017",
+  "markets": [
+    "United States",
+    "global media"
+  ],
+  "disciplines": [
+    "advertising",
+    "brand",
+    "crisis-pr"
+  ],
+  "objective": "Associate the brand with cultural unity and relevance.",
+  "audience": [
+    "young adults"
+  ],
+  "businessContext": "A celebrity-led film borrowed imagery associated with real protest movements.",
+  "strategy": "Use a mass-culture symbol and celebrity to dramatize togetherness.",
+  "execution": [
+    "Online film",
+    "celebrity casting",
+    "protest-themed creative"
+  ],
+  "outcome": "failed",
+  "outcomes": [
+    "The company withdrew the film and apologized after widespread criticism."
+  ],
+  "evidenceQuality": "high",
+  "causalConfidence": "high",
+  "whatWorked": [],
+  "whatFailed": [
+    "The execution trivialized serious social movements and lacked stakeholder legitimacy."
+  ],
+  "failureModes": [
+    "purpose-washing",
+    "cultural appropriation",
+    "insufficient stakeholder review"
+  ],
+  "transferConditions": [
+    "Only use social-issue narratives when the brand has credible actions and affected stakeholders shape the work."
+  ],
+  "nonTransferConditions": [
+    "Do not use protest imagery as aesthetic shorthand for product-led harmony."
+  ],
+  "sources": [
+    {
+      "id": "source-1",
+      "title": "Pepsi statement re: Pepsi Moments content",
+      "url": "https://www.pepsico.com/news/press-release/pepsi-statement-re-pepsi-moments-content04052017",
+      "publisher": "PepsiCo",
+      "accessedAt": "2026-09-11",
+      "sourceType": "company-report",
+      "methodology": "Supports descriptive campaign history or recognition; does not independently establish incrementality."
+    }
+  ],
+  "category": "Non-alcoholic beverages",
+  "businessModel": "Consumer packaged goods",
+  "marketMaturity": "Mature",
+  "economicContext": "Period of prominent protest movements and contested brand participation in social issues",
+  "evidenceGrade": "D",
+  "outcomeMeasurements": [
+    {
+      "name": "The company withdrew the film and apologized after widespread criticism.",
+      "level": "reputation",
+      "direction": "negative",
+      "incrementality": "claimed",
+      "sourceIds": [
+        "source-1"
+      ]
+    }
+  ],
+  "rights": {
+    "basis": "factual-metadata-only",
+    "redistributionAllowed": true,
+    "reviewedBy": "Codex-assisted source review",
+    "reviewedAt": "2026-09-11",
+    "notes": "Only independently written factual metadata and outbound links are redistributed; no source text or creative asset is copied."
+  },
+  "review": {
+    "status": "approved",
+    "reviewedBy": "Codex-assisted editorial review",
+    "reviewedAt": "2026-09-11",
+    "notes": "Conservative Grade D enrichment. Original claims retained; independent human review is still encouraged."
+  }
+}

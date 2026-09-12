@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 2,
+  "id": "rei-optoutside",
+  "campaign": "Opt Outside",
+  "brand": "REI Co-op",
+  "period": "2015 onward",
+  "markets": [
+    "United States"
+  ],
+  "disciplines": [
+    "brand-purpose",
+    "employee-experience",
+    "earned-media"
+  ],
+  "objective": "Express the co-op's outdoor purpose by closing on Black Friday.",
+  "audience": [
+    "Employees",
+    "members",
+    "outdoor community"
+  ],
+  "businessContext": "A retailer chose to close stores and delay order processing during a major shopping day.",
+  "strategy": "Turn a costly operational choice into credible proof of values and invite community participation.",
+  "execution": [
+    "Store closure",
+    "paid employee day off",
+    "partner mobilization",
+    "outdoor activity platform"
+  ],
+  "outcome": "succeeded",
+  "outcomes": [
+    "REI made the closure a permanent employee benefit after running the platform since 2015."
+  ],
+  "evidenceQuality": "medium",
+  "causalConfidence": "low",
+  "whatWorked": [
+    "The message was backed by a visible operational sacrifice.",
+    "Partners expanded participation beyond advertising."
+  ],
+  "whatFailed": [
+    "The available source does not establish incremental sales or brand lift."
+  ],
+  "failureModes": [
+    "purpose-commercial causality gap",
+    "imitation without sacrifice"
+  ],
+  "transferConditions": [
+    "The organization can make a durable operational commitment consistent with its member promise."
+  ],
+  "nonTransferConditions": [
+    "Do not borrow anti-consumption messaging without accepting a real business trade-off."
+  ],
+  "sources": [
+    {
+      "id": "source-1",
+      "title": "REI makes Opt Outside permanent",
+      "url": "https://www.rei.com/newsroom/article/rei-co-op-announces-permanent-commitment-to-optoutside-movement-closing-stores-on-black-friday-for-good",
+      "publisher": "REI Co-op",
+      "accessedAt": "2026-09-11",
+      "sourceType": "company-report",
+      "methodology": "Confirms history, operational behavior and permanence; does not isolate commercial effect."
+    }
+  ],
+  "category": "Outdoor retail",
+  "businessModel": "Consumer cooperative retail",
+  "marketMaturity": "Mature",
+  "economicContext": "Black Friday retail promotion",
+  "evidenceGrade": "D",
+  "outcomeMeasurements": [
+    {
+      "name": "Permanent operating commitment",
+      "level": "brand",
+      "direction": "positive",
+      "incrementality": "claimed",
+      "sourceIds": [
+        "source-1"
+      ]
+    }
+  ],
+  "rights": {
+    "basis": "factual-metadata-only",
+    "redistributionAllowed": true,
+    "reviewedBy": "Codex-assisted source review",
+    "reviewedAt": "2026-09-11",
+    "notes": "Only independently written factual metadata and outbound links are redistributed."
+  },
+  "review": {
+    "status": "approved",
+    "reviewedBy": "Codex-assisted editorial review",
+    "reviewedAt": "2026-09-11",
+    "notes": "Claims checked against the linked primary or regulatory source. Evidence grade remains conservative; independent human review is encouraged."
+  }
+}

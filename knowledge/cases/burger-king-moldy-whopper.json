@@ -1,1 +1,90 @@
-{"id":"burger-king-moldy-whopper","campaign":"Moldy Whopper","brand":"Burger King","period":"2020","markets":["global"],"disciplines":["advertising","product-proof","creative"],"objective":"Demonstrate removal of artificial preservatives through memorable product proof.","audience":["fast-food consumers"],"businessContext":"Category food imagery normally optimizes appetite appeal.","strategy":"Make visible decomposition the proof of a product formulation claim.","execution":["Time-lapse food decay","out-of-home","film","print"],"outcome":"mixed","outcomes":["The work gained major creative-industry recognition while deliberately creating polarizing, unappetizing imagery."],"evidenceQuality":"medium","causalConfidence":"low","whatWorked":["The creative mechanism made the product claim difficult to ignore."],"whatFailed":["Attention and awards do not establish incremental sales impact."],"failureModes":["attention-value conflation","appetite suppression","award bias"],"transferConditions":["A counter-category visual can directly and truthfully prove a valued product change."],"nonTransferConditions":["Do not trade core category appeal for shock without measuring commercial effects."],"sources":[{"title":"Moldy Whopper","url":"https://www.dandad.org/awards/professional/2020/231779/moldy-whopper/","publisher":"D&AD","accessedAt":"2026-09-11"}]}
+{
+  "schemaVersion": 2,
+  "id": "burger-king-moldy-whopper",
+  "campaign": "Moldy Whopper",
+  "brand": "Burger King",
+  "period": "2020",
+  "markets": [
+    "global"
+  ],
+  "disciplines": [
+    "advertising",
+    "product-proof",
+    "creative"
+  ],
+  "objective": "Demonstrate removal of artificial preservatives through memorable product proof.",
+  "audience": [
+    "fast-food consumers"
+  ],
+  "businessContext": "Category food imagery normally optimizes appetite appeal.",
+  "strategy": "Make visible decomposition the proof of a product formulation claim.",
+  "execution": [
+    "Time-lapse food decay",
+    "out-of-home",
+    "film",
+    "print"
+  ],
+  "outcome": "mixed",
+  "outcomes": [
+    "The work gained major creative-industry recognition while deliberately creating polarizing, unappetizing imagery."
+  ],
+  "evidenceQuality": "medium",
+  "causalConfidence": "low",
+  "whatWorked": [
+    "The creative mechanism made the product claim difficult to ignore."
+  ],
+  "whatFailed": [
+    "Attention and awards do not establish incremental sales impact."
+  ],
+  "failureModes": [
+    "attention-value conflation",
+    "appetite suppression",
+    "award bias"
+  ],
+  "transferConditions": [
+    "A counter-category visual can directly and truthfully prove a valued product change."
+  ],
+  "nonTransferConditions": [
+    "Do not trade core category appeal for shock without measuring commercial effects."
+  ],
+  "sources": [
+    {
+      "id": "source-1",
+      "title": "Moldy Whopper",
+      "url": "https://www.dandad.org/awards/professional/2020/231779/moldy-whopper/",
+      "publisher": "D&AD",
+      "accessedAt": "2026-09-11",
+      "sourceType": "award-case",
+      "methodology": "Supports descriptive campaign history or recognition; does not independently establish incrementality."
+    }
+  ],
+  "category": "Quick-service restaurants",
+  "businessModel": "Franchise consumer services",
+  "marketMaturity": "Mature",
+  "economicContext": "Not established by the cited source",
+  "evidenceGrade": "D",
+  "outcomeMeasurements": [
+    {
+      "name": "The work gained major creative-industry recognition while deliberately creating polarizing, unappetizing imagery.",
+      "level": "brand",
+      "direction": "unknown",
+      "incrementality": "claimed",
+      "sourceIds": [
+        "source-1"
+      ]
+    }
+  ],
+  "rights": {
+    "basis": "factual-metadata-only",
+    "redistributionAllowed": true,
+    "reviewedBy": "Codex-assisted source review",
+    "reviewedAt": "2026-09-11",
+    "notes": "Only independently written factual metadata and outbound links are redistributed; no source text or creative asset is copied."
+  },
+  "review": {
+    "status": "approved",
+    "reviewedBy": "Codex-assisted editorial review",
+    "reviewedAt": "2026-09-11",
+    "notes": "Conservative Grade D enrichment. Original claims retained; independent human review is still encouraged."
+  }
+}

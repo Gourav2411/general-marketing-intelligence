@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 2,
+  "id": "dove-campaign-real-beauty",
+  "campaign": "Campaign for Real Beauty",
+  "brand": "Dove",
+  "period": "2004 onward",
+  "markets": [
+    "Global"
+  ],
+  "disciplines": [
+    "brand-purpose",
+    "advertising",
+    "social-impact"
+  ],
+  "objective": "Challenge narrow beauty stereotypes and make beauty a source of confidence rather than anxiety.",
+  "audience": [
+    "Women",
+    "girls",
+    "parents",
+    "educators"
+  ],
+  "businessContext": "Brand research reported low self-identification with conventional beauty standards.",
+  "strategy": "Connect communications, representation and self-esteem programs under a sustained category-relevant mission.",
+  "execution": [
+    "Advertising featuring diverse women",
+    "films",
+    "self-esteem education",
+    "partnerships"
+  ],
+  "outcome": "succeeded",
+  "outcomes": [
+    "Unilever sustained the platform and reported broad participation in self-esteem education."
+  ],
+  "evidenceQuality": "medium",
+  "causalConfidence": "low",
+  "whatWorked": [
+    "The issue related directly to category representation.",
+    "Programs provided action beyond advertising."
+  ],
+  "whatFailed": [
+    "Company-reported reach and attention do not isolate brand or social causality."
+  ],
+  "failureModes": [
+    "purpose-commercial causality gap",
+    "portfolio contradiction risk"
+  ],
+  "transferConditions": [
+    "The issue is category-relevant and supported by durable programs, representation standards and operating behavior."
+  ],
+  "nonTransferConditions": [
+    "Do not use social purpose solely as a creative theme or ignore contradictions elsewhere in the company portfolio."
+  ],
+  "sources": [
+    {
+      "id": "source-1",
+      "title": "Making Purpose Pay: Inspiring Sustainable Living",
+      "url": "https://www.unilever.com/files/92ui5egz/production/f5275ae450e58c008842c928cc2607ea1df2e884.pdf",
+      "publisher": "Unilever",
+      "accessedAt": "2026-09-11",
+      "sourceType": "company-report",
+      "methodology": "First-party account of research, program design and reported reach."
+    }
+  ],
+  "category": "Personal care",
+  "businessModel": "Consumer packaged goods",
+  "marketMaturity": "Mature",
+  "economicContext": "Growing scrutiny of narrow beauty representation",
+  "evidenceGrade": "D",
+  "outcomeMeasurements": [
+    {
+      "name": "Program reach",
+      "level": "reputation",
+      "direction": "positive",
+      "incrementality": "claimed",
+      "sourceIds": [
+        "source-1"
+      ]
+    }
+  ],
+  "rights": {
+    "basis": "factual-metadata-only",
+    "redistributionAllowed": true,
+    "reviewedBy": "Codex-assisted source review",
+    "reviewedAt": "2026-09-11",
+    "notes": "Only independently written factual metadata and outbound links are redistributed."
+  },
+  "review": {
+    "status": "approved",
+    "reviewedBy": "Codex-assisted editorial review",
+    "reviewedAt": "2026-09-11",
+    "notes": "Claims checked against the linked primary or regulatory source. Evidence grade remains conservative; independent human review is encouraged."
+  }
+}

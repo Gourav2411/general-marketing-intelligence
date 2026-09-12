@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 2,
+  "id": "sunday-riley-fake-reviews",
+  "campaign": "Employee-posted product reviews",
+  "brand": "Sunday Riley",
+  "period": "2015-2017; 2020 final order",
+  "markets": [
+    "United States"
+  ],
+  "disciplines": [
+    "reviews",
+    "influencer-governance",
+    "reputation"
+  ],
+  "objective": "Improve perceived product ratings and credibility on a major retailer website.",
+  "audience": [
+    "Skincare shoppers"
+  ],
+  "businessContext": "The FTC alleged employees posted reviews without disclosing their relationship to the company.",
+  "strategy": "Use favorable consumer-style reviews as social proof.",
+  "execution": [
+    "Employee reviews",
+    "undisclosed affiliation",
+    "review-score influence"
+  ],
+  "outcome": "failed",
+  "outcomes": [
+    "The FTC approved a final order barring the deceptive review practices."
+  ],
+  "evidenceQuality": "high",
+  "causalConfidence": "high",
+  "whatWorked": [],
+  "whatFailed": [
+    "The apparent independent proof was not independent and material relationships were concealed."
+  ],
+  "failureModes": [
+    "fake social proof",
+    "disclosure failure",
+    "review manipulation"
+  ],
+  "transferConditions": [
+    "Use for employee advocacy, testimonials, reviews and influencer programs."
+  ],
+  "nonTransferConditions": [
+    "Do not infer that soliciting authentic, disclosed customer reviews is improper."
+  ],
+  "sources": [
+    {
+      "id": "source-1",
+      "title": "Sunday Riley Modern Skincare FTC matter",
+      "url": "https://www.ftc.gov/legal-library/browse/cases-proceedings/192-3008-sunday-riley-modern-skincare-llc-matter",
+      "publisher": "Federal Trade Commission",
+      "accessedAt": "2026-09-11",
+      "sourceType": "regulatory",
+      "methodology": "Regulatory case page describing allegations and final order."
+    }
+  ],
+  "category": "Skincare",
+  "businessModel": "Consumer packaged goods",
+  "marketMaturity": "Growth",
+  "economicContext": "Retail-platform review economy",
+  "evidenceGrade": "B",
+  "outcomeMeasurements": [
+    {
+      "name": "FTC final order",
+      "level": "reputation",
+      "direction": "negative",
+      "incrementality": "observational",
+      "sourceIds": [
+        "source-1"
+      ]
+    }
+  ],
+  "rights": {
+    "basis": "factual-metadata-only",
+    "redistributionAllowed": true,
+    "reviewedBy": "Codex-assisted source review",
+    "reviewedAt": "2026-09-11",
+    "notes": "Only independently written factual metadata and outbound links are redistributed."
+  },
+  "review": {
+    "status": "approved",
+    "reviewedBy": "Codex-assisted editorial review",
+    "reviewedAt": "2026-09-11",
+    "notes": "Claims checked against the linked primary or regulatory source. Evidence grade remains conservative; independent human review is encouraged."
+  }
+}

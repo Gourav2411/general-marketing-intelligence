@@ -1,1 +1,91 @@
-{"id":"coca-cola-share-a-coke","campaign":"Share a Coke","brand":"Coca-Cola","period":"2011 onward","markets":["Australia","global"],"disciplines":["advertising","personalization","earned-media"],"objective":"Increase relevance and social participation around an established product.","audience":["young consumers","mass market"],"businessContext":"A familiar package became a personalized social object.","strategy":"Replace brand labels with popular names to prompt finding, gifting and sharing.","execution":["Personalized packaging","retail activation","social participation"],"outcome":"succeeded","outcomes":["The program expanded from Australia to many markets and became a repeatable brand platform."],"evidenceQuality":"medium","causalConfidence":"medium","whatWorked":["The product itself carried the participatory idea.","The behavior was simple and observable."],"whatFailed":["Name coverage and cultural adaptation created inclusion constraints."],"failureModes":["personalization exclusion","novelty decay"],"transferConditions":["The product or experience can carry meaningful, scalable personalization."],"nonTransferConditions":["Do not infer that adding names alone creates demand without distribution and cultural fit."],"sources":[{"title":"Share a Coke","url":"https://www.coca-colacompany.com/about-us/history/share-a-coke-how-the-groundbreaking-campaign-got-its-start-down-under","publisher":"The Coca-Cola Company","accessedAt":"2026-09-11"}]}
+{
+  "schemaVersion": 2,
+  "id": "coca-cola-share-a-coke",
+  "campaign": "Share a Coke",
+  "brand": "Coca-Cola",
+  "period": "2011 onward",
+  "markets": [
+    "Australia",
+    "global"
+  ],
+  "disciplines": [
+    "advertising",
+    "personalization",
+    "earned-media"
+  ],
+  "objective": "Increase relevance and social participation around an established product.",
+  "audience": [
+    "young consumers",
+    "mass market"
+  ],
+  "businessContext": "A familiar package became a personalized social object.",
+  "strategy": "Replace brand labels with popular names to prompt finding, gifting and sharing.",
+  "execution": [
+    "Personalized packaging",
+    "retail activation",
+    "social participation"
+  ],
+  "outcome": "succeeded",
+  "outcomes": [
+    "The program expanded from Australia to many markets and became a repeatable brand platform."
+  ],
+  "evidenceQuality": "medium",
+  "causalConfidence": "medium",
+  "whatWorked": [
+    "The product itself carried the participatory idea.",
+    "The behavior was simple and observable."
+  ],
+  "whatFailed": [
+    "Name coverage and cultural adaptation created inclusion constraints."
+  ],
+  "failureModes": [
+    "personalization exclusion",
+    "novelty decay"
+  ],
+  "transferConditions": [
+    "The product or experience can carry meaningful, scalable personalization."
+  ],
+  "nonTransferConditions": [
+    "Do not infer that adding names alone creates demand without distribution and cultural fit."
+  ],
+  "sources": [
+    {
+      "id": "source-1",
+      "title": "Share a Coke",
+      "url": "https://www.coca-colacompany.com/about-us/history/share-a-coke-how-the-groundbreaking-campaign-got-its-start-down-under",
+      "publisher": "The Coca-Cola Company",
+      "accessedAt": "2026-09-11",
+      "sourceType": "company-report",
+      "methodology": "Supports descriptive campaign history or recognition; does not independently establish incrementality."
+    }
+  ],
+  "category": "Non-alcoholic beverages",
+  "businessModel": "Consumer packaged goods",
+  "marketMaturity": "Mature",
+  "economicContext": "Not established by the cited source",
+  "evidenceGrade": "D",
+  "outcomeMeasurements": [
+    {
+      "name": "The program expanded from Australia to many markets and became a repeatable brand platform.",
+      "level": "brand",
+      "direction": "positive",
+      "incrementality": "claimed",
+      "sourceIds": [
+        "source-1"
+      ]
+    }
+  ],
+  "rights": {
+    "basis": "factual-metadata-only",
+    "redistributionAllowed": true,
+    "reviewedBy": "Codex-assisted source review",
+    "reviewedAt": "2026-09-11",
+    "notes": "Only independently written factual metadata and outbound links are redistributed; no source text or creative asset is copied."
+  },
+  "review": {
+    "status": "approved",
+    "reviewedBy": "Codex-assisted editorial review",
+    "reviewedAt": "2026-09-11",
+    "notes": "Conservative Grade D enrichment. Original claims retained; independent human review is still encouraged."
+  }
+}

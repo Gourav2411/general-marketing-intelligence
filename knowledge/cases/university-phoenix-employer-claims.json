@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 2,
+  "id": "university-phoenix-employer-claims",
+  "campaign": "Employer partnership and job-opportunity advertising",
+  "brand": "University of Phoenix",
+  "period": "2019 settlement",
+  "markets": [
+    "United States"
+  ],
+  "disciplines": [
+    "advertising",
+    "lead-generation",
+    "claims"
+  ],
+  "objective": "Attract prospective students using employer and career-opportunity messages.",
+  "audience": [
+    "Prospective students",
+    "service members",
+    "veterans"
+  ],
+  "businessContext": "The FTC alleged that advertisements created false impressions of relationships and job opportunities with major employers.",
+  "strategy": "Use recognizable employers as proof of career relevance.",
+  "execution": [
+    "Television and digital advertising",
+    "employer logos",
+    "career-opportunity claims"
+  ],
+  "outcome": "failed",
+  "outcomes": [
+    "The settlement included $50 million in cash and cancellation of $141 million in student debt."
+  ],
+  "evidenceQuality": "high",
+  "causalConfidence": "high",
+  "whatWorked": [],
+  "whatFailed": [
+    "Borrowed institutional credibility was not supported by the represented relationships."
+  ],
+  "failureModes": [
+    "false affiliation",
+    "vulnerable-audience targeting",
+    "outcome overclaim"
+  ],
+  "transferConditions": [
+    "Use when education or employment marketing invokes partners, placements or future outcomes."
+  ],
+  "nonTransferConditions": [
+    "Do not generalize settlement values beyond this case."
+  ],
+  "sources": [
+    {
+      "id": "source-1",
+      "title": "FTC obtains $191 million University of Phoenix settlement",
+      "url": "https://www.ftc.gov/news-events/news/press-releases/2019/12/ftc-obtains-record-191-million-settlement-university-phoenix-resolve-ftc-charges-it-used-deceptive",
+      "publisher": "Federal Trade Commission",
+      "accessedAt": "2026-09-11",
+      "sourceType": "regulatory",
+      "methodology": "Regulatory description of alleged advertising and settlement terms."
+    }
+  ],
+  "category": "Higher education",
+  "businessModel": "For-profit education",
+  "marketMaturity": "Mature",
+  "economicContext": "High-consideration education and employment claims",
+  "evidenceGrade": "B",
+  "outcomeMeasurements": [
+    {
+      "name": "Settlement value",
+      "level": "business",
+      "direction": "negative",
+      "value": 191,
+      "unit": "USD millions",
+      "incrementality": "observational",
+      "sourceIds": [
+        "source-1"
+      ]
+    }
+  ],
+  "rights": {
+    "basis": "factual-metadata-only",
+    "redistributionAllowed": true,
+    "reviewedBy": "Codex-assisted source review",
+    "reviewedAt": "2026-09-11",
+    "notes": "Only independently written factual metadata and outbound links are redistributed."
+  },
+  "review": {
+    "status": "approved",
+    "reviewedBy": "Codex-assisted editorial review",
+    "reviewedAt": "2026-09-11",
+    "notes": "Claims checked against the linked primary or regulatory source. Evidence grade remains conservative; independent human review is encouraged."
+  }
+}

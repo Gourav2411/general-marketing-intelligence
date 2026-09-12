@@ -1,1 +1,88 @@
-{"id":"patagonia-dont-buy-this-jacket","campaign":"Don't Buy This Jacket","brand":"Patagonia","period":"2011","markets":["United States"],"disciplines":["brand","purpose","advertising"],"objective":"Encourage consideration of environmental cost and responsible consumption.","audience":["outdoor consumers"],"businessContext":"The message ran during a high-consumption retail period and aligned with an established repair and environmental program.","strategy":"Use an anti-consumption headline to invite reflection and reinforce a long-held operating position.","execution":["Print advertisement","environmental impact disclosure","repair and reuse call"],"outcome":"succeeded","outcomes":["The advertisement became a durable expression of Patagonia's environmental positioning."],"evidenceQuality":"medium","causalConfidence":"low","whatWorked":["The claim aligned with observable company practices rather than appearing as a temporary slogan."],"whatFailed":["The apparent paradox is easy for other brands to imitate superficially."],"failureModes":["purpose-washing","message-business contradiction"],"transferConditions":["The organization has long-running operational proof consistent with the provocative message."],"nonTransferConditions":["Do not borrow anti-consumption language when revenue practices and product durability contradict it."],"sources":[{"title":"Don't Buy This Jacket, Black Friday and the New York Times","url":"https://www.patagonia.com/stories/dont-buy-this-jacket-black-friday-and-the-new-york-times/story-18615.html","publisher":"Patagonia","accessedAt":"2026-09-11"}]}
+{
+  "schemaVersion": 2,
+  "id": "patagonia-dont-buy-this-jacket",
+  "campaign": "Don't Buy This Jacket",
+  "brand": "Patagonia",
+  "period": "2011",
+  "markets": [
+    "United States"
+  ],
+  "disciplines": [
+    "brand",
+    "purpose",
+    "advertising"
+  ],
+  "objective": "Encourage consideration of environmental cost and responsible consumption.",
+  "audience": [
+    "outdoor consumers"
+  ],
+  "businessContext": "The message ran during a high-consumption retail period and aligned with an established repair and environmental program.",
+  "strategy": "Use an anti-consumption headline to invite reflection and reinforce a long-held operating position.",
+  "execution": [
+    "Print advertisement",
+    "environmental impact disclosure",
+    "repair and reuse call"
+  ],
+  "outcome": "succeeded",
+  "outcomes": [
+    "The advertisement became a durable expression of Patagonia's environmental positioning."
+  ],
+  "evidenceQuality": "medium",
+  "causalConfidence": "low",
+  "whatWorked": [
+    "The claim aligned with observable company practices rather than appearing as a temporary slogan."
+  ],
+  "whatFailed": [
+    "The apparent paradox is easy for other brands to imitate superficially."
+  ],
+  "failureModes": [
+    "purpose-washing",
+    "message-business contradiction"
+  ],
+  "transferConditions": [
+    "The organization has long-running operational proof consistent with the provocative message."
+  ],
+  "nonTransferConditions": [
+    "Do not borrow anti-consumption language when revenue practices and product durability contradict it."
+  ],
+  "sources": [
+    {
+      "id": "source-1",
+      "title": "Don't Buy This Jacket, Black Friday and the New York Times",
+      "url": "https://www.patagonia.com/stories/dont-buy-this-jacket-black-friday-and-the-new-york-times/story-18615.html",
+      "publisher": "Patagonia",
+      "accessedAt": "2026-09-11",
+      "sourceType": "company-report",
+      "methodology": "Supports descriptive campaign history or recognition; does not independently establish incrementality."
+    }
+  ],
+  "category": "Outdoor apparel",
+  "businessModel": "Consumer retail",
+  "marketMaturity": "Mature",
+  "economicContext": "Black Friday consumption period",
+  "evidenceGrade": "D",
+  "outcomeMeasurements": [
+    {
+      "name": "The advertisement became a durable expression of Patagonia's environmental positioning.",
+      "level": "brand",
+      "direction": "positive",
+      "incrementality": "claimed",
+      "sourceIds": [
+        "source-1"
+      ]
+    }
+  ],
+  "rights": {
+    "basis": "factual-metadata-only",
+    "redistributionAllowed": true,
+    "reviewedBy": "Codex-assisted source review",
+    "reviewedAt": "2026-09-11",
+    "notes": "Only independently written factual metadata and outbound links are redistributed; no source text or creative asset is copied."
+  },
+  "review": {
+    "status": "approved",
+    "reviewedBy": "Codex-assisted editorial review",
+    "reviewedAt": "2026-09-11",
+    "notes": "Conservative Grade D enrichment. Original claims retained; independent human review is still encouraged."
+  }
+}

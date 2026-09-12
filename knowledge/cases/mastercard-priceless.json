@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 2,
+  "id": "mastercard-priceless",
+  "campaign": "Priceless",
+  "brand": "Mastercard",
+  "period": "1997 onward",
+  "markets": [
+    "Global"
+  ],
+  "disciplines": [
+    "brand-platform",
+    "advertising",
+    "experiential"
+  ],
+  "objective": "Create a differentiated emotional platform for a payment brand.",
+  "audience": [
+    "Cardholders",
+    "mass consumer audience"
+  ],
+  "businessContext": "A functional payment category required an ownable emotional idea that could travel across markets.",
+  "strategy": "Contrast purchasable items with meaningful experiences that money cannot buy.",
+  "execution": [
+    "Television advertising",
+    "localized stories",
+    "experiential extensions",
+    "sponsorship"
+  ],
+  "outcome": "succeeded",
+  "outcomes": [
+    "Mastercard maintained and expanded the platform for at least 25 years."
+  ],
+  "evidenceQuality": "medium",
+  "causalConfidence": "low",
+  "whatWorked": [
+    "A repeatable narrative structure combined global consistency with local adaptation.",
+    "The idea expanded from communications into experiences."
+  ],
+  "whatFailed": [
+    "Longevity does not independently prove incremental business effect."
+  ],
+  "failureModes": [
+    "longevity-effectiveness conflation",
+    "formula fatigue"
+  ],
+  "transferConditions": [
+    "The platform is ownable, flexible across cultures and can extend into customer experience."
+  ],
+  "nonTransferConditions": [
+    "Do not treat a reusable tagline alone as a durable platform."
+  ],
+  "sources": [
+    {
+      "id": "source-1",
+      "title": "Marking 25 years of Priceless",
+      "url": "https://www.mastercard.com/global/en/news-and-trends/stories/2022/priceless-25-year-anniversary.html",
+      "publisher": "Mastercard",
+      "accessedAt": "2026-09-11",
+      "sourceType": "company-report",
+      "methodology": "First-party account of launch, longevity and platform evolution."
+    }
+  ],
+  "category": "Payments",
+  "businessModel": "Two-sided financial network",
+  "marketMaturity": "Mature",
+  "economicContext": "Global expansion of card payments",
+  "evidenceGrade": "D",
+  "outcomeMeasurements": [
+    {
+      "name": "Platform longevity",
+      "level": "brand",
+      "direction": "positive",
+      "incrementality": "claimed",
+      "sourceIds": [
+        "source-1"
+      ]
+    }
+  ],
+  "rights": {
+    "basis": "factual-metadata-only",
+    "redistributionAllowed": true,
+    "reviewedBy": "Codex-assisted source review",
+    "reviewedAt": "2026-09-11",
+    "notes": "Only independently written factual metadata and outbound links are redistributed."
+  },
+  "review": {
+    "status": "approved",
+    "reviewedBy": "Codex-assisted editorial review",
+    "reviewedAt": "2026-09-11",
+    "notes": "Claims checked against the linked primary or regulatory source. Evidence grade remains conservative; independent human review is encouraged."
+  }
+}
