@@ -1,5 +1,7 @@
 # Read-only connector guide
 
+For end-to-end account creation, credential placement, Claude/Codex examples and verification prompts, see [`CONNECT_YOUR_DATA.md`](CONNECT_YOUR_DATA.md). This page is the compact connector reference.
+
 All connectors retrieve evidence only. They cannot change campaigns, budgets, CRM records, website content or analytics configuration.
 
 ## Google Search Console

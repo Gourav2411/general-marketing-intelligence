@@ -108,6 +108,8 @@ Open `http://127.0.0.1:4173`. Ask Claude or Codex to call `build_dashboard` for 
 
 If Google credentials already live in Claude Desktop configuration, use `npm run dashboard:claude`; it allowlists the required settings and never prints credential values.
 
+For one step-by-step path covering every implemented connector, least-privilege roles, complete Claude/Codex configuration, verification prompts and troubleshooting, start with **[Connect your data](docs/CONNECT_YOUR_DATA.md)**.
+
 For an interactive private configuration flow:
 
 ```bash

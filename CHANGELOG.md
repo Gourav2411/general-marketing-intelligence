@@ -1,5 +1,13 @@
 # Changelog
 
+## [Unreleased]
+
+### Documentation
+
+- Added a single end-to-end data connection guide for Claude Desktop, Claude Code and OpenAI Codex.
+- Added detailed least-privilege setup, configuration, verification prompts and troubleshooting for GSC, GA4, Google Ads, Meta Ads, LinkedIn Ads, HubSpot, Salesforce, generic CRM APIs, CRM CSV and paid-media CSV.
+- Added a connector readiness matrix and explicitly distinguished live connectors, CSV support and planned direct integrations.
+
 ## [1.11.0] - 2026-09-14
 
 ### Added
