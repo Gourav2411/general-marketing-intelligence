@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 2,
+  "rights": {
+    "basis": "factual-metadata-only",
+    "redistributionAllowed": true,
+    "reviewedBy": "Codex-assisted source review",
+    "reviewedAt": "2026-09-13",
+    "notes": "Only independently written factual metadata and outbound links are redistributed; no source prose or creative asset is copied."
+  },
+  "review": {
+    "status": "approved",
+    "reviewedBy": "Codex-assisted editorial review",
+    "reviewedAt": "2026-09-13",
+    "notes": "Claims were checked against the linked primary or regulatory source. Evidence and causality are stated conservatively; independent human review is encouraged."
+  },
+  "id": "booking-performance-marketing-governance",
+  "campaign": "Performance-marketing allocation governance",
+  "brand": "Booking Holdings",
+  "period": "2019-2021",
+  "markets": [
+    "Global"
+  ],
+  "disciplines": [
+    "media-allocation",
+    "performance-marketing",
+    "measurement"
+  ],
+  "objective": "Allocate large performance budgets using marginal traffic, conversion, repeat behavior and direct-booking economics.",
+  "audience": [
+    "Travel shoppers"
+  ],
+  "businessContext": "The travel marketplace depends heavily on search, metasearch and affiliates while cancellation rates, CPCs and direct traffic materially change reported ROI.",
+  "strategy": "Evaluate channels using incremental traffic, customer experience and anticipated repeat rate rather than a single platform-reported return metric.",
+  "execution": [
+    "Search and metasearch investment",
+    "affiliate marketing",
+    "brand media",
+    "direct-booking measurement",
+    "channel ROI monitoring"
+  ],
+  "outcome": "succeeded",
+  "outcomes": [
+    "Booking reported $3.8 billion of marketing expense in 2021 and performance ROI roughly in line with 2019, while direct room-night mix increased versus both 2020 and 2019."
+  ],
+  "evidenceQuality": "medium",
+  "causalConfidence": "low",
+  "whatWorked": [
+    "Allocation explicitly incorporated cancellation, conversion, repeat behavior and direct demand.",
+    "The company separated performance and brand roles in its reporting."
+  ],
+  "whatFailed": [
+    "Public reporting cannot reveal campaign-level incrementality or the exact allocation algorithm."
+  ],
+  "failureModes": [
+    "platform-reported ROI bias",
+    "cancellation distortion",
+    "brand-bidding cannibalization"
+  ],
+  "transferConditions": [
+    "The advertiser can join spend to completed transactions, cancellations, repeat behavior and direct demand."
+  ],
+  "nonTransferConditions": [
+    "Do not benchmark absolute spend or channel mix across businesses with different margins and repeat rates."
+  ],
+  "sources": [
+    {
+      "id": "source-1",
+      "title": "Booking Holdings 2021 Form 10-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/1075531/000107553122000008/bkng-20211231.htm",
+      "publisher": "Booking Holdings via SEC EDGAR",
+      "accessedAt": "2026-09-13",
+      "sourceType": "company-report",
+      "methodology": "Company filing describes channel evaluation factors, marketing expense, ROI context and direct-booking mix."
+    }
+  ],
+  "category": "Online travel",
+  "businessModel": "Marketplace and agency",
+  "marketMaturity": "Mature",
+  "economicContext": "Travel-demand recovery after acute COVID-19 disruption",
+  "evidenceGrade": "C",
+  "outcomeMeasurements": [
+    {
+      "name": "Marketing expense in 2021",
+      "level": "business",
+      "direction": "neutral",
+      "value": 3.8,
+      "unit": "USD billions",
+      "incrementality": "observational",
+      "sourceIds": [
+        "source-1"
+      ]
+    },
+    {
+      "name": "Performance ROI versus 2019",
+      "level": "business",
+      "direction": "neutral",
+      "incrementality": "observational",
+      "sourceIds": [
+        "source-1"
+      ]
+    },
+    {
+      "name": "Direct room-night mix versus 2019 and 2020",
+      "level": "behavior",
+      "direction": "positive",
+      "incrementality": "observational",
+      "sourceIds": [
+        "source-1"
+      ]
+    }
+  ]
+}

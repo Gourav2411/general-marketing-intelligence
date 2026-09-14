@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "rights": {
+    "basis": "factual-metadata-only",
+    "redistributionAllowed": true,
+    "reviewedBy": "Codex-assisted source review",
+    "reviewedAt": "2026-09-13",
+    "notes": "Only independently written factual metadata and outbound links are redistributed; no source prose or creative asset is copied."
+  },
+  "review": {
+    "status": "approved",
+    "reviewedBy": "Codex-assisted editorial review",
+    "reviewedAt": "2026-09-13",
+    "notes": "Claims were checked against the linked primary or regulatory source. Evidence and causality are stated conservatively; independent human review is encouraged."
+  },
+  "id": "saramin-seo-investment",
+  "campaign": "Search discoverability investment",
+  "brand": "Saramin",
+  "period": "2015-2019",
+  "markets": [
+    "South Korea"
+  ],
+  "disciplines": [
+    "seo",
+    "technical-seo",
+    "conversion"
+  ],
+  "objective": "Grow qualified organic discovery for a Korean employment platform.",
+  "audience": [
+    "Korean job seekers",
+    "employers"
+  ],
+  "businessContext": "The platform had crawl errors, duplicate content and opportunities to clarify job content for search engines.",
+  "strategy": "Treat SEO as a sustained product and engineering program rather than a one-time keyword exercise.",
+  "execution": [
+    "Crawl-error remediation",
+    "canonical URLs",
+    "duplicate-content cleanup",
+    "JobPosting and breadcrumb structured data"
+  ],
+  "outcome": "succeeded",
+  "outcomes": [
+    "Google reports 102% year-over-year organic traffic growth in the September 2019 hiring season, 93% growth in new sign-ups from organic traffic and a 9% year-over-year conversion-rate increase."
+  ],
+  "evidenceQuality": "medium",
+  "causalConfidence": "low",
+  "whatWorked": [
+    "Technical fixes and structured data were connected to an explicit conversion outcome.",
+    "The program accumulated improvements over several years."
+  ],
+  "whatFailed": [
+    "Seasonality and concurrent changes are not controlled in the published case study."
+  ],
+  "failureModes": [
+    "seasonality mistaken for incrementality",
+    "technical work without conversion tracking"
+  ],
+  "transferConditions": [
+    "A large structured-content marketplace can measure both search visibility and downstream conversion."
+  ],
+  "nonTransferConditions": [
+    "Do not generalize the reported magnitude to sites with different demand, authority or inventory."
+  ],
+  "sources": [
+    {
+      "id": "source-1",
+      "title": "Saramin SEO investment case study",
+      "url": "https://developers.google.com/search/case-studies/saramin-case-study",
+      "publisher": "Google Search Central",
+      "accessedAt": "2026-09-13",
+      "sourceType": "platform-library",
+      "methodology": "Platform case study reports implementation and year-over-year outcomes; no controlled counterfactual is described."
+    }
+  ],
+  "category": "Online recruitment",
+  "businessModel": "B2B and B2C marketplace",
+  "marketMaturity": "Growth",
+  "economicContext": "South Korean employment market",
+  "evidenceGrade": "D",
+  "outcomeMeasurements": [
+    {
+      "name": "Organic traffic in peak hiring season",
+      "level": "media",
+      "direction": "positive",
+      "value": 102,
+      "unit": "percent year-over-year increase",
+      "incrementality": "claimed",
+      "sourceIds": [
+        "source-1"
+      ]
+    },
+    {
+      "name": "New sign-ups from organic traffic",
+      "level": "behavior",
+      "direction": "positive",
+      "value": 93,
+      "unit": "percent increase",
+      "incrementality": "claimed",
+      "sourceIds": [
+        "source-1"
+      ]
+    },
+    {
+      "name": "Organic conversion rate",
+      "level": "behavior",
+      "direction": "positive",
+      "value": 9,
+      "unit": "percent year-over-year increase",
+      "incrementality": "claimed",
+      "sourceIds": [
+        "source-1"
+      ]
+    }
+  ]
+}

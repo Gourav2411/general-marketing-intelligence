@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "rights": {
+    "basis": "factual-metadata-only",
+    "redistributionAllowed": true,
+    "reviewedBy": "Codex-assisted source review",
+    "reviewedAt": "2026-09-13",
+    "notes": "Only independently written factual metadata and outbound links are redistributed; no source prose or creative asset is copied."
+  },
+  "review": {
+    "status": "approved",
+    "reviewedBy": "Codex-assisted editorial review",
+    "reviewedAt": "2026-09-13",
+    "notes": "Claims were checked against the linked primary or regulatory source. Evidence and causality are stated conservatively; independent human review is encouraged."
+  },
+  "id": "maggi-india-recall-relaunch",
+  "campaign": "Maggi India recall and relaunch",
+  "brand": "Maggi",
+  "period": "2015-2016",
+  "markets": [
+    "India"
+  ],
+  "disciplines": [
+    "product-crisis",
+    "public-relations",
+    "relaunch"
+  ],
+  "objective": "Protect consumers and rebuild distribution and trust after regulatory testing concerns forced a nationwide withdrawal.",
+  "audience": [
+    "Indian consumers",
+    "retailers",
+    "regulators"
+  ],
+  "businessContext": "Testing disputes around lead and label declarations produced regulatory action, consumer confusion and removal of Maggi noodles from shelves.",
+  "strategy": "Withdraw product, conduct extensive testing, cooperate with court-directed testing and relaunch after clearance.",
+  "execution": [
+    "Nationwide withdrawal",
+    "laboratory testing",
+    "stakeholder communications",
+    "market relaunch"
+  ],
+  "outcome": "mixed",
+  "outcomes": [
+    "Nestlé records the 2015 withdrawal and later reintroduction after court-directed testing.",
+    "Nestlé's 2016 annual review says Maggi regained leadership in India's noodle category."
+  ],
+  "evidenceQuality": "medium",
+  "causalConfidence": "low",
+  "whatWorked": [
+    "The response paired communication with product withdrawal and verifiable testing.",
+    "The brand returned to market after independent laboratory results."
+  ],
+  "whatFailed": [
+    "Early uncertainty became a large trust and availability crisis.",
+    "Company sources cannot independently establish how much the response caused the recovery."
+  ],
+  "failureModes": [
+    "slow crisis clarity",
+    "regulatory uncertainty",
+    "consumer trust shock"
+  ],
+  "transferConditions": [
+    "A crisis response can be anchored in auditable safety actions and third-party testing."
+  ],
+  "nonTransferConditions": [
+    "Do not communicate reassurance without operational remediation and independent verification."
+  ],
+  "sources": [
+    {
+      "id": "source-1",
+      "title": "Nestlé in society: Creating Shared Value 2015",
+      "url": "https://www.nestle.com/asset-library/Documents/Library/Documents/Corporate_Social_Responsibility/nestle-csv-full-report-2015-en.pdf",
+      "publisher": "Nestlé",
+      "accessedAt": "2026-09-13",
+      "sourceType": "company-report",
+      "methodology": "Company report records the testing chronology, withdrawal and reintroduction."
+    },
+    {
+      "id": "source-2",
+      "title": "Nestlé Annual Review 2016",
+      "url": "https://www.nestle.com/sites/default/files/asset-library/documents/library/documents/annual_reports/2016-annual-review-en.pdf",
+      "publisher": "Nestlé",
+      "accessedAt": "2026-09-13",
+      "sourceType": "company-report",
+      "methodology": "Company annual review reports the relaunch and category-leadership recovery."
+    }
+  ],
+  "category": "Packaged food",
+  "businessModel": "Consumer packaged goods",
+  "marketMaturity": "Mature",
+  "economicContext": "India during a product-safety and regulatory crisis",
+  "evidenceGrade": "C",
+  "outcomeMeasurements": [
+    {
+      "name": "Nationwide withdrawal and later reintroduction",
+      "level": "business",
+      "direction": "negative",
+      "incrementality": "observational",
+      "sourceIds": [
+        "source-1"
+      ]
+    },
+    {
+      "name": "Reported return to noodle-category leadership",
+      "level": "business",
+      "direction": "positive",
+      "incrementality": "claimed",
+      "sourceIds": [
+        "source-2"
+      ]
+    }
+  ]
+}

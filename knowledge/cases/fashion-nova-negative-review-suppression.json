@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 2,
+  "rights": {
+    "basis": "factual-metadata-only",
+    "redistributionAllowed": true,
+    "reviewedBy": "Codex-assisted source review",
+    "reviewedAt": "2026-09-13",
+    "notes": "Only independently written factual metadata and outbound links are redistributed; no source prose or creative asset is copied."
+  },
+  "review": {
+    "status": "approved",
+    "reviewedBy": "Codex-assisted editorial review",
+    "reviewedAt": "2026-09-13",
+    "notes": "Claims were checked against the linked primary or regulatory source. Evidence and causality are stated conservatively; independent human review is encouraged."
+  },
+  "id": "fashion-nova-negative-review-suppression",
+  "campaign": "Negative-review suppression",
+  "brand": "Fashion Nova",
+  "period": "2015-2019; 2022 order",
+  "markets": [
+    "United States"
+  ],
+  "disciplines": [
+    "ecommerce",
+    "reviews",
+    "lifecycle",
+    "reputation",
+    "governance"
+  ],
+  "objective": "Maintain favorable on-site product ratings and conversion signals.",
+  "audience": [
+    "Online fashion shoppers"
+  ],
+  "businessContext": "On-site ratings and reviews materially influence purchase decisions and post-purchase feedback can expose product dissatisfaction.",
+  "strategy": "Publish favorable reviews while withholding lower-rated submissions, as charged by the FTC.",
+  "execution": [
+    "Review moderation",
+    "suppression of lower-star reviews",
+    "on-site rating display"
+  ],
+  "outcome": "failed",
+  "outcomes": [
+    "The FTC order required $4.2 million in monetary relief and prohibited misrepresentation of customer reviews.",
+    "The FTC later distributed nearly $2.4 million across 148,351 payments to eligible customers."
+  ],
+  "evidenceQuality": "high",
+  "causalConfidence": "high",
+  "whatWorked": [],
+  "whatFailed": [
+    "The system converted lifecycle feedback into misleading acquisition proof by selectively hiding dissatisfaction."
+  ],
+  "failureModes": [
+    "review suppression",
+    "feedback governance failure",
+    "conversion optimization without truthfulness"
+  ],
+  "transferConditions": [
+    "Use for review systems, post-purchase email, social proof and marketplace governance."
+  ],
+  "nonTransferConditions": [
+    "Do not infer that neutral spam, abuse or relevance moderation is prohibited when policies are transparent and applied consistently."
+  ],
+  "sources": [
+    {
+      "id": "source-1",
+      "title": "Fashion Nova Decision and Order",
+      "url": "https://www.ftc.gov/system/files/ftc_gov/pdf/1923138C4759FashionNovaOrder_0.pdf",
+      "publisher": "Federal Trade Commission",
+      "accessedAt": "2026-09-13",
+      "sourceType": "regulatory",
+      "methodology": "Final order establishes required monetary relief and review-related conduct restrictions."
+    },
+    {
+      "id": "source-2",
+      "title": "Fashion Nova Settlement",
+      "url": "https://www.ftc.gov/enforcement/refunds/fashion-nova-settlement",
+      "publisher": "Federal Trade Commission",
+      "accessedAt": "2026-09-13",
+      "sourceType": "regulatory",
+      "methodology": "FTC refund page documents the alleged suppression and later consumer distribution."
+    }
+  ],
+  "category": "Online fashion retail",
+  "businessModel": "Direct-to-consumer ecommerce",
+  "marketMaturity": "Growth",
+  "economicContext": "Review-dependent social-commerce market",
+  "evidenceGrade": "B",
+  "outcomeMeasurements": [
+    {
+      "name": "FTC monetary relief ordered",
+      "level": "business",
+      "direction": "negative",
+      "value": 4.2,
+      "unit": "USD millions",
+      "incrementality": "observational",
+      "sourceIds": [
+        "source-1"
+      ]
+    },
+    {
+      "name": "Consumer refund payments distributed",
+      "level": "business",
+      "direction": "negative",
+      "value": 148351,
+      "unit": "payments",
+      "incrementality": "observational",
+      "sourceIds": [
+        "source-2"
+      ]
+    }
+  ]
+}

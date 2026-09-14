@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 2,
+  "rights": {
+    "basis": "factual-metadata-only",
+    "redistributionAllowed": true,
+    "reviewedBy": "Codex-assisted source review",
+    "reviewedAt": "2026-09-13",
+    "notes": "Only independently written factual metadata and outbound links are redistributed; no source prose or creative asset is copied."
+  },
+  "review": {
+    "status": "approved",
+    "reviewedBy": "Codex-assisted editorial review",
+    "reviewedAt": "2026-09-13",
+    "notes": "Claims were checked against the linked primary or regulatory source. Evidence and causality are stated conservatively; independent human review is encouraged."
+  },
+  "id": "mx-player-video-seo",
+  "campaign": "Video discoverability optimization",
+  "brand": "MX Player",
+  "period": "2020-2021",
+  "markets": [
+    "India"
+  ],
+  "disciplines": [
+    "seo",
+    "technical-seo",
+    "content-distribution"
+  ],
+  "objective": "Increase discovery of a large multilingual video catalog through organic search surfaces.",
+  "audience": [
+    "Indian online-video viewers",
+    "search users"
+  ],
+  "businessContext": "A catalog exceeding 200,000 hours had limited web-video visibility despite substantial content supply.",
+  "strategy": "Make video inventory machine-readable and keep discovery feeds current.",
+  "execution": [
+    "Video structured data",
+    "frequent video sitemap submission",
+    "Search and Discover eligibility work"
+  ],
+  "outcome": "succeeded",
+  "outcomes": [
+    "Google's case study reports more than 3x traffic growth from Google and a 100% rise in video page views per organic-search session over six months."
+  ],
+  "evidenceQuality": "medium",
+  "causalConfidence": "low",
+  "whatWorked": [
+    "Technical discoverability work matched a large existing content asset.",
+    "The implementation targeted both reach and depth of viewing."
+  ],
+  "whatFailed": [
+    "The platform case study does not report a controlled counterfactual."
+  ],
+  "failureModes": [
+    "attribution to seasonal demand",
+    "platform dependency"
+  ],
+  "transferConditions": [
+    "The site has substantial indexable video inventory and can maintain accurate structured data and sitemaps."
+  ],
+  "nonTransferConditions": [
+    "Do not expect markup to compensate for thin, inaccessible or low-quality video pages."
+  ],
+  "sources": [
+    {
+      "id": "source-1",
+      "title": "MX Player video optimization case study",
+      "url": "https://developers.google.com/search/case-studies/mx-case-study?hl=en",
+      "publisher": "Google Search Central",
+      "accessedAt": "2026-09-13",
+      "sourceType": "platform-library",
+      "methodology": "First-party platform case study reports implementation and before/after outcomes; no randomized control is described."
+    }
+  ],
+  "category": "Online video",
+  "businessModel": "Advertising-supported streaming",
+  "marketMaturity": "Growth",
+  "economicContext": "India digital-video growth market",
+  "evidenceGrade": "D",
+  "outcomeMeasurements": [
+    {
+      "name": "Traffic from Google",
+      "level": "media",
+      "direction": "positive",
+      "value": 3,
+      "unit": "more than 3x growth",
+      "incrementality": "claimed",
+      "sourceIds": [
+        "source-1"
+      ]
+    },
+    {
+      "name": "Video page views per organic-search session",
+      "level": "behavior",
+      "direction": "positive",
+      "value": 100,
+      "unit": "percent increase",
+      "incrementality": "claimed",
+      "sourceIds": [
+        "source-1"
+      ]
+    }
+  ]
+}

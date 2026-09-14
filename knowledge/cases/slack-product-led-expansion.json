@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "rights": {
+    "basis": "factual-metadata-only",
+    "redistributionAllowed": true,
+    "reviewedBy": "Codex-assisted source review",
+    "reviewedAt": "2026-09-13",
+    "notes": "Only independently written factual metadata and outbound links are redistributed; no source prose or creative asset is copied."
+  },
+  "review": {
+    "status": "approved",
+    "reviewedBy": "Codex-assisted editorial review",
+    "reviewedAt": "2026-09-13",
+    "notes": "Claims were checked against the linked primary or regulatory source. Evidence and causality are stated conservatively; independent human review is encouraged."
+  },
+  "id": "slack-product-led-expansion",
+  "campaign": "Product-led organizational expansion",
+  "brand": "Slack",
+  "period": "2014-2019",
+  "markets": [
+    "Global"
+  ],
+  "disciplines": [
+    "b2b-marketing",
+    "saas",
+    "product-led-growth",
+    "lifecycle"
+  ],
+  "objective": "Acquire teams through self-service use and expand adoption inside organizations.",
+  "audience": [
+    "Knowledge workers",
+    "teams",
+    "enterprise buyers"
+  ],
+  "businessContext": "Enterprise collaboration software typically depended heavily on top-down selling and lengthy implementation.",
+  "strategy": "Let users experience a free product, advocate internally and expand usage, supported by sales and customer success for larger deployments.",
+  "execution": [
+    "Free plan",
+    "self-service onboarding",
+    "customer support",
+    "organizational expansion",
+    "focused enterprise sales"
+  ],
+  "outcome": "succeeded",
+  "outcomes": [
+    "Slack reported more than 10 million daily active users and over 88,000 paid customers as of January 2019, rising above 95,000 paid customers by April 2019."
+  ],
+  "evidenceQuality": "medium",
+  "causalConfidence": "low",
+  "whatWorked": [
+    "The product itself created evidence and advocacy before enterprise purchase.",
+    "Customer success supported expansion after initial adoption."
+  ],
+  "whatFailed": [
+    "The filing does not isolate product-led mechanics from sales, category growth or brand effects."
+  ],
+  "failureModes": [
+    "free users that never convert",
+    "uncontrolled departmental sprawl"
+  ],
+  "transferConditions": [
+    "Users can adopt safely at small scale and value increases with team participation."
+  ],
+  "nonTransferConditions": [
+    "Do not apply frictionless self-service where security, integration or procurement requires up-front enterprise control."
+  ],
+  "sources": [
+    {
+      "id": "source-1",
+      "title": "Slack Technologies registration statement",
+      "url": "https://www.sec.gov/Archives/edgar/data/1764925/000162828019008125/slack424.htm",
+      "publisher": "Slack Technologies via SEC EDGAR",
+      "accessedAt": "2026-09-13",
+      "sourceType": "company-report",
+      "methodology": "Company filing describes the go-to-market model and audited business-scale disclosures; it does not isolate marketing causality."
+    }
+  ],
+  "category": "Workplace collaboration software",
+  "businessModel": "B2B SaaS freemium",
+  "marketMaturity": "Growth",
+  "economicContext": "Rapid enterprise collaboration-category expansion",
+  "evidenceGrade": "C",
+  "outcomeMeasurements": [
+    {
+      "name": "Daily active users",
+      "level": "behavior",
+      "direction": "positive",
+      "value": 10,
+      "unit": "million-plus",
+      "incrementality": "observational",
+      "sourceIds": [
+        "source-1"
+      ]
+    },
+    {
+      "name": "Paid customers by April 2019",
+      "level": "business",
+      "direction": "positive",
+      "value": 95000,
+      "unit": "customers-plus",
+      "incrementality": "observational",
+      "sourceIds": [
+        "source-1"
+      ]
+    }
+  ]
+}

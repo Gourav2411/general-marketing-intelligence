@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 2,
+  "rights": {
+    "basis": "factual-metadata-only",
+    "redistributionAllowed": true,
+    "reviewedBy": "Codex-assisted source review",
+    "reviewedAt": "2026-09-13",
+    "notes": "Only independently written factual metadata and outbound links are redistributed; no source prose or creative asset is copied."
+  },
+  "review": {
+    "status": "approved",
+    "reviewedBy": "Codex-assisted editorial review",
+    "reviewedAt": "2026-09-13",
+    "notes": "Claims were checked against the linked primary or regulatory source. Evidence and causality are stated conservatively; independent human review is encouraged."
+  },
+  "id": "jcpenney-fair-and-square-pricing",
+  "campaign": "Fair and Square pricing",
+  "brand": "JCPenney",
+  "period": "2012-2013",
+  "markets": [
+    "United States"
+  ],
+  "disciplines": [
+    "pricing",
+    "promotion",
+    "retail-marketing"
+  ],
+  "objective": "Replace frequent discounting with simpler everyday, month-long and best-price tiers.",
+  "audience": [
+    "Department-store shoppers"
+  ],
+  "businessContext": "The retailer sought to shift from a promotion-led department-store model to simpler pricing and a specialty-store presentation.",
+  "strategy": "Remove most promotional activity and teach customers a new value system through a brand and pricing reset.",
+  "execution": [
+    "Everyday pricing",
+    "reduced promotions",
+    "new logo and brand campaign",
+    "new merchandise presentation"
+  ],
+  "outcome": "failed",
+  "outcomes": [
+    "JCPenney reported a 25.2% comparable-store-sales decline in 2012.",
+    "The company later said the prior strategy did not resonate and returned most of the business to a promotional model."
+  ],
+  "evidenceQuality": "high",
+  "causalConfidence": "medium",
+  "whatWorked": [
+    "The proposition attempted to reduce complexity."
+  ],
+  "whatFailed": [
+    "It removed familiar deal signals faster than customer reference prices and shopping habits could change.",
+    "Multiple simultaneous changes made diagnosis and recovery harder."
+  ],
+  "failureModes": [
+    "reference-price disruption",
+    "promotion withdrawal",
+    "too many simultaneous changes"
+  ],
+  "transferConditions": [
+    "Use when testing changes to established promotional expectations and price architecture."
+  ],
+  "nonTransferConditions": [
+    "Do not assume simpler pricing is automatically more persuasive to promotion-trained customers."
+  ],
+  "sources": [
+    {
+      "id": "source-1",
+      "title": "JCPenney 2012 Form 10-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/1166126/000116612613000016/jcp-20130202x10k.htm",
+      "publisher": "JCPenney via SEC EDGAR",
+      "accessedAt": "2026-09-13",
+      "sourceType": "company-report",
+      "methodology": "Company filing reports sales outcomes during the first year of the transformation."
+    },
+    {
+      "id": "source-2",
+      "title": "JCPenney 2014 Form 10-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/1166126/000116612615000013/jcp-0131201510k.htm",
+      "publisher": "JCPenney via SEC EDGAR",
+      "accessedAt": "2026-09-13",
+      "sourceType": "company-report",
+      "methodology": "Company filing states the prior strategy did not resonate and documents return to promotions."
+    }
+  ],
+  "category": "Department-store retail",
+  "businessModel": "Retail",
+  "marketMaturity": "Mature",
+  "economicContext": "US department-store pressure and changing shopping behavior",
+  "evidenceGrade": "C",
+  "outcomeMeasurements": [
+    {
+      "name": "Comparable-store sales in 2012",
+      "level": "business",
+      "direction": "negative",
+      "value": -25.2,
+      "unit": "percent",
+      "incrementality": "observational",
+      "sourceIds": [
+        "source-1"
+      ]
+    },
+    {
+      "name": "Return to a promotional model",
+      "level": "behavior",
+      "direction": "negative",
+      "incrementality": "observational",
+      "sourceIds": [
+        "source-2"
+      ]
+    }
+  ]
+}

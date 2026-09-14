@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 2,
+  "rights": {
+    "basis": "factual-metadata-only",
+    "redistributionAllowed": true,
+    "reviewedBy": "Codex-assisted source review",
+    "reviewedAt": "2026-09-13",
+    "notes": "Only independently written factual metadata and outbound links are redistributed; no source prose or creative asset is copied."
+  },
+  "review": {
+    "status": "approved",
+    "reviewedBy": "Codex-assisted editorial review",
+    "reviewedAt": "2026-09-13",
+    "notes": "Claims were checked against the linked primary or regulatory source. Evidence and causality are stated conservatively; independent human review is encouraged."
+  },
+  "id": "ariel-share-the-load-india",
+  "campaign": "Share The Load",
+  "brand": "Ariel",
+  "period": "2015 onward",
+  "markets": [
+    "India"
+  ],
+  "disciplines": [
+    "advertising",
+    "purpose-marketing",
+    "behavior-change"
+  ],
+  "objective": "Challenge the assumption that laundry and household work belong primarily to women.",
+  "audience": [
+    "Indian households",
+    "men and women sharing domestic responsibilities"
+  ],
+  "businessContext": "Household labor in India was commonly framed as women's work, creating a social norm directly adjacent to the detergent category.",
+  "strategy": "Use the brand's category role to make unequal household labor visible and invite men to participate.",
+  "execution": [
+    "Film-led campaign",
+    "successive campaign chapters",
+    "public conversation about domestic labor"
+  ],
+  "outcome": "succeeded",
+  "outcomes": [
+    "P&G reports that the campaign continued for more than seven years and that the measured social norm shifted over that period."
+  ],
+  "evidenceQuality": "medium",
+  "causalConfidence": "low",
+  "whatWorked": [
+    "The social issue was tightly connected to product use.",
+    "A repeatable platform allowed the message to evolve rather than end after one burst."
+  ],
+  "whatFailed": [
+    "The cited company report does not isolate campaign incrementality from broader social change."
+  ],
+  "failureModes": [
+    "purpose without product relevance",
+    "causal overclaim"
+  ],
+  "transferConditions": [
+    "The brand has a credible role in the behavior it asks people to change."
+  ],
+  "nonTransferConditions": [
+    "Do not copy the purpose framing into a category with no credible link to the issue."
+  ],
+  "sources": [
+    {
+      "id": "source-1",
+      "title": "P&G 2023 Citizenship Report",
+      "url": "https://us.pg.com/citizenship2023/PG_2023_Citizenship_Report.pdf",
+      "publisher": "Procter & Gamble",
+      "accessedAt": "2026-09-13",
+      "sourceType": "company-report",
+      "methodology": "Company report documents the campaign's launch, duration and reported norm shift; it is not an independent incrementality study."
+    }
+  ],
+  "category": "Laundry care",
+  "businessModel": "Consumer packaged goods",
+  "marketMaturity": "Mature",
+  "economicContext": "India; broader economic effects are not isolated",
+  "evidenceGrade": "C",
+  "outcomeMeasurements": [
+    {
+      "name": "Reported shift in the household-labor norm after seven campaign years",
+      "level": "behavior",
+      "direction": "positive",
+      "incrementality": "claimed",
+      "sourceIds": [
+        "source-1"
+      ]
+    }
+  ]
+}

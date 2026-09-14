@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "rights": {
+    "basis": "factual-metadata-only",
+    "redistributionAllowed": true,
+    "reviewedBy": "Codex-assisted source review",
+    "reviewedAt": "2026-09-13",
+    "notes": "Only independently written factual metadata and outbound links are redistributed; no source prose or creative asset is copied."
+  },
+  "review": {
+    "status": "approved",
+    "reviewedBy": "Codex-assisted editorial review",
+    "reviewedAt": "2026-09-13",
+    "notes": "Claims were checked against the linked primary or regulatory source. Evidence and causality are stated conservatively; independent human review is encouraged."
+  },
+  "id": "airbnb-brand-performance-mix-shift",
+  "campaign": "Brand and performance marketing mix shift",
+  "brand": "Airbnb",
+  "period": "2020-2021",
+  "markets": [
+    "Global"
+  ],
+  "disciplines": [
+    "media-allocation",
+    "brand-marketing",
+    "performance-marketing",
+    "seo"
+  ],
+  "objective": "Reduce dependence on paid performance acquisition by strengthening brand, communications and direct or unpaid traffic.",
+  "audience": [
+    "Travel guests",
+    "hosts"
+  ],
+  "businessContext": "COVID-19 disrupted travel demand while paid search competition and brand-keyword costs created pressure on acquisition economics.",
+  "strategy": "Shift the mix toward brand and communications, reduce performance marketing relative to 2019 and coordinate product launches with integrated marketing.",
+  "execution": [
+    "Paused portions of performance spend during the pandemic",
+    "increased relative emphasis on brand",
+    "global product launches",
+    "communications and earned coverage"
+  ],
+  "outcome": "mixed",
+  "outcomes": [
+    "Airbnb disclosed a $661.8 million decline in combined brand and performance marketing in 2020, including a $540.5 million decline in performance marketing.",
+    "The filing states the strategy and risks but does not establish a causal lift from the mix shift."
+  ],
+  "evidenceQuality": "medium",
+  "causalConfidence": "low",
+  "whatWorked": [
+    "The allocation thesis considered direct demand and brand strength rather than treating every booking as a paid-media outcome."
+  ],
+  "whatFailed": [
+    "Pandemic demand shocks make simple before-and-after efficiency claims unreliable."
+  ],
+  "failureModes": [
+    "confounded media-mix inference",
+    "brand search cannibalization",
+    "overdependence on auction platforms"
+  ],
+  "transferConditions": [
+    "The brand already has meaningful direct demand and can measure incrementality, repeat rate and channel overlap."
+  ],
+  "nonTransferConditions": [
+    "Do not cut performance spend merely because a famous brand did; test marginal return and demand capture first."
+  ],
+  "sources": [
+    {
+      "id": "source-1",
+      "title": "Airbnb 2020 Form 10-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/1559720/000155972021000010/airbnb-10k.htm",
+      "publisher": "Airbnb via SEC EDGAR",
+      "accessedAt": "2026-09-13",
+      "sourceType": "company-report",
+      "methodology": "Company filing states the media-mix change, spend movements and risks; COVID-19 is a major confounder."
+    },
+    {
+      "id": "source-2",
+      "title": "Airbnb 2021 Form 10-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/1559720/000155972022000006/abnb-20211231.htm",
+      "publisher": "Airbnb via SEC EDGAR",
+      "accessedAt": "2026-09-13",
+      "sourceType": "company-report",
+      "methodology": "Company filing describes the ongoing integrated brand, communications and performance strategy."
+    }
+  ],
+  "category": "Travel marketplace",
+  "businessModel": "Two-sided marketplace",
+  "marketMaturity": "Mature",
+  "economicContext": "COVID-19 travel disruption",
+  "evidenceGrade": "C",
+  "outcomeMeasurements": [
+    {
+      "name": "Combined brand and performance marketing change in 2020",
+      "level": "business",
+      "direction": "negative",
+      "value": -661.8,
+      "unit": "USD millions",
+      "incrementality": "observational",
+      "sourceIds": [
+        "source-1"
+      ]
+    },
+    {
+      "name": "Performance marketing change in 2020",
+      "level": "business",
+      "direction": "negative",
+      "value": -540.5,
+      "unit": "USD millions",
+      "incrementality": "observational",
+      "sourceIds": [
+        "source-1"
+      ]
+    }
+  ]
+}

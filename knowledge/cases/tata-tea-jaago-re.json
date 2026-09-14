@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 2,
+  "rights": {
+    "basis": "factual-metadata-only",
+    "redistributionAllowed": true,
+    "reviewedBy": "Codex-assisted source review",
+    "reviewedAt": "2026-09-13",
+    "notes": "Only independently written factual metadata and outbound links are redistributed; no source prose or creative asset is copied."
+  },
+  "review": {
+    "status": "approved",
+    "reviewedBy": "Codex-assisted editorial review",
+    "reviewedAt": "2026-09-13",
+    "notes": "Claims were checked against the linked primary or regulatory source. Evidence and causality are stated conservatively; independent human review is encouraged."
+  },
+  "id": "tata-tea-jaago-re",
+  "campaign": "Jaago Re",
+  "brand": "Tata Tea",
+  "period": "2007 onward",
+  "markets": [
+    "India"
+  ],
+  "disciplines": [
+    "advertising",
+    "purpose-marketing",
+    "public-awareness"
+  ],
+  "objective": "Differentiate a mass tea brand through a recurring platform about civic awareness.",
+  "audience": [
+    "Indian tea consumers",
+    "civically engaged adults"
+  ],
+  "businessContext": "Tea advertising had an opportunity to connect the morning ritual of waking up with social and civic alertness.",
+  "strategy": "Turn the product ritual into a durable brand idea that can address changing national issues.",
+  "execution": [
+    "Issue-led films",
+    "digital participation",
+    "campaign chapters on voting, corruption, gender and community welfare"
+  ],
+  "outcome": "succeeded",
+  "outcomes": [
+    "Tata Consumer documents Jaago Re as a landmark platform used across multiple issues since 2007."
+  ],
+  "evidenceQuality": "medium",
+  "causalConfidence": "low",
+  "whatWorked": [
+    "The brand mnemonic and social message share the same wake-up metaphor.",
+    "The platform could renew around current issues."
+  ],
+  "whatFailed": [
+    "The cited sources do not provide an incremental business-effect estimate."
+  ],
+  "failureModes": [
+    "issue fatigue",
+    "weak proof of business impact"
+  ],
+  "transferConditions": [
+    "A stable brand idea can accommodate multiple relevant cultural issues."
+  ],
+  "nonTransferConditions": [
+    "Do not treat campaign longevity alone as proof of sales lift."
+  ],
+  "sources": [
+    {
+      "id": "source-1",
+      "title": "Tata Tea brand page",
+      "url": "https://www.tataconsumer.com/brands/tea/tata-tea",
+      "publisher": "Tata Consumer Products",
+      "accessedAt": "2026-09-13",
+      "sourceType": "company-report",
+      "methodology": "Company page establishes launch timing, platform purpose and issue range."
+    },
+    {
+      "id": "source-2",
+      "title": "Pledge to make India a Corruption Free Country",
+      "url": "https://www.tataconsumer.com/news/pledge-make-india-corruption-free-country",
+      "publisher": "Tata Consumer Products",
+      "accessedAt": "2026-09-13",
+      "sourceType": "company-report",
+      "methodology": "Contemporaneous company release documents one execution of the platform."
+    }
+  ],
+  "category": "Tea",
+  "businessModel": "Consumer packaged goods",
+  "marketMaturity": "Mature",
+  "economicContext": "India mass-market consumer category",
+  "evidenceGrade": "D",
+  "outcomeMeasurements": [
+    {
+      "name": "Sustained use as a multi-year brand platform",
+      "level": "brand",
+      "direction": "positive",
+      "incrementality": "claimed",
+      "sourceIds": [
+        "source-1",
+        "source-2"
+      ]
+    }
+  ]
+}

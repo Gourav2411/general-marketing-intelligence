@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.11.0] - 2026-09-14
+
+### Added
+
+- Twelve governed historical cases selected to strengthen weak coverage across India and APAC, B2B and SaaS, pricing and promotions, product launches, lifecycle and email, SEO, media allocation and documented PR crises.
+- Evidence-backed cases for Ariel, Tata Tea, Maggi, MX Player, Saramin, Slack, HubSpot, JCPenney, Samsung, Airbnb, Fashion Nova and Booking Holdings.
+
+### Changed
+
+- Expanded the trusted corpus from 20 to 32 native ontology-v2 cases across seven markets.
+- Increased failed-or-mixed coverage from 8 to 13 cases, preserving the anti-survivorship-bias floor at 40.6%.
+- Kept company-reported and platform-library outcomes conservatively graded when no controlled counterfactual is available.
+
+### Known limits
+
+- The 250-case corpus milestone remains unmet; 218 additional reviewed cases are required.
+- Geographic and discipline coverage is improved but remains far from representative of all marketing history.
+
 ## [1.10.0] - 2026-09-11
 
 ### Added

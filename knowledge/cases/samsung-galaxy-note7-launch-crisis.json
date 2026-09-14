@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 2,
+  "rights": {
+    "basis": "factual-metadata-only",
+    "redistributionAllowed": true,
+    "reviewedBy": "Codex-assisted source review",
+    "reviewedAt": "2026-09-13",
+    "notes": "Only independently written factual metadata and outbound links are redistributed; no source prose or creative asset is copied."
+  },
+  "review": {
+    "status": "approved",
+    "reviewedBy": "Codex-assisted editorial review",
+    "reviewedAt": "2026-09-13",
+    "notes": "Claims were checked against the linked primary or regulatory source. Evidence and causality are stated conservatively; independent human review is encouraged."
+  },
+  "id": "samsung-galaxy-note7-launch-crisis",
+  "campaign": "Galaxy Note7 launch, recall and crisis response",
+  "brand": "Samsung",
+  "period": "2016-2017",
+  "markets": [
+    "Global",
+    "South Korea",
+    "United States"
+  ],
+  "disciplines": [
+    "product-launch",
+    "public-relations",
+    "recall-communications"
+  ],
+  "objective": "Launch a premium smartphone, then protect customers and recover trust after battery incidents.",
+  "audience": [
+    "Premium smartphone buyers",
+    "retail and carrier partners",
+    "regulators"
+  ],
+  "businessContext": "A globally promoted flagship launch encountered battery failures shortly after release, including incidents involving replacement devices.",
+  "strategy": "Stop sales, coordinate recalls and refunds, investigate root causes with outside specialists, apologize and introduce a new battery-safety process.",
+  "execution": [
+    "Global product launch",
+    "sales halt",
+    "recall and exchange communications",
+    "refunds",
+    "public investigation findings",
+    "eight-point battery safety check"
+  ],
+  "outcome": "failed",
+  "outcomes": [
+    "Samsung permanently stopped Note7 production after halting sales and exchanges.",
+    "Samsung later reported an investigation with independent specialist participation and introduced additional safety checks."
+  ],
+  "evidenceQuality": "high",
+  "causalConfidence": "medium",
+  "whatWorked": [
+    "The later response disclosed root-cause work and operational safeguards.",
+    "Recall communication used carriers, retailers, service, social and direct contact."
+  ],
+  "whatFailed": [
+    "The initial replacement program did not resolve the safety concern, forcing a second stop and permanent discontinuation."
+  ],
+  "failureModes": [
+    "premature remediation",
+    "product-safety failure",
+    "launch momentum overriding verification"
+  ],
+  "transferConditions": [
+    "Use for high-risk launches where communications, recall operations and technical remediation must be coordinated."
+  ],
+  "nonTransferConditions": [
+    "Do not treat communication quality as a substitute for validated product safety."
+  ],
+  "sources": [
+    {
+      "id": "source-1",
+      "title": "Official Statement: Galaxy Note7",
+      "url": "https://news.samsung.com/us/official-statement-samsung-galaxy-note7/",
+      "publisher": "Samsung Newsroom",
+      "accessedAt": "2026-09-13",
+      "sourceType": "company-report",
+      "methodology": "Contemporaneous statement documents the first sales halt and replacement plan."
+    },
+    {
+      "id": "source-2",
+      "title": "Samsung asks partners to stop Note7 sales and exchanges",
+      "url": "https://news.samsung.com/us/official-statement-global-stop-sale-and-exchange-of-galaxy-note7/",
+      "publisher": "Samsung Newsroom",
+      "accessedAt": "2026-09-13",
+      "sourceType": "company-report",
+      "methodology": "Contemporaneous statement documents the later stop affecting original and replacement devices."
+    },
+    {
+      "id": "source-3",
+      "title": "Samsung announces cause of Galaxy Note7 incidents",
+      "url": "https://news.samsung.com/us/Samsung-Electronics-Announces-Cause-of-Galaxy-Note7-Incidents-in-Press-Conference",
+      "publisher": "Samsung Newsroom",
+      "accessedAt": "2026-09-13",
+      "sourceType": "company-report",
+      "methodology": "Company report documents investigation participants, apology and new safety process."
+    }
+  ],
+  "category": "Consumer electronics",
+  "businessModel": "Hardware",
+  "marketMaturity": "Mature",
+  "economicContext": "Highly competitive global premium-smartphone launch cycle",
+  "evidenceGrade": "C",
+  "outcomeMeasurements": [
+    {
+      "name": "Permanent product discontinuation",
+      "level": "business",
+      "direction": "negative",
+      "incrementality": "observational",
+      "sourceIds": [
+        "source-2"
+      ]
+    },
+    {
+      "name": "Post-crisis battery safety process",
+      "level": "reputation",
+      "direction": "positive",
+      "incrementality": "observational",
+      "sourceIds": [
+        "source-3"
+      ]
+    }
+  ]
+}
