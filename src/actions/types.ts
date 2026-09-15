@@ -1,6 +1,6 @@
 export type AccessMode="read_only"|"draft_only"|"read_write";
 export type ActionSource="local_artifacts"|"google_ads"|"hubspot"|"salesforce"|"email";
-export type ActionKind="save_campaign_draft"|"create_paid_campaign"|"update_campaign_budget"|"pause_campaign"|"create_crm_campaign"|"send_email_campaign";
+export type ActionKind="save_campaign_draft"|"create_hubspot_task_draft"|"create_paid_campaign"|"update_campaign_budget"|"pause_campaign"|"create_crm_campaign"|"send_email_campaign";
 export type ApprovalStatus="preview"|"approved"|"executed"|"revoked"|"expired"|"failed";
 export type RiskClass="R0"|"R1"|"R2"|"R3"|"R4";
 export interface ActionAdapterDeclaration {kind:ActionKind;source:ActionSource;riskClass:RiskClass;reversible:boolean;approvalRequirement:"none"|"explicit"|"explicit_twice";maximumScope:Record<string,number|string|boolean>;requiredEvidence:string[];tenantPermissions:string[];auditFields:string[];enabled:boolean;}

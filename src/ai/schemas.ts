@@ -1,6 +1,7 @@
 import { z } from "zod";
 import type {NumericClaim} from "../measurement/numericProvenance.js";
-const numericClaim=z.object({value:z.number(),unit:z.string().optional(),kind:z.enum(["observed","calculated","proposed","external_reference"]),label:z.string().min(1),evidenceIds:z.array(z.string()).optional(),inputIds:z.array(z.string()).optional(),calculation:z.string().optional(),rationale:z.string().optional(),sourceUrl:z.string().url().optional()}).strict();
+const optionalString=z.string().nullable().optional().transform(value=>value??undefined),optionalList=z.array(z.string()).nullable().optional().transform(value=>value??undefined);
+const numericClaim=z.object({value:z.number(),unit:optionalString,kind:z.enum(["observed","calculated","proposed","external_reference"]),label:z.string().min(1),evidenceIds:optionalList,inputIds:optionalList,calculation:optionalString,rationale:optionalString,sourceUrl:z.string().url().nullable().optional().transform(value=>value??undefined)}).strict();
 export const marketingAnalysisSchema=z.object({
  observedSignal:z.string().min(1),
  interpretation:z.string().min(1),

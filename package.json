@@ -1,6 +1,6 @@
 {
   "name": "general-marketing-intelligence",
-  "version": "1.12.0",
+  "version": "1.13.0",
   "private": true,
   "type": "module",
   "description": "A reusable MCP decision layer for direct Google and CSV-backed marketing intelligence.",
@@ -51,6 +51,7 @@
     "test:schema": "node scripts/schema-compat-test.mjs",
     "test:actions": "node scripts/action-approval-test.mjs",
     "test:action-risk-v2": "node scripts/action-risk-v2-test.mjs",
+    "test:hubspot-action": "node scripts/hubspot-action-test.mjs",
     "test:strategy": "node scripts/strategy-test.mjs",
     "test:dashboard": "node scripts/dashboard-test.mjs",
     "test:dashboard:google": "node scripts/dashboard-google-test.mjs",
@@ -63,24 +64,31 @@
     "corpus": "npm run build && node scripts/corpus.mjs",
     "knowledge:ingest": "npm run build && node scripts/corpus.mjs submit",
     "memory": "npm run build && node scripts/memory.mjs",
+    "decisions:migrate": "npm run build && node scripts/migrate-decision-storage.mjs",
     "benchmark:intelligence": "npm run build && node scripts/intelligence-benchmark.mjs",
     "benchmark:decision-system": "npm run build && node scripts/decision-system-benchmark.mjs",
+    "benchmark:live": "npm run build && node scripts/live-decision-benchmark.mjs",
+    "benchmark:review": "node scripts/human-review-report.mjs",
     "coverage": "npm run build && c8 --all --src dist/hosted --reporter=text --reporter=lcov node scripts/hosted-security-test.mjs",
     "license:check": "node scripts/license-check.mjs",
     "test": "npm run build && npm run test:marketing && npm run test:ai && npm run test:local && npm run test:google && npm run test:connectors && npm run test:mcp && npm run test:hosted && npm run test:schema && npm run test:actions && npm run test:strategy && npm run test:dashboard && npm run test:dashboard:google && npm run test:ad-strategy && npm run test:platforms && npm run test:intelligence && npm run test:corpus",
-    "verify": "npm run build && npm run typecheck && npm run test:marketing && npm run test:ai && npm run test:local && npm run test:google && npm run test:connectors && npm run test:mcp && npm run test:hosted && npm run test:schema && npm run test:actions && npm run test:action-risk-v2 && npm run test:strategy && npm run test:dashboard && npm run test:dashboard:google && npm run test:ad-strategy && npm run test:platforms && npm run test:intelligence && npm run test:corpus && npm run test:architecture-v2 && npm run knowledge:validate && npm run benchmark:intelligence && npm run benchmark:decision-system && npm run license:check"
+    "verify": "npm run build && npm run typecheck && npm run test:marketing && npm run test:ai && npm run test:local && npm run test:google && npm run test:connectors && npm run test:mcp && npm run test:hosted && npm run test:schema && npm run test:actions && npm run test:action-risk-v2 && npm run test:hubspot-action && npm run test:strategy && npm run test:dashboard && npm run test:dashboard:google && npm run test:ad-strategy && npm run test:platforms && npm run test:intelligence && npm run test:corpus && npm run test:architecture-v2 && npm run knowledge:validate && npm run benchmark:intelligence && npm run benchmark:decision-system && npm run license:check"
   },
   "dependencies": {
     "@google-analytics/data": "7.0.0",
     "@modelcontextprotocol/sdk": "1.30.0",
+    "better-sqlite3": "^12.11.1",
     "csv-parse": "^7.0.2",
     "googleapis": "178.0.0",
     "jose": "6.2.10",
     "openai": "7.8.0",
+    "pg": "^8.23.0",
     "zod": "3.25.76"
   },
   "devDependencies": {
+    "@types/better-sqlite3": "^9.6.0",
     "@types/node": "22.18.1",
+    "@types/pg": "^8.23.1",
     "c8": "10.1.3",
     "tsx": "4.20.5",
     "typescript": "5.9.3"
