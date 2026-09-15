@@ -9,6 +9,14 @@ An open-source marketing decision layer for Claude, Codex and other MCP clients.
 
 **Code calculates. Evidence grounds. AI interprets. The marketing leader decides.**
 
+```text
+Evidence -> Diagnose -> Decide -> Act -> Learn
+                ^                    |
+                +---- updated prior--+
+```
+
+In under a minute: the system retrieves governed evidence, builds a tenant-scoped marketing graph, calculates the diagnosis, ranks precedents by structural transferability, exposes disagreement across nine independent evaluators, records the human decision, controls any action through risk-tiered approval, and learns only after an explicit outcome is recorded.
+
 The current release keeps the same 54 MCP tools and adds a strategic intelligence layer: sourced success and failure precedents, transferability checks, nine-lens deliberation, red-teaming, a decision contract, private account learning and a 100-case evaluation harness. It also includes deterministic question routing, read-only connectors for Google Search Console, GA4, Google Ads, Meta Ads, LinkedIn Ads, HubSpot, Salesforce and configurable CRM/paid-media sources, recommendation-only statistical advertising strategy, live dashboards, local stdio and a separately configured hosted Streamable HTTP reference edition.
 
 The trusted historical corpus currently contains 32 fully enriched ontology-v2 cases, with 40.6% classified as failed or mixed. Coverage now includes India and APAC, B2B SaaS, pricing and promotions, product launches, lifecycle, SEO, media allocation and documented PR crises. The first editorial milestone remains 250 cases; `npm run corpus -- status` reports progress and will not mark the corpus ready until count, balance and enrichment gates all pass.
@@ -43,9 +51,10 @@ The MCP server retrieves and normalizes evidence. Deterministic TypeScript funct
 | Human-controlled actions | Read/draft/write policy, immutable previews, exact expiring approvals, separate execution, revocation and audit history |
 | Local dashboards | Live GSC/GA4 and CSV evidence, date comparisons, scorecards, trends, geo bubbles, ranked charts and browser-local layouts |
 | Evidence governance | Normalized provenance, explicit mapping, confidence limitations, local snapshots and structured MCP responses |
-| AI safety | Code-owned calculations, structured AI validation, numeric-integrity checks and deterministic fallback |
-| Strategic intelligence | Provenance-bearing historical cases, failed-case retrieval, transfer checks, nine expert lenses, red-team review and explicit decision thresholds |
-| Account learning | Explicit private local decision/outcome memory; no silent training or credential storage |
+| AI safety | Typed observed, calculated, proposed and external-reference numbers; structured validation, prompt-injection boundaries and deterministic fallback |
+| Strategic intelligence | Inspectable precedent transferability, provenance-bearing historical cases, nine independent evaluators, disagreement synthesis and red-team review |
+| Account learning | Tenant-scoped Decision, Outcome and Learning records; no learning claim without an explicit measured outcome |
+| Marketing graph | Typed canonical entities and relationships with stable IDs, cross-source provenance, serialization and tenant isolation |
 | Team architecture | Authenticated Streamable HTTP reference, external OIDC/JWKS verification, tenant/source permissions, encrypted credentials, revocation, audit events and rate limits |
 | Engineering | Node 20/22 CI, CodeQL, dependency review, license policy, coverage, schema compatibility tests, SBOMs and build attestations |
 
@@ -70,6 +79,8 @@ GSC     GA4     Google Ads     CRM / CSV
 The server never changes advertising budgets, publishes content, sends email or writes to business systems in this release. It can save an approved private local campaign draft; all external write adapters remain disabled.
 
 See [`docs/INTELLIGENCE_LAYER.md`](docs/INTELLIGENCE_LAYER.md) for ontology v2, evidence grading, rights review, staged contributions, duplicate detection, the 250-case release gate, private learning and evaluation limits. The seed corpus demonstrates the system; it is deliberately not presented as exhaustive knowledge of marketing history.
+
+Architecture guides: [`ARCHITECTURE_V2.md`](docs/ARCHITECTURE_V2.md), [`MARKETING_GRAPH.md`](docs/MARKETING_GRAPH.md), [`DECISION_LOOP.md`](docs/DECISION_LOOP.md), [`EVALUATIONS.md`](docs/EVALUATIONS.md) and [`RISK_MODEL.md`](docs/RISK_MODEL.md).
 
 ## Human-controlled action flow
 

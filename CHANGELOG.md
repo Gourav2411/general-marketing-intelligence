@@ -1,12 +1,28 @@
 # Changelog
 
-## [Unreleased]
+## [1.12.0] - 2026-09-15
+
+### Architecture
+
+- Added an inspectable deterministic transferability model with documented score components, structural fit, non-transfer penalties and deterministic fallback.
+- Added a typed, serializable, tenant-scoped marketing knowledge graph with canonical identity keys and normalized evidence adapters.
+- Replaced prompt-only strategic-role simulation with nine independent deterministic evaluator modules and explicit disagreement synthesis.
+- Added Decision, Outcome and Learning records with outcome-gated learning, contradictory-evidence corrections and account-scoped future context.
+- Added R0-R4 action declarations, tenant and risk enforcement, idempotency and structured action telemetry while keeping every external write adapter disabled.
+- Replaced evidence-only numeric matching with typed observed, calculated, proposed and external-reference provenance.
+- Added untrusted-source sanitization for connector, CRM and corpus text.
+
+### Evaluation
+
+- Added a 180-scenario decision-system benchmark with 70% adversarial, ambiguous or no-action cases and JSON/Markdown output.
+- Added graph, transferability, evaluator-disagreement, decision-loop, numeric-provenance, prompt-injection and action-risk tests.
 
 ### Documentation
 
 - Added a single end-to-end data connection guide for Claude Desktop, Claude Code and OpenAI Codex.
 - Added detailed least-privilege setup, configuration, verification prompts and troubleshooting for GSC, GA4, Google Ads, Meta Ads, LinkedIn Ads, HubSpot, Salesforce, generic CRM APIs, CRM CSV and paid-media CSV.
 - Added a connector readiness matrix and explicitly distinguished live connectors, CSV support and planned direct integrations.
+- Added architecture, marketing graph, decision loop, evaluations and action risk-model guides.
 
 ## [1.11.0] - 2026-09-14
 
