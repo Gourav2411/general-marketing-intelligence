@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.13.1] - 2026-09-15
+
+### Security
+
+- Removed environment-derived account identifiers and learning contents from legacy memory CLI logs; added a regression test for the CodeQL clear-text logging path.
+
 ## [1.13.0] - 2026-09-15
 
 ### Added

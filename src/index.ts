@@ -42,7 +42,7 @@ import {registerToolMetadata,registeredToolMetadata} from "./registry/metadata.j
 import {loadKnowledgeBase} from "./intelligence/knowledge.js";
 import {retrievePrecedentsOptionalEmbeddings} from "./intelligence/embeddings.js";
 
-export const SERVER_VERSION="1.13.0";
+export const SERVER_VERSION="1.13.1";
 export function createMarketingServer(){
 const server=new McpServer({name:"general-marketing-intelligence",version:SERVER_VERSION});
 const originalRegister=server.registerTool.bind(server) as (...args:any[])=>unknown;
