@@ -8,7 +8,7 @@ Evidence -> Diagnose -> Decide -> Act -> Learn
                 +---- updated prior--+
 ```
 
-The architecture is additive and preserves the 54-tool MCP interface.
+The architecture is additive. Version 1.13 intentionally expands the public interface from 54 to 59 tools while preserving every existing tool and schema.
 
 ## Layers
 
@@ -25,10 +25,10 @@ The architecture is additive and preserves the 54-tool MCP interface.
 ## Compatibility choices
 
 - Existing connectors and MCP tool schemas remain available.
-- The graph uses typed memory plus serialization rather than a database dependency.
+- The graph uses typed memory plus serialization; decisions use SQLite locally and optional Postgres in hosted mode.
 - External models remain optional; retrieval, evaluators and benchmarks have deterministic fallbacks.
 - Legacy account memory remains readable; new closed-loop records are separate.
-- Only the existing local draft adapter executes. External actions remain disabled.
-- Tool metadata begins in `src/registry/metadata.ts`; moving all registrations out of `src/index.ts` remains incremental work.
+- The local draft adapter executes by default. The single-task HubSpot R2 adapter is opt-in; all other external actions remain disabled.
+- Every registered tool resolves category, risk, permissions and evidence metadata through the registry and every invocation passes through the privacy-filtered telemetry wrapper.
 
 Source strings are untrusted evidence, never instructions. Credentials and unnecessary PII are excluded from telemetry.

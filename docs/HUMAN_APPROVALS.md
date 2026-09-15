@@ -14,7 +14,7 @@ Set `MCP_ACCESS_MODE` for the simple policy, or copy `config/action-policy.examp
 
 Every executable action follows a separate three-step protocol:
 
-1. `preview_marketing_action` records an immutable payload hash, risk, summary and expiry.
+1. `preview_marketing_action` or the constrained `preview_hubspot_task_draft` records an immutable payload hash, risk, summary and expiry.
 2. The client shows the preview. The user must type the exact `APPROVE <approval_id>` phrase before `approve_marketing_action` is called.
 3. Approval does not execute. The client asks once more whether to execute, then may call `execute_approved_action`.
 
@@ -22,9 +22,9 @@ Approvals expire, are single use, and can be revoked. Execution verifies the sto
 
 ## Current execution boundary
 
-Version 1.3.0 implements one executor: `save_campaign_draft`, which writes an approved JSON draft to a private local directory. Google Ads, CRM and email mutation types exist only so previews and policies have a stable contract. Their write adapters are disabled, so the server cannot change a budget, create or pause an ad campaign, update CRM records or send email.
+`save_campaign_draft` writes an approved JSON draft locally. Version 1.13 also includes `create_hubspot_task_draft`, limited to one task and one optional association. It is disabled unless read/write policy, HubSpot write permission and `HUBSPOT_WRITE_ENABLED=true` all agree. It requires an idempotency key and evidence ID. Google Ads, bulk CRM, email and publishing adapters remain disabled.
 
-Enabling `read_write` does not override that boundary. A future adapter must add platform-specific least-privilege credentials, concurrency checks, idempotency, rollback guidance and integration tests before release.
+Enabling `read_write` alone does not override these boundaries. Use a least-privilege HubSpot private app and preserve the returned task ID for manual archival. No advertising budget can be changed by this release.
 
 ## Trust boundary
 

@@ -6,7 +6,15 @@ npm run benchmark:decision-system
 
 The harness contains 180 ground-truth contract scenarios across performance, B2B SaaS, ecommerce, enterprise sales, lifecycle, SEO, pricing, launches, PLG, regional expansion, brand, PR, attribution, measurement, noisy data, delayed revenue, creative fatigue and budget allocation. Seventy percent are adversarial, ambiguous or no-action cases.
 
-It compares `plain_llm`, `current_gmi` and `upgraded_gmi`. JSON and Markdown reports are written under `.benchmark-results/`. Without an API key, deterministic capability fixtures run and live comparison is skipped cleanly. The harness never silently spends an available API key; a separately configured live adapter remains required.
+It compares `plain_llm`, `current_gmi` and `upgraded_gmi`. JSON and Markdown reports are written under `.benchmark-results/`. The deterministic harness never silently spends an available API key.
+
+For a real three-mode comparison, set `OPENAI_API_KEY`, choose `LIVE_BENCHMARK_LIMIT`, and explicitly acknowledge cost:
+
+```bash
+LIVE_BENCHMARK_LIMIT=12 npm run benchmark:live -- --confirm-spend
+```
+
+The live harness produces shuffled blind IDs and keeps the mode key in `.benchmark-results/private/`. Two or more reviewers score the outputs using `HUMAN_EVALUATION_RUBRIC.md`, then run `npm run benchmark:review -- ratings.jsonl` for agreement reporting.
 
 This is an architecture regression benchmark, not proof of live-model accuracy. Practitioner blind scoring and calibrated live-model trials remain necessary.
 

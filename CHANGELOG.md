@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.13.0] - 2026-09-15
+
+### Added
+
+- Added decision, outcome and account-learning MCP tools backed by SQLite locally and optional Postgres for hosted deployments.
+- Added automatic nine-evaluator councils to executive tools.
+- Added an explicit-cost live three-mode benchmark, blinded review files, a human rubric and inter-rater agreement reporting.
+- Added privacy-filtered telemetry and metadata for every registered tool.
+- Added optional embedding retrieval blended with structural scores and deterministic fallback.
+- Added an opt-in, one-task HubSpot R2 adapter with evidence, idempotency and separate approval.
+- Added a governed roadmap for the remaining 218 corpus cases; unreviewed synthetic cases were not added.
+
+### Changed
+
+- Expanded the MCP interface from 54 to 59 tools without removing existing tools.
+- Migrated new local Decision, Outcome and Learning persistence to SQLite with a legacy JSONL importer.
+
 ## [1.12.0] - 2026-09-15
 
 ### Architecture

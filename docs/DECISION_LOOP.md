@@ -10,4 +10,6 @@ Signal -> Diagnosis -> Strategy -> Decision -> Action -> Outcome -> Learning -> 
 
 `ClosedLoopLearningRecord` is derived only when an OutcomeRecord exists. Positive evidence increases confidence modestly. A contradictory later outcome applies a larger correction in the opposite direction. `buildAccountLearningContext` retrieves only account- and tenant-scoped outcome-backed learning for future recommendations.
 
-Records are private, git-ignored JSONL files with restrictive permissions. They are an auditable local baseline, not a production concurrent database. Hosted deployments should use transactional, encrypted tenant storage.
+The local default is a private git-ignored SQLite database in WAL mode with tenant/account indexes and foreign keys. `npm run decisions:migrate` imports legacy JSONL records without deleting the originals. Set `MARKETING_DECISION_DB` to change the local path.
+
+Hosted deployments may set `DECISION_DATABASE_URL` to use the Postgres repository. Its API exposes only tenant/account-scoped operations. Use TLS, database encryption, least-privilege credentials, backups and externally managed retention in production.

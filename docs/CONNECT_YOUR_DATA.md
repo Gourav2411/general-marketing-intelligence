@@ -2,7 +2,7 @@
 
 This is the end-to-end setup guide for every source supported by General Marketing Intelligence. Start with one source, verify it, and add the next. You do not need every connector for the server to run.
 
-All live connectors are read-only. The server contains no Google Ads, Meta Ads, LinkedIn Ads, HubSpot or Salesforce mutation path. Keep secrets outside the repository and never paste credentials into a model conversation, issue or support request.
+All reporting connectors are read-only. The only external write path is an optional one-task HubSpot adapter protected by R2 policy, evidence, idempotency, preview, exact approval and separate execution. It is disabled by default. Keep secrets outside the repository and never paste credentials into a model conversation, issue or support request.
 
 ## Install and verify
 
@@ -196,7 +196,18 @@ Verification prompt:
 
 > Call `hubspot_funnel_report` for the last 90 days. Confirm the lifecycle and deal-stage definitions with me before recommending investment.
 
-The connector aggregates in code and does not return contact names or email addresses.
+The reporting connector aggregates in code and does not return contact names or email addresses.
+
+### Optional HubSpot task action
+
+Keep the read-only setup above unless you explicitly need one-task creation. For the write-enabled private app, add only the scope required to create CRM task objects, then configure:
+
+```json
+"MCP_ACCESS_MODE": "read_write",
+"HUBSPOT_WRITE_ENABLED": "true"
+```
+
+Use `preview_hubspot_task_draft`. Claude or Codex must show the exact preview, obtain `APPROVE <approval_id>`, and ask separately before `execute_approved_action`. The adapter creates at most one task with one optional contact association. Store the returned task ID so an operator can archive it if rollback is required.
 
 ## Salesforce
 

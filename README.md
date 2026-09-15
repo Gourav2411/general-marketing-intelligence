@@ -17,7 +17,7 @@ Evidence -> Diagnose -> Decide -> Act -> Learn
 
 In under a minute: the system retrieves governed evidence, builds a tenant-scoped marketing graph, calculates the diagnosis, ranks precedents by structural transferability, exposes disagreement across nine independent evaluators, records the human decision, controls any action through risk-tiered approval, and learns only after an explicit outcome is recorded.
 
-The current release keeps the same 54 MCP tools and adds a strategic intelligence layer: sourced success and failure precedents, transferability checks, nine-lens deliberation, red-teaming, a decision contract, private account learning and a 100-case evaluation harness. It also includes deterministic question routing, read-only connectors for Google Search Console, GA4, Google Ads, Meta Ads, LinkedIn Ads, HubSpot, Salesforce and configurable CRM/paid-media sources, recommendation-only statistical advertising strategy, live dashboards, local stdio and a separately configured hosted Streamable HTTP reference edition.
+The current release provides 59 MCP tools. It adds executable decision/outcome/learning records, automatic nine-evaluator councils in executive tools, optional embedding retrieval, SQLite local persistence, an optional Postgres hosted repository, complete tool-call telemetry and one tightly bounded HubSpot task action. Read-only reporting remains the default and all consequential actions remain human-approved.
 
 The trusted historical corpus currently contains 32 fully enriched ontology-v2 cases, with 40.6% classified as failed or mixed. Coverage now includes India and APAC, B2B SaaS, pricing and promotions, product launches, lifecycle, SEO, media allocation and documented PR crises. The first editorial milestone remains 250 cases; `npm run corpus -- status` reports progress and will not mark the corpus ready until count, balance and enrichment gates all pass.
 
@@ -48,7 +48,7 @@ The MCP server retrieves and normalizes evidence. Deterministic TypeScript funct
 | Guided routing | One business question maps to an ordered workflow across executive, acquisition, content, measurement, governance and visualization families |
 | Executive decisions | Growth reviews, channel scorecards, landing-page opportunities, measurement audits, experiment reviews and growth-bet recommendations |
 | Strategy and planning | Observed keyword opportunities, separate growth and marketing strategies, paid-search plans and email-sequence drafts |
-| Human-controlled actions | Read/draft/write policy, immutable previews, exact expiring approvals, separate execution, revocation and audit history |
+| Human-controlled actions | Read/draft/write policy, immutable previews, exact expiring approvals, separate execution, revocation, audit history and an opt-in R2 HubSpot task adapter |
 | Local dashboards | Live GSC/GA4 and CSV evidence, date comparisons, scorecards, trends, geo bubbles, ranked charts and browser-local layouts |
 | Evidence governance | Normalized provenance, explicit mapping, confidence limitations, local snapshots and structured MCP responses |
 | AI safety | Typed observed, calculated, proposed and external-reference numbers; structured validation, prompt-injection boundaries and deterministic fallback |
@@ -76,11 +76,13 @@ GSC     GA4     Google Ads     CRM / CSV
        Evidence-backed marketing decision
 ```
 
-The server never changes advertising budgets, publishes content, sends email or writes to business systems in this release. It can save an approved private local campaign draft; all external write adapters remain disabled.
+The server never changes advertising budgets, publishes content or sends email. It can save an approved private local campaign draft. One HubSpot task adapter is available only when write policy, `HUBSPOT_WRITE_ENABLED=true`, a token, R2 evidence, idempotency, preview, exact approval and separate execution all agree.
 
 See [`docs/INTELLIGENCE_LAYER.md`](docs/INTELLIGENCE_LAYER.md) for ontology v2, evidence grading, rights review, staged contributions, duplicate detection, the 250-case release gate, private learning and evaluation limits. The seed corpus demonstrates the system; it is deliberately not presented as exhaustive knowledge of marketing history.
 
 Architecture guides: [`ARCHITECTURE_V2.md`](docs/ARCHITECTURE_V2.md), [`MARKETING_GRAPH.md`](docs/MARKETING_GRAPH.md), [`DECISION_LOOP.md`](docs/DECISION_LOOP.md), [`EVALUATIONS.md`](docs/EVALUATIONS.md) and [`RISK_MODEL.md`](docs/RISK_MODEL.md).
+
+Corpus and review guides: [`CORPUS_250_ROADMAP.md`](docs/CORPUS_250_ROADMAP.md) and [`HUMAN_EVALUATION_RUBRIC.md`](docs/HUMAN_EVALUATION_RUBRIC.md).
 
 ## Human-controlled action flow
 
@@ -392,11 +394,14 @@ Connect using **STDIO**, open **Tools**, invoke `connection_status`, then try `o
 | `ad_strategy_review` | What recommendation-only strategy and bounded budget test fits normalized cross-platform campaign evidence? |
 | `google_ads_strategy_review` | What does live read-only Google Ads evidence suggest, after data sufficiency and conversion lag are considered? |
 | `marketing_intelligence_router` / `marketing_tool_catalog` | Which ordered tool workflow and family match one business question? |
+| `create_marketing_decision` / `record_marketing_outcome` / `inspect_account_learning` | What was decided, what happened and which outcome-backed learning should affect the next decision? |
+| `retrieve_marketing_precedents` | Which governed cases transfer structurally, with optional embedding similarity and deterministic fallback? |
 | `paid_media_diagnostics` | Do daily observations indicate an anomaly, change point, pacing issue, saturation or creative fatigue? |
 | `paid_media_csv_report` | What strategy follows from a normalized Google, Meta, LinkedIn, Microsoft, YouTube or programmatic export? |
 | `meta_ads_report` / `linkedin_ads_report` | What campaign evidence is available from the configured read-only reporting API? |
 | `generic_crm_api_report` | What normalized opportunity and revenue evidence is available from a mapped public HTTPS JSON endpoint? |
 | `action_permission_status` | Which read, draft and write permissions are active? |
+| `preview_hubspot_task_draft` | What exact one-task R2 HubSpot write is proposed for separate approval and execution? |
 | `preview_marketing_action` / `approve_marketing_action` / `execute_approved_action` | What exact action is proposed, explicitly approved and separately executed? |
 | `revoke_action_approval` / `action_audit_history` | Which approval should be cancelled, and what lifecycle events occurred? |
 
@@ -406,17 +411,17 @@ Connect using **STDIO**, open **Tools**, invoke `connection_status`, then try `o
 npm run verify
 ```
 
-This covers build, typecheck, deterministic decision cases, AI validation/fallback, local CSV behavior, mocked GSC/GA4/Google Ads/Meta/LinkedIn/CRM responses, routing, account-calibrated advertising statistics, diagnostics, normalization, action approval security, strategy and dashboard calculations, stdio discovery and invocation of all 54 tools.
+This covers build, typecheck, deterministic decision cases, AI validation/fallback, local CSV behavior, mocked connectors, SQLite decisions, evaluator disagreement, telemetry, the bounded HubSpot action, strategy and dashboard calculations, stdio discovery and invocation of all 59 tools.
 
 Tagged releases additionally produce a CycloneDX software bill of materials, SHA-256 checksums and GitHub build-provenance attestations. Public tool compatibility is protected by an MCP schema contract test.
 
 ## Boundaries
 
-- Search Console, GA4, Google Ads, Meta Ads, LinkedIn Ads, HubSpot, Salesforce, generic CRM and paid-media CSV/API paths are read-only. Microsoft Ads has normalized CSV support; its direct asynchronous Reporting v13 connector remains planned.
+- Search Console, GA4, Google Ads, Meta Ads, LinkedIn Ads, Salesforce, generic CRM and paid-media reporting paths are read-only. HubSpot reporting is read-only; only the separately gated single-task adapter can write.
 - Mapping quality and source definitions determine whether cross-platform joins are trustworthy.
 - Estimated pipeline is only as reliable as the supplied attribution and CRM definitions.
 - Scores and confidence labels are transparent heuristics, not causal or statistical models.
-- External tools recommend; they never change spend, publish, message people or write to business systems. The only executor in v1.3.0 saves an explicitly approved private local draft.
+- Advertising tools recommend and never change spend. The only external executor creates one explicitly approved HubSpot task when the opt-in write gate is enabled.
 - [`SKILL.md`](skills/general-marketing-intelligence/SKILL.md) affects hosts that explicitly load project skills.
 
 ## Security
