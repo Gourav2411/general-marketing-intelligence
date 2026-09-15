@@ -17,7 +17,9 @@ export interface MarketingCase {
  transferConditions:string[]; nonTransferConditions:string[];
  sources:{id?:string;title:string;url:string;publisher:string;accessedAt:string;sourceType?:"independent-research"|"regulatory"|"company-report"|"platform-library"|"award-case"|"journalism"|"commentary";methodology?:string}[];
 }
-export interface RetrievedCase { case:MarketingCase; score:number; matchedTerms:string[]; }
+export interface TransferabilityComponents {semanticSimilarity:number;industryFit:number;businessModelFit:number;gtmFit:number;customerFit:number;objectiveFit:number;geographyFit:number;marketMaturityFit:number;evidenceQuality:number;failureRelevance:number;nonTransferPenalty:number;}
+export interface RetrievedCase {case:MarketingCase;score:number;matchedTerms:string[];components:TransferabilityComponents;strongestSimilarities:string[];materialDifferences:string[];transferRisks:string[];whyIncluded:string;whyMayNotTransfer:string;}
+export interface TransferabilityContext {industry?:string;businessModel?:string;companyStage?:string;gtmMotion?:string;customerType?:string;acvProfile?:string;geography?:string;channelMix?:string[];marketMaturity?:string;salesCycle?:string;pricingModel?:string;objective?:string;includeFailureCases?:boolean;}
 export interface LearningRecord {
  id:string; createdAt:string; accountId:string; question:string; recommendation:string;
  evidenceIds:string[]; assumptions:string[]; confidence:"LOW"|"MEDIUM"|"HIGH";

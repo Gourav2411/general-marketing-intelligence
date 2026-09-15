@@ -1,6 +1,6 @@
 {
   "name": "general-marketing-intelligence",
-  "version": "1.11.0",
+  "version": "1.12.0",
   "private": true,
   "type": "module",
   "description": "A reusable MCP decision layer for direct Google and CSV-backed marketing intelligence.",
@@ -50,6 +50,7 @@
     "test:hosted": "node scripts/hosted-security-test.mjs",
     "test:schema": "node scripts/schema-compat-test.mjs",
     "test:actions": "node scripts/action-approval-test.mjs",
+    "test:action-risk-v2": "node scripts/action-risk-v2-test.mjs",
     "test:strategy": "node scripts/strategy-test.mjs",
     "test:dashboard": "node scripts/dashboard-test.mjs",
     "test:dashboard:google": "node scripts/dashboard-google-test.mjs",
@@ -57,15 +58,17 @@
     "test:platforms": "node scripts/platform-intelligence-test.mjs",
     "test:intelligence": "node scripts/intelligence-test.mjs",
     "test:corpus": "node scripts/corpus-foundation-test.mjs",
+    "test:architecture-v2": "node scripts/architecture-v2-test.mjs",
     "knowledge:validate": "npm run build && node scripts/knowledge-ingest.mjs --validate",
     "corpus": "npm run build && node scripts/corpus.mjs",
     "knowledge:ingest": "npm run build && node scripts/corpus.mjs submit",
     "memory": "npm run build && node scripts/memory.mjs",
     "benchmark:intelligence": "npm run build && node scripts/intelligence-benchmark.mjs",
+    "benchmark:decision-system": "npm run build && node scripts/decision-system-benchmark.mjs",
     "coverage": "npm run build && c8 --all --src dist/hosted --reporter=text --reporter=lcov node scripts/hosted-security-test.mjs",
     "license:check": "node scripts/license-check.mjs",
     "test": "npm run build && npm run test:marketing && npm run test:ai && npm run test:local && npm run test:google && npm run test:connectors && npm run test:mcp && npm run test:hosted && npm run test:schema && npm run test:actions && npm run test:strategy && npm run test:dashboard && npm run test:dashboard:google && npm run test:ad-strategy && npm run test:platforms && npm run test:intelligence && npm run test:corpus",
-    "verify": "npm run build && npm run typecheck && npm run test:marketing && npm run test:ai && npm run test:local && npm run test:google && npm run test:connectors && npm run test:mcp && npm run test:hosted && npm run test:schema && npm run test:actions && npm run test:strategy && npm run test:dashboard && npm run test:dashboard:google && npm run test:ad-strategy && npm run test:platforms && npm run test:intelligence && npm run test:corpus && npm run knowledge:validate && npm run benchmark:intelligence && npm run license:check"
+    "verify": "npm run build && npm run typecheck && npm run test:marketing && npm run test:ai && npm run test:local && npm run test:google && npm run test:connectors && npm run test:mcp && npm run test:hosted && npm run test:schema && npm run test:actions && npm run test:action-risk-v2 && npm run test:strategy && npm run test:dashboard && npm run test:dashboard:google && npm run test:ad-strategy && npm run test:platforms && npm run test:intelligence && npm run test:corpus && npm run test:architecture-v2 && npm run knowledge:validate && npm run benchmark:intelligence && npm run benchmark:decision-system && npm run license:check"
   },
   "dependencies": {
     "@google-analytics/data": "7.0.0",

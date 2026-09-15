@@ -1,0 +1,7 @@
+import {mkdirSync,writeFileSync} from "node:fs";
+import {resolve} from "node:path";
+import {decisionScenarios} from "../dist/evaluation/scenarios.js";
+import {markdownReport,scoreScenario,summarize} from "../dist/evaluation/benchmark.js";
+const modes=["plain_llm","current_gmi","upgraded_gmi"],adversarial=decisionScenarios.filter(x=>x.adversarial).length,report={generatedAt:new Date().toISOString(),fixtureMode:!process.env.OPENAI_API_KEY,liveModelStatus:process.env.OPENAI_API_KEY?"Live credentials detected; deterministic fixture comparison retained unless an explicit benchmark adapter is configured.":"Skipped cleanly: OPENAI_API_KEY is absent.",scenarioCount:decisionScenarios.length,adversarialRate:Number((100*adversarial/decisionScenarios.length).toFixed(1)),modes:Object.fromEntries(modes.map(mode=>[mode,summarize(decisionScenarios.map(scenario=>scoreScenario(scenario,mode)))]))};
+if(report.scenarioCount<150)throw new Error("Decision benchmark requires at least 150 scenarios");if(report.adversarialRate<30)throw new Error("At least 30% of decision scenarios must be adversarial, ambiguous or no-action cases");
+const directory=resolve(process.env.DECISION_BENCHMARK_DIR??".benchmark-results");mkdirSync(directory,{recursive:true,mode:0o700});writeFileSync(resolve(directory,"decision-system.json"),`${JSON.stringify(report,null,2)}\n`,{mode:0o600});writeFileSync(resolve(directory,"decision-system.md"),markdownReport(report),{mode:0o600});console.log(markdownReport(report));

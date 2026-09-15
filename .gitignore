@@ -12,6 +12,9 @@ setup-output/
 .marketing-actions/
 .marketing-memory/
 .marketing-corpus/
+.marketing-decisions/
+.marketing-telemetry/
+.benchmark-results/
 coverage/
 *.tgz
 sbom.cdx.json

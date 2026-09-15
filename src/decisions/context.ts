@@ -1,0 +1,2 @@
+import {relevantLearning} from "./store.js";
+export function buildAccountLearningContext(accountId=process.env.MARKETING_ACCOUNT_ID??"default",tenantId=process.env.MARKETING_TENANT_ID??"local",limit=10){const rows=relevantLearning(accountId,tenantId,limit);return {records:rows,markdown:rows.length?rows.map(x=>`- ${x.createdAt}: decision=${x.decisionId}; confidence change=${x.confidenceChange}; ${x.lesson}`).join("\n"):"- No outcome-backed account learning is recorded. Do not claim the system learned this account."};}
