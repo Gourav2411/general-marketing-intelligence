@@ -4,4 +4,17 @@
 /SECURITY.md @Gourav2411
 /LICENSE @Gourav2411
 /NOTICE @Gourav2411
+/TRADEMARKS.md @Gourav2411
+/DATA_LICENSE.md @Gourav2411
+/DCO.md @Gourav2411
+/GOVERNANCE.md @Gourav2411
+/package.json @Gourav2411
+/package-lock.json @Gourav2411
+/knowledge/cases/ @Gourav2411
+/knowledge/case-template.v2.json @Gourav2411
+/src/hosted/ @Gourav2411
+/src/hosted.ts @Gourav2411
+/src/actions/ @Gourav2411
+/src/intelligence/review.ts @Gourav2411
+/scripts/corpus.mjs @Gourav2411
 /src/connectors/ @Gourav2411

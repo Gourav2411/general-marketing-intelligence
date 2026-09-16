@@ -1,0 +1,59 @@
+name: Marketing case proposal
+description: Propose a sourced case for the governed marketing corpus.
+title: "[Corpus]: "
+labels: [corpus-research]
+body:
+  - type: markdown
+    attributes:
+      value: Propose the case before preparing JSON. Do not paste paywalled text, copyrighted articles, customer data or confidential material. A proposal is not an approved corpus entry.
+  - type: input
+    id: case
+    attributes:
+      label: Case and organization
+      description: Provide a concise, neutral case title and organization name.
+    validations:
+      required: true
+  - type: dropdown
+    id: outcome
+    attributes:
+      label: Reported outcome
+      options: [Succeeded, Failed, Mixed, Not yet established]
+    validations:
+      required: true
+  - type: input
+    id: geography
+    attributes:
+      label: Geography and period
+    validations:
+      required: true
+  - type: textarea
+    id: relevance
+    attributes:
+      label: Decision relevance
+      description: What marketing decision could this precedent help examine?
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Proposed sources
+      description: List direct URLs and identify regulatory, academic, company, platform or journalistic sources.
+    validations:
+      required: true
+  - type: textarea
+    id: limitations
+    attributes:
+      label: Known limitations or conflicting evidence
+    validations:
+      required: true
+  - type: checkboxes
+    id: rights
+    attributes:
+      label: Rights and integrity
+      options:
+        - label: I will contribute independently written structured facts, not copied source prose, images, tables or charts.
+          required: true
+        - label: I have disclosed any employment, client, financial or personal conflict connected with this case.
+          required: true
+        - label: I understand that AI-assisted drafts require independent source verification and named human review.
+          required: true
