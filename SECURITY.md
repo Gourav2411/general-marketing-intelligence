@@ -8,7 +8,7 @@ Security fixes are applied to the latest code on the default branch. This projec
 
 Do not open a public issue. Use GitHub's **Report a vulnerability** action in the repository Security tab. Include affected versions, reproduction steps, impact and any suggested mitigation. Avoid accessing data that is not yours and do not include real credentials or customer data.
 
-The maintainer will acknowledge a complete report when practicable, investigate it, coordinate remediation and credit the reporter if requested and appropriate. No response or resolution SLA is promised.
+The maintainer aims to acknowledge a complete report within seven calendar days. Acknowledgement is not a promise of resolution within seven days; remediation timing depends on severity, reproducibility and coordination needs. If no acknowledgement arrives, the reporter may follow up through the private advisory. The project will coordinate disclosure and credit the reporter if requested and appropriate.
 
 ## Credential model
 

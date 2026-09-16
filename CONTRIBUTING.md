@@ -7,7 +7,7 @@ Thank you for helping improve General Marketing Intelligence.
 - Use an issue to discuss material changes before investing in implementation.
 - Do not open public issues for security vulnerabilities; follow `SECURITY.md`.
 - Never submit credentials, customer data, analytics exports, proprietary prompts or confidential business information.
-- Contributions must be your original work or material you have the right to submit.
+- Contributions must be your original work or material you have the right to submit. Software contributions are submitted under Apache-2.0. Corpus contributions are submitted under the terms in `DATA_LICENSE.md`.
 
 ## Development workflow
 
@@ -43,6 +43,8 @@ npm run verify
 ```
 
 Submission does not imply approval. Maintainers independently check claims, sources, rights and duplicates before promoting a staged case into `knowledge/cases/`.
+
+Disclose employment, client, financial or personal relationships connected with a proposed case. AI may assist discovery or drafting, but it is not a source and cannot perform the named human approval. Do not submit AI-generated citations or claims that you have not checked against the linked source.
 
 ## Review and acceptance
 

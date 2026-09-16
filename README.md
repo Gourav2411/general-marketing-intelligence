@@ -444,10 +444,10 @@ The project is open source so marketers, analysts and engineers can use it, ques
 
 ## Contributing
 
-Contributions are welcome through issues and pull requests. Read [`CONTRIBUTING.md`](CONTRIBUTING.md), follow the [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md), and sign commits under the [`DCO.md`](DCO.md). Project decisions and ownership are described in [`GOVERNANCE.md`](GOVERNANCE.md).
+Contributions are welcome through issues and pull requests. Read [`CONTRIBUTING.md`](CONTRIBUTING.md), follow the [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md), and sign every commit under the [`DCO.md`](DCO.md). Project decisions and reviewer responsibilities are described in [`GOVERNANCE.md`](GOVERNANCE.md). Marketing-case contributors should use the corpus issue and pull-request templates; AI-assisted drafts still require source verification and named human review.
 
 ## License
 
-Copyright 2026 Gourav Kondadadi. Licensed under the [Apache License 2.0](LICENSE). The license includes an express patent grant; trademarks and product names remain with their respective owners. See [`NOTICE`](NOTICE).
+Copyright 2026 Gourav Kondadadi. Software is licensed under the [Apache License 2.0](LICENSE). The governed corpus has a separate [CC BY-SA 4.0 data license](DATA_LICENSE.md), which applies only to rights the project and contributors can license. The Apache license includes an express patent grant. Project branding is governed by the [trademark policy](TRADEMARKS.md); third-party trademarks remain with their respective owners. See [`NOTICE`](NOTICE).
 
 The software is provided “AS IS”, without warranties or conditions of any kind. It provides analytical recommendations, not legal, financial or professional advice.
