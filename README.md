@@ -428,6 +428,8 @@ Tagged releases additionally produce a CycloneDX software bill of materials, SHA
 
 Never commit service-account JSON, `.env` files, API keys or customer data. Report vulnerabilities privately through the repository Security tab; see [`SECURITY.md`](SECURITY.md). Never expose the stdio entry point to the public internet. The hosted entry point remains a reference architecture until its local storage and process-level controls are replaced with production infrastructure.
 
+Local telemetry, decisions, approvals, learning memory and snapshots default to `~/.general-marketing-intelligence`, independent of the MCP client's working directory. Set `GMI_STATE_DIR` to another absolute writable directory when the client uses a restricted filesystem. Individual `MARKETING_*` path variables still override their corresponding files or directories.
+
 ## Roadmap
 
 Near-term priorities include:

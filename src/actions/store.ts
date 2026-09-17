@@ -3,7 +3,8 @@ import { chmodSync, existsSync, mkdirSync, readFileSync, readdirSync, renameSync
 import { join, resolve } from "node:path";
 import type { ActionRequest, ApprovalRecord } from "./types.js";
 import {emitTelemetry} from "../observability/telemetry.js";
-const root=()=>resolve(process.env.MCP_ACTION_DIR??".marketing-actions"),recordPath=(id:string)=>join(root(),"approvals",`${id}.json`),auditPath=()=>join(root(),"audit.jsonl");
+import {runtimeStatePath} from "../runtime/paths.js";
+const root=()=>process.env.MCP_ACTION_DIR?resolve(process.env.MCP_ACTION_DIR):runtimeStatePath("actions"),recordPath=(id:string)=>join(root(),"approvals",`${id}.json`),auditPath=()=>join(root(),"audit.jsonl");
 const stable=(value:unknown):unknown=>Array.isArray(value)?value.map(stable):value&&typeof value==="object"?Object.fromEntries(Object.entries(value as Record<string,unknown>).sort(([a],[b])=>a.localeCompare(b)).map(([key,item])=>[key,stable(item)])):value;
 export const payloadHash=(request:ActionRequest)=>createHash("sha256").update(JSON.stringify(stable(request))).digest("hex");
 const prepare=()=>{mkdirSync(join(root(),"approvals"),{recursive:true,mode:0o700});chmodSync(root(),0o700)};
