@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.13.2] - 2026-09-18
+
+### Fixed
+
+- Removed the MCP client's working directory from local telemetry, decision, approval, memory and snapshot path resolution.
+- Added `GMI_STATE_DIR`, defaulting to `~/.general-marketing-intelligence`, as the shared writable local state root.
+- Made privacy-filtered telemetry fail safely when its destination is unavailable so observability cannot prevent tools from reaching configured connectors.
+- Added a regression test that runs from `/` and verifies writable state remains available outside the process working directory.
+
 ## [1.13.1] - 2026-09-15
 
 ### Security

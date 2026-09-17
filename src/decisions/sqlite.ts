@@ -1,8 +1,9 @@
 import Database from "better-sqlite3";
 import {mkdirSync} from "node:fs";
-import {dirname,join} from "node:path";
+import {dirname} from "node:path";
+import {runtimeStatePath} from "../runtime/paths.js";
 
-const databasePath=()=>process.env.MARKETING_DECISION_DB??join(process.cwd(),".marketing-decisions","decisions.sqlite");
+const databasePath=()=>process.env.MARKETING_DECISION_DB??runtimeStatePath("decisions","decisions.sqlite");
 let connection:Database.Database|undefined;
 export function decisionDatabase(){
  if(connection)return connection;
