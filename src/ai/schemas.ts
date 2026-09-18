@@ -14,6 +14,6 @@ export const marketingAnalysisSchema=z.object({
  numericClaims:z.array(numericClaim).default([])
 }).strict();
 export type MarketingAnalysis=z.infer<typeof marketingAnalysisSchema>;
-export interface EvidencePacket { observedFacts:unknown; calculatedMetrics:unknown; deterministicScores:unknown; opportunityState:unknown; confidenceInputs:unknown; deterministicOutput:string; }
+export interface EvidencePacket { observedFacts:unknown; calculatedMetrics:unknown; deterministicScores:unknown; opportunityState:unknown; confidenceInputs:unknown; deterministicOutput:string; accountContext?:unknown; }
 export interface MarketingAnalysisInput { task:string; evidence:EvidencePacket; prompt:string; }
 export type {NumericClaim};

@@ -1,5 +1,17 @@
 # Changelog
 
+## [Unreleased]
+
+### Added
+
+- Added deterministic account-context retrieval ranked by relevance, recency and outcome strength, with provenance IDs and bounded prompt context.
+- Added contradiction detection, tenant-isolation and evaluator-memory regression coverage.
+
+### Changed
+
+- Connected outcome-backed account learning to the nine-evaluator decision council and optional OpenAI reasoning path.
+- Extended `inspect_account_learning` with question-aware retrieval and structured context diagnostics.
+
 ## [1.13.2] - 2026-09-18
 
 ### Fixed

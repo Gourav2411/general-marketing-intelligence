@@ -395,6 +395,8 @@ Connect using **STDIO**, open **Tools**, invoke `connection_status`, then try `o
 | `google_ads_strategy_review` | What does live read-only Google Ads evidence suggest, after data sufficiency and conversion lag are considered? |
 | `marketing_intelligence_router` / `marketing_tool_catalog` | Which ordered tool workflow and family match one business question? |
 | `create_marketing_decision` / `record_marketing_outcome` / `inspect_account_learning` | What was decided, what happened and which outcome-backed learning should affect the next decision? |
+
+Account memory is closed-loop rather than conversational: a recommendation becomes learning only after a human records a measured outcome. Future decisions retrieve a bounded, tenant-scoped set ranked by question relevance, recency and outcome strength, with provenance IDs and contradiction flags. Pass the current business question to `inspect_account_learning` to preview the context the evaluators will use. Raw chats and unverified model prose are never promoted into account memory.
 | `retrieve_marketing_precedents` | Which governed cases transfer structurally, with optional embedding similarity and deterministic fallback? |
 | `paid_media_diagnostics` | Do daily observations indicate an anomaly, change point, pacing issue, saturation or creative fatigue? |
 | `paid_media_csv_report` | What strategy follows from a normalized Google, Meta, LinkedIn, Microsoft, YouTube or programmatic export? |

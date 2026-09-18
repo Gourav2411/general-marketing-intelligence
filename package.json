@@ -54,6 +54,7 @@
     "test:hubspot-action": "node scripts/hubspot-action-test.mjs",
     "test:sensitive-logging": "node scripts/sensitive-logging-test.mjs",
     "test:runtime-paths": "node scripts/runtime-paths-test.mjs",
+    "test:context-memory": "node scripts/context-memory-test.mjs",
     "test:strategy": "node scripts/strategy-test.mjs",
     "test:dashboard": "node scripts/dashboard-test.mjs",
     "test:dashboard:google": "node scripts/dashboard-google-test.mjs",
@@ -74,7 +75,7 @@
     "coverage": "npm run build && c8 --all --src dist/hosted --reporter=text --reporter=lcov node scripts/hosted-security-test.mjs",
     "license:check": "node scripts/license-check.mjs",
     "test": "npm run build && npm run test:marketing && npm run test:ai && npm run test:local && npm run test:google && npm run test:connectors && npm run test:mcp && npm run test:hosted && npm run test:schema && npm run test:actions && npm run test:strategy && npm run test:dashboard && npm run test:dashboard:google && npm run test:ad-strategy && npm run test:platforms && npm run test:intelligence && npm run test:corpus",
-    "verify": "npm run build && npm run typecheck && npm run test:marketing && npm run test:ai && npm run test:local && npm run test:google && npm run test:connectors && npm run test:mcp && npm run test:hosted && npm run test:schema && npm run test:actions && npm run test:action-risk-v2 && npm run test:hubspot-action && npm run test:sensitive-logging && npm run test:runtime-paths && npm run test:strategy && npm run test:dashboard && npm run test:dashboard:google && npm run test:ad-strategy && npm run test:platforms && npm run test:intelligence && npm run test:corpus && npm run test:architecture-v2 && npm run knowledge:validate && npm run benchmark:intelligence && npm run benchmark:decision-system && npm run license:check"
+    "verify": "npm run build && npm run typecheck && npm run test:marketing && npm run test:ai && npm run test:local && npm run test:google && npm run test:connectors && npm run test:mcp && npm run test:hosted && npm run test:schema && npm run test:actions && npm run test:action-risk-v2 && npm run test:hubspot-action && npm run test:sensitive-logging && npm run test:runtime-paths && npm run test:context-memory && npm run test:strategy && npm run test:dashboard && npm run test:dashboard:google && npm run test:ad-strategy && npm run test:platforms && npm run test:intelligence && npm run test:corpus && npm run test:architecture-v2 && npm run knowledge:validate && npm run benchmark:intelligence && npm run benchmark:decision-system && npm run license:check"
   },
   "dependencies": {
     "@google-analytics/data": "7.1.0",
