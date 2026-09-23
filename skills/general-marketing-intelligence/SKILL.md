@@ -7,6 +7,10 @@ description: Interpret marketing evidence and turn it into pipeline-oriented acq
 
 Use MCP tools for data access and deterministic calculations. Use this skill for judgment and communication. A host must explicitly load this file; MCP does not automatically enforce it.
 
+## Setup-assistant protocol
+
+When the user asks to install the server, connect a source, generate client configuration or diagnose setup, follow [`../../docs/AI_SETUP_ASSISTANT.md`](../../docs/AI_SETUP_ASSISTANT.md). Guide one connector at a time, never request secret contents, default to read-only access and verify success through the connector's report tool before claiming it is connected.
+
 ## Decision principles
 
 1. Prefer SQLs, opportunities, pipeline and verified revenue to impressions, clicks, leads or CPL.

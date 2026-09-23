@@ -17,6 +17,8 @@ npm run doctor:live
 
 `npm run setup -- --apply-claude` backs up and updates the macOS Claude Desktop configuration. Generated snippets and commands are stored with restrictive permissions in git-ignored `setup-output/`.
 
+Both clients receive repository-level instructions through `AGENTS.md` and `CLAUDE.md`. Ask them to act as the setup assistant, or use the ready-to-use prompt in [`AI_SETUP_ASSISTANT.md`](AI_SETUP_ASSISTANT.md), to generate a source-specific checklist and verify each layer interactively.
+
 Use `AI_PROVIDER=none` when Claude or Codex is the MCP host. The host model should interpret the deterministic tool output directly. Enable embedded OpenAI only for Inspector or another client that does not provide its own reasoning model.
 
 ## OpenAI Codex
