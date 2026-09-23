@@ -80,13 +80,13 @@
   "dependencies": {
     "@google-analytics/data": "7.1.0",
     "@modelcontextprotocol/sdk": "1.30.0",
-    "better-sqlite3": "12.11.1",
+    "better-sqlite3": "13.0.3",
     "csv-parse": "^7.0.2",
     "googleapis": "181.0.0",
-    "jose": "6.2.10",
-    "openai": "7.8.0",
+    "jose": "6.2.12",
+    "openai": "7.15.0",
     "pg": "^8.23.0",
-    "zod": "3.25.76"
+    "zod": "4.6.5"
   },
   "devDependencies": {
     "@types/better-sqlite3": "^9.6.0",
