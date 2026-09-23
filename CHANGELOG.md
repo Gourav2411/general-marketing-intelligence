@@ -4,6 +4,12 @@
 
 ### Added
 
+- Added a shared AI-guided setup playbook with repository entry points for Claude and Codex, connector routing, least-privilege rules, client-specific configuration and layered verification.
+
+## [Unreleased]
+
+### Added
+
 - Added deterministic account-context retrieval ranked by relevance, recency and outcome strength, with provenance IDs and bounded prompt context.
 - Added contradiction detection, tenant-isolation and evaluator-memory regression coverage.
 
