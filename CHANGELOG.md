@@ -4,6 +4,7 @@
 
 ### Added
 
+- Added a tenant-scoped historical evidence warehouse with atomic SQLite snapshots, a Postgres hosted reference, immutable lineage, decision reconstruction, export, deletion and retention controls.
 - Added a versioned canonical marketing semantic layer covering shared entities, governed metric definitions, evidence tiers and explicit cross-source identities.
 - Added semantic annotations to normalized Google evidence, a JSON configuration contract and compatibility tests that prevent platform events or attributed values from silently becoming CRM revenue.
 - Added a shared AI-guided setup playbook with repository entry points for Claude and Codex, connector routing, least-privilege rules, client-specific configuration and layered verification.

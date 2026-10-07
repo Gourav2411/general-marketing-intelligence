@@ -50,7 +50,7 @@ The MCP server retrieves and normalizes evidence. Deterministic TypeScript funct
 | Strategy and planning | Observed keyword opportunities, separate growth and marketing strategies, paid-search plans and email-sequence drafts |
 | Human-controlled actions | Read/draft/write policy, immutable previews, exact expiring approvals, separate execution, revocation, audit history and an opt-in R2 HubSpot task adapter |
 | Local dashboards | Live GSC/GA4 and CSV evidence, date comparisons, scorecards, trends, geo bubbles, ranked charts and browser-local layouts |
-| Evidence governance | Normalized provenance, explicit mapping, confidence limitations, local snapshots and structured MCP responses |
+| Evidence governance | Tenant-scoped SQLite/Postgres warehouse, immutable normalized evidence, versioned lineage, retention/export/deletion controls and decision reconstruction |
 | Canonical semantics | Versioned entity and metric definitions, evidence tiers and governed cross-source campaign, page, channel and lifecycle identities |
 | AI safety | Typed observed, calculated, proposed and external-reference numbers; structured validation, prompt-injection boundaries and deterministic fallback |
 | Strategic intelligence | Inspectable precedent transferability, provenance-bearing historical cases, nine independent evaluators, disagreement synthesis and red-team review |
@@ -81,7 +81,7 @@ The server never changes advertising budgets, publishes content or sends email. 
 
 See [`docs/INTELLIGENCE_LAYER.md`](docs/INTELLIGENCE_LAYER.md) for ontology v2, evidence grading, rights review, staged contributions, duplicate detection, the 250-case release gate, private learning and evaluation limits. The seed corpus demonstrates the system; it is deliberately not presented as exhaustive knowledge of marketing history.
 
-Architecture guides: [`ARCHITECTURE_V2.md`](docs/ARCHITECTURE_V2.md), [`SEMANTIC_LAYER.md`](docs/SEMANTIC_LAYER.md), [`MARKETING_GRAPH.md`](docs/MARKETING_GRAPH.md), [`DECISION_LOOP.md`](docs/DECISION_LOOP.md), [`EVALUATIONS.md`](docs/EVALUATIONS.md) and [`RISK_MODEL.md`](docs/RISK_MODEL.md).
+Architecture guides: [`ARCHITECTURE_V2.md`](docs/ARCHITECTURE_V2.md), [`SEMANTIC_LAYER.md`](docs/SEMANTIC_LAYER.md), [`EVIDENCE_WAREHOUSE.md`](docs/EVIDENCE_WAREHOUSE.md), [`MARKETING_GRAPH.md`](docs/MARKETING_GRAPH.md), [`DECISION_LOOP.md`](docs/DECISION_LOOP.md), [`EVALUATIONS.md`](docs/EVALUATIONS.md) and [`RISK_MODEL.md`](docs/RISK_MODEL.md).
 
 Corpus and review guides: [`CORPUS_250_ROADMAP.md`](docs/CORPUS_250_ROADMAP.md) and [`HUMAN_EVALUATION_RUBRIC.md`](docs/HUMAN_EVALUATION_RUBRIC.md).
 
