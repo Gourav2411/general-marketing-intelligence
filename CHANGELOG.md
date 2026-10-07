@@ -8,6 +8,10 @@
 - Added semantic annotations to normalized Google evidence, a JSON configuration contract and compatibility tests that prevent platform events or attributed values from silently becoming CRM revenue.
 - Added a shared AI-guided setup playbook with repository entry points for Claude and Codex, connector routing, least-privilege rules, client-specific configuration and layered verification.
 
+### Security
+
+- Updated the MCP SDK and patched transitive networking dependencies for the current production audit advisories.
+
 - Added deterministic account-context retrieval ranked by relevance, recency and outcome strength, with provenance IDs and bounded prompt context.
 - Added contradiction detection, tenant-isolation and evaluator-memory regression coverage.
 
