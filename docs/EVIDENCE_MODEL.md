@@ -10,6 +10,10 @@ Every live record retains:
 - Source-specific observed metrics
 - Calculation method
 - Limitations and partial-data warnings
+- Semantic schema and metric-definition versions
+- Canonical metric references, evidence tier and identity-mapping confidence
+
+The canonical meanings and forbidden equivalences are defined in [`SEMANTIC_LAYER.md`](SEMANTIC_LAYER.md). Semantic annotations are additive and optional for backwards compatibility.
 
 ## Mapping
 
