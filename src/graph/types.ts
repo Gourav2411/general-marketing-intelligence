@@ -1,5 +1,6 @@
-export const entityTypes=["Account","Campaign","Channel","Creative","Audience","Keyword","LandingPage","Content","Lead","Opportunity","Customer","RevenueEvent","Experiment","Hypothesis","Decision","Action","Outcome","Learning"] as const;
-export type EntityType=typeof entityTypes[number];
+import {canonicalEntityTypes,type CanonicalEntityType} from "../semantics/types.js";
+export const entityTypes=canonicalEntityTypes;
+export type EntityType=CanonicalEntityType;
 export const relationTypes=["uses","targets","belongs_to","lands_on","originated_from","becomes","produces","tests","creates","updates","attributed_to","measured_by"] as const;
 export type RelationType=typeof relationTypes[number];
 export interface Provenance {sourceSystem:string;sourceId:string;retrievedAt:string;evidenceIds:string[];}

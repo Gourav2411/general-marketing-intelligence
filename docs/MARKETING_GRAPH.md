@@ -1,6 +1,6 @@
 # Marketing knowledge graph
 
-The canonical graph in `src/graph` supports Account, Campaign, Channel, Creative, Audience, Keyword, LandingPage, Content, Lead, Opportunity, Customer, RevenueEvent, Experiment, Hypothesis, Decision, Action, Outcome and Learning entities.
+The canonical graph in `src/graph` shares the versioned entity registry with the [semantic layer](SEMANTIC_LAYER.md). It supports Account, Contact, Lead, Opportunity, Customer, Campaign, AdGroup, Creative, Channel, Audience, Persona, Keyword, LandingPage, Content, Product, Market, ConversionEvent, RevenueEvent, Experiment, Hypothesis, Decision, Action, Outcome and Learning entities.
 
 Relationships include `uses`, `targets`, `belongs_to`, `lands_on`, `originated_from`, `becomes`, `produces`, `tests`, `creates`, `updates`, `attributed_to` and `measured_by`.
 

@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "definitions_version": "1.0.0",
+  "currency": "USD",
+  "timezone": "UTC",
+  "governance": {
+    "owner": "Revenue Operations",
+    "approved_at": "2026-01-01T00:00:00.000Z"
+  },
+  "lifecycle": {
+    "stages": [
+      {
+        "canonical_stage": "mql",
+        "source_values": [{ "source": "hubspot", "value": "marketingqualifiedlead" }]
+      },
+      {
+        "canonical_stage": "closed_won",
+        "source_values": [{ "source": "hubspot", "value": "closedwon" }]
+      }
+    ]
+  },
+  "identities": {
+    "campaigns": [
+      {
+        "canonical_key": "campaign:enterprise-search",
+        "label": "Enterprise Search",
+        "source_values": [
+          { "source": "google_ads", "value": "Enterprise Search 2026" },
+          { "source": "hubspot", "value": "enterprise-search" }
+        ]
+      }
+    ],
+    "landing_pages": [
+      {
+        "canonical_key": "page:enterprise",
+        "label": "Enterprise landing page",
+        "source_values": [
+          { "source": "ga4", "value": "/enterprise" },
+          { "source": "google_search_console", "value": "https://example.com/enterprise" }
+        ]
+      }
+    ]
+  },
+  "channel_groups": [
+    {
+      "canonical_key": "paid-search",
+      "label": "Paid Search",
+      "source_values": [
+        { "source": "ga4", "value": "Paid Search" },
+        { "source": "google_ads", "value": "SEARCH" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Gourav2411/general-marketing-intelligence/config/semantic-model.schema.v1.json",
+  "title": "General Marketing Intelligence semantic model",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "definitions_version", "currency", "timezone", "governance", "lifecycle", "identities", "channel_groups"],
+  "properties": {
+    "version": { "const": 1 },
+    "definitions_version": { "const": "1.0.0" },
+    "currency": { "type": "string", "pattern": "^[A-Z]{3}$" },
+    "timezone": { "type": "string", "minLength": 1 },
+    "governance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["owner", "approved_at"],
+      "properties": {
+        "owner": { "type": "string", "minLength": 1 },
+        "approved_at": { "type": "string", "format": "date-time" }
+      }
+    },
+    "lifecycle": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["stages"],
+      "properties": { "stages": { "$ref": "#/$defs/mappingList" } }
+    },
+    "identities": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["campaigns", "landing_pages"],
+      "properties": {
+        "campaigns": { "$ref": "#/$defs/mappingList" },
+        "landing_pages": { "$ref": "#/$defs/mappingList" }
+      }
+    },
+    "channel_groups": { "$ref": "#/$defs/mappingList" }
+  },
+  "$defs": {
+    "sourceValue": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source", "value"],
+      "properties": {
+        "source": { "type": "string", "minLength": 1 },
+        "value": { "type": "string", "minLength": 1 }
+      }
+    },
+    "mapping": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_values"],
+      "properties": {
+        "canonical_key": { "type": "string", "minLength": 1 },
+        "canonical_stage": { "enum": ["lead", "mql", "sql", "opportunity", "closed_won", "closed_lost"] },
+        "label": { "type": "string", "minLength": 1 },
+        "source_values": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/sourceValue" } }
+      },
+      "oneOf": [
+        { "required": ["canonical_key"] },
+        { "required": ["canonical_stage"] }
+      ]
+    },
+    "mappingList": { "type": "array", "items": { "$ref": "#/$defs/mapping" } }
+  }
+}
