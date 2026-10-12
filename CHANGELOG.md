@@ -4,6 +4,10 @@
 
 ### Added
 
+- Added idempotent, tenant-scoped monitoring cycles with SQLite job state, evidence checkpoints and safe retry behavior.
+- Added decision-oriented connector, freshness, anomaly, pacing, funnel-leakage, content-decay and overdue-review alerts with stable deduplication.
+- Added `run_monitoring_cycle`, `monitoring_status` and `monitoring_alerts`, increasing the development MCP schema from 59 to 62 tools.
+- Added `npm run monitor:once` for bounded local or hosted scheduling with deterministic reporting-window keys.
 - Added a tenant-scoped historical evidence warehouse with atomic SQLite snapshots, a Postgres hosted reference, immutable lineage, decision reconstruction, export, deletion and retention controls.
 - Added a versioned canonical marketing semantic layer covering shared entities, governed metric definitions, evidence tiers and explicit cross-source identities.
 - Added semantic annotations to normalized Google evidence, a JSON configuration contract and compatibility tests that prevent platform events or attributed values from silently becoming CRM revenue.
