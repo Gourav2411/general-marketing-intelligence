@@ -4,6 +4,8 @@
 
 ### Added
 
+- Added an Official MCP Registry `server.json` manifest and npm ownership metadata.
+- Added a public npm executable definition for the local stdio server so registry clients can install it consistently.
 - Added idempotent, tenant-scoped monitoring cycles with SQLite job state, evidence checkpoints and safe retry behavior.
 - Added decision-oriented connector, freshness, anomaly, pacing, funnel-leakage, content-decay and overdue-review alerts with stable deduplication.
 - Added `run_monitoring_cycle`, `monitoring_status` and `monitoring_alerts`, increasing the development MCP schema from 59 to 62 tools.
