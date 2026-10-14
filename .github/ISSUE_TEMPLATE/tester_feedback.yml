@@ -1,0 +1,53 @@
+name: Tester feedback
+description: Report your first-run experience, a confusing result or an evidence boundary that needs improvement.
+title: "[Tester feedback]: "
+labels:
+  - testing
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for testing General Marketing Intelligence. Do not paste credentials, access tokens, customer data or identifiable analytics rows.
+  - type: dropdown
+    id: path
+    attributes:
+      label: What did you test?
+      options:
+        - Synthetic demo
+        - CSV import
+        - Google Search Console
+        - Google Analytics 4
+        - Paid-media connector
+        - CRM connector
+        - Claude or Codex MCP setup
+        - Dashboard
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: What business question were you trying to answer?
+      placeholder: Describe the decision, without sharing private data.
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: What happened?
+      description: Include the command or tool name and a sanitized error or result.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+    validations:
+      required: true
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Data-safety confirmation
+      options:
+        - label: I removed credentials, tokens, customer data and identifiable analytics rows.
+          required: true

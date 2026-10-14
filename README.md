@@ -5,9 +5,39 @@
 [![CodeQL](https://github.com/Gourav2411/general-marketing-intelligence/actions/workflows/codeql.yml/badge.svg)](https://github.com/Gourav2411/general-marketing-intelligence/actions/workflows/codeql.yml)
 [![Release](https://img.shields.io/github/v/release/Gourav2411/general-marketing-intelligence)](https://github.com/Gourav2411/general-marketing-intelligence/releases/latest)
 
-An open-source marketing decision layer for Claude, Codex and other MCP clients. It connects acquisition, web analytics and CRM evidence, performs calculations in code, and turns the results into decision-oriented marketing outputs.
+![General Marketing Intelligence: evidence to decision](assets/launch/gmi-launch-cover.png)
+
+**Ask one commercial question. Get an evidence trail, a calculated diagnosis, competing strategic views and a decision that still belongs to a human.**
+
+General Marketing Intelligence is an open-source decision system for Claude, Codex and other MCP clients. It connects acquisition, web analytics and CRM evidence, performs calculations in code, and turns the results into decision-oriented marketing outputs.
 
 **Code calculates. Evidence grounds. AI interprets. The marketing leader decides.**
+
+> If this is the kind of open marketing infrastructure you want to exist, [star the repository](https://github.com/Gourav2411/general-marketing-intelligence) and help test it on real, permissioned data.
+
+## See the decision, not another dashboard
+
+**Question:** Where should the next month of acquisition effort go?
+
+```text
+Observed evidence
+  Search A: 6.43x attributed pipeline/spend, 2.14x revenue/spend
+  Social B: 3.81x attributed pipeline/spend, 0.95x revenue/spend
+
+Calculated diagnosis
+  Search A has stronger downstream progression.
+  Social B shows weaker commercial progression and rising frequency.
+
+Proposed decision
+  Run a bounded +10% Search A scale test after the conversion-lag window.
+  Hold Social B, rotate the creative hypothesis and inspect saturation.
+
+Human control
+  No platform change is executed. The owner approves the cap, guardrails,
+  stop condition and review date in the advertising platform.
+```
+
+The figures above are synthetic and demonstrate the output contract, not product performance. Read the [complete anonymized analysis](docs/EXAMPLE_ANALYSIS.md), run `npm run demo -- growth-bet`, or follow the [60-second demonstration](docs/DEMO_60_SECOND.md).
 
 ```text
 Evidence -> Diagnose -> Decide -> Act -> Learn
