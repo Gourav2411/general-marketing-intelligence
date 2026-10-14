@@ -17,7 +17,7 @@ Evidence -> Diagnose -> Decide -> Act -> Learn
 
 In under a minute: the system retrieves governed evidence, builds a tenant-scoped marketing graph, calculates the diagnosis, ranks precedents by structural transferability, exposes disagreement across nine independent evaluators, records the human decision, controls any action through risk-tiered approval, and learns only after an explicit outcome is recorded.
 
-The current release provides 59 MCP tools. It adds executable decision/outcome/learning records, automatic nine-evaluator councils in executive tools, optional embedding retrieval, SQLite local persistence, an optional Postgres hosted repository, complete tool-call telemetry and one tightly bounded HubSpot task action. Read-only reporting remains the default and all consequential actions remain human-approved.
+The current development version provides 62 MCP tools. It adds executable decision/outcome/learning records, automatic nine-evaluator councils in executive tools, optional embedding retrieval, SQLite local persistence, an optional Postgres hosted repository, complete tool-call telemetry, decision-oriented monitoring and one tightly bounded HubSpot task action. Read-only reporting remains the default and all consequential actions remain human-approved.
 
 The trusted historical corpus currently contains 32 fully enriched ontology-v2 cases, with 40.6% classified as failed or mixed. Coverage now includes India and APAC, B2B SaaS, pricing and promotions, product launches, lifecycle, SEO, media allocation and documented PR crises. The first editorial milestone remains 250 cases; `npm run corpus -- status` reports progress and will not mark the corpus ready until count, balance and enrichment gates all pass.
 
@@ -55,6 +55,7 @@ The MCP server retrieves and normalizes evidence. Deterministic TypeScript funct
 | AI safety | Typed observed, calculated, proposed and external-reference numbers; structured validation, prompt-injection boundaries and deterministic fallback |
 | Strategic intelligence | Inspectable precedent transferability, provenance-bearing historical cases, nine independent evaluators, disagreement synthesis and red-team review |
 | Account learning | Tenant-scoped Decision, Outcome and Learning records; no learning claim without an explicit measured outcome |
+| Continuous monitoring | Idempotent evidence cycles, resumable checkpoints, connector/freshness/anomaly/pacing/leakage/decay signals and deduplicated alerts tied to business decisions |
 | Marketing graph | Typed canonical entities and relationships with stable IDs, cross-source provenance, serialization and tenant isolation |
 | Team architecture | Authenticated Streamable HTTP reference, external OIDC/JWKS verification, tenant/source permissions, encrypted credentials, revocation, audit events and rate limits |
 | Engineering | Node 20/22 CI, CodeQL, dependency review, license policy, coverage, schema compatibility tests, SBOMs and build attestations |
@@ -407,6 +408,10 @@ Account memory is closed-loop rather than conversational: a recommendation becom
 | `preview_hubspot_task_draft` | What exact one-task R2 HubSpot write is proposed for separate approval and execution? |
 | `preview_marketing_action` / `approve_marketing_action` / `execute_approved_action` | What exact action is proposed, explicitly approved and separately executed? |
 | `revoke_action_approval` / `action_audit_history` | Which approval should be cancelled, and what lifecycle events occurred? |
+| `run_monitoring_cycle` | Which configured evidence changed enough to affect a marketing decision? |
+| `monitoring_status` / `monitoring_alerts` | Which cycles ran, where can they resume and which deduplicated alerts need review? |
+
+Monitoring is described in [`docs/MONITORING.md`](docs/MONITORING.md). It is recommendation-only and never changes external systems.
 
 ## Verification
 
@@ -414,7 +419,7 @@ Account memory is closed-loop rather than conversational: a recommendation becom
 npm run verify
 ```
 
-This covers build, typecheck, deterministic decision cases, AI validation/fallback, local CSV behavior, mocked connectors, SQLite decisions, evaluator disagreement, telemetry, the bounded HubSpot action, strategy and dashboard calculations, stdio discovery and invocation of all 59 tools.
+This covers build, typecheck, deterministic decision cases, AI validation/fallback, local CSV behavior, mocked connectors, SQLite decisions, evaluator disagreement, telemetry, monitoring, the bounded HubSpot action, strategy and dashboard calculations, stdio discovery and the 62-tool compatibility contract.
 
 Tagged releases additionally produce a CycloneDX software bill of materials, SHA-256 checksums and GitHub build-provenance attestations. Public tool compatibility is protected by an MCP schema contract test.
 
