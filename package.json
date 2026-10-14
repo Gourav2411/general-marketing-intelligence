@@ -1,11 +1,27 @@
 {
   "name": "general-marketing-intelligence",
   "version": "1.14.0",
-  "private": true,
+  "private": false,
   "type": "module",
   "description": "A reusable MCP decision layer for direct Google and CSV-backed marketing intelligence.",
   "license": "Apache-2.0",
   "author": "Gourav Kondadadi",
+  "mcpName": "io.github.gourav2411/general-marketing-intelligence",
+  "bin": {
+    "general-marketing-intelligence": "dist/stdio.js"
+  },
+  "files": [
+    "dist/",
+    "config/",
+    "knowledge/",
+    "skills/",
+    "templates/",
+    "README.md",
+    "LICENSE",
+    "NOTICE",
+    "DATA_LICENSE.md",
+    "SECURITY.md"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Gourav2411/general-marketing-intelligence.git"

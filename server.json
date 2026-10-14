@@ -1,0 +1,67 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.gourav2411/general-marketing-intelligence",
+  "title": "General Marketing Intelligence",
+  "description": "Evidence-led marketing decisions, monitoring and human-approved actions for MCP clients.",
+  "websiteUrl": "https://github.com/Gourav2411/general-marketing-intelligence",
+  "repository": {
+    "url": "https://github.com/Gourav2411/general-marketing-intelligence",
+    "source": "github"
+  },
+  "version": "1.14.0",
+  "packages": [
+    {
+      "registryType": "npm",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "identifier": "general-marketing-intelligence",
+      "version": "1.14.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "DATA_MODE",
+          "description": "Evidence mode: demo, upload, or live.",
+          "isRequired": false,
+          "isSecret": false,
+          "default": "demo"
+        },
+        {
+          "name": "GOOGLE_APPLICATION_CREDENTIALS",
+          "description": "Absolute path to a Google service-account JSON file for live GA4 and Search Console access.",
+          "isRequired": false,
+          "isSecret": true
+        },
+        {
+          "name": "GA4_PROPERTY_ID",
+          "description": "Google Analytics 4 property identifier.",
+          "isRequired": false,
+          "isSecret": false
+        },
+        {
+          "name": "GSC_SITE_URL",
+          "description": "Google Search Console site URL or domain property.",
+          "isRequired": false,
+          "isSecret": false
+        },
+        {
+          "name": "OPENAI_API_KEY",
+          "description": "Optional OpenAI API key for model-assisted enhancement; deterministic tools work without it.",
+          "isRequired": false,
+          "isSecret": true
+        }
+      ]
+    }
+  ],
+  "_meta": {
+    "io.modelcontextprotocol.registry/publisher-provided": {
+      "categories": [
+        "marketing",
+        "analytics",
+        "decision-support"
+      ],
+      "humanApproval": true,
+      "defaultMode": "read-only"
+    }
+  }
+}
